@@ -20,11 +20,11 @@ export default function Project() {
         <div className='flex flex-col gap-5 md:flex-row'>
           <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-blue-800 to-red-800 text-transparent h-[21vh]   md:h-[42vh]  md:w-[1000]  w-[250px]  opacity-70 rounded-md'>
 
-            <div className='bg-black h-[20vh]  md:h-[41vh]  w-[240px] md:w-[540px]  mt-1  opacity-100'>
+            <div data-aos="fade-down"  className='bg-black h-[20vh]  md:h-[41vh]  w-[240px] md:w-[550px]  mt-1  opacity-100'>
 
-              <div className='project md:hidden  '></div>
-              <div className='project-3 hidden md:block   '></div>
-              <div className='project-5 hidden md:hidden sm:block '></div>
+              <div className='project md:hidden transition-all duration-1000 ease-in-out hover:scale-110  '></div>
+              <div className='project-3 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110    '></div>
+              <div className='project-5 hidden md:hidden sm:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
 
             </div>
 
@@ -33,8 +33,8 @@ export default function Project() {
 
           <div data-aos="fade-up" className='flex flex-col gap-2  md:ml-[20px] sm:ml-[]'>
             <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent md:text-[30px]'> shoelayers</p>
-            <p className='text-[12px] md:text-[20px] sm:text-[10]'>Shoelayers is a stylish and user-friendly website focused on showcasing and selling shoes and clothing. Built with HTML and CSS, it features a clean design that highlights trendy footwear and fashionable outfits.  The site likely includes sections for different categories, product descriptions, and a visually appealing layout to attract customers.</p>
-            <p className='text-gray-500'>HTML AND CSS</p>
+            <p className='text-[12px] md:text-[19px] sm:text-[10]'>Shoelayers is a stylish and user-friendly website focused on showcasing and selling shoes and clothing. <br /> Built with HTML and CSS, it features a clean design that highlights trendy footwear and fashionable outfits. <br /> The site likely includes sections for different categories, product descriptions, and a visually appealing layout to attract customers.</p>
+            <p className='text-gray-700'>HTML AND CSS</p>
 
 
             <div className='flex gap-4 md:text-[22px]'>
@@ -67,20 +67,20 @@ export default function Project() {
         <div className='flex flex-col gap-5 md:flex-row-reverse  md:mt-10'>
           <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-pink-800 to-blue-800 text-transparent h-[21vh] w-[250px] md:h-[42vh]  md:w-[1000]  opacity-70 rounded-md'>
 
-            <div className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[500px] opacity-100'>
+            <div data-aos="fade-down"  className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[540px] opacity-100'>
 
-              <div className='project-2 md:hidden'></div>
-              <div className='project-4 hidden md:block '></div>
+              <div className='project-2 md:hidden transition-all duration-1000 ease-in-out hover:scale-110 '></div>
+              <div className='project-4 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
 
             </div>
 
           </div>
 
 
-          <div  data-aos="fade-down" className='flex flex-col gap-2 md:text-[22px] md:mr-[20px]  '>
+          <div  data-aos="fade-up" className='flex flex-col gap-2 md:text-[22px] md:mr-[20px]  '>
             <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent  md:text-[30px]'> Coach-clone</p>
-            <p className='text-[12px] md:text-[20px]'>CoachClone is a fitness and gym membership website designed using Tailwind CSS, Next.js, and JavaScript. <br /> It provides users with information about fitness programs, gym memberships, and workout routines. <br /> The platform is built for a seamless and responsive user experience, ensuring easy navigation and accessibility. <br /> It may include features like membership registration, class scheduling, and fitness tips, making it a valuable tool for gym-goers and fitness enthusiasts.</p>
-            <p className='text-gray-500'>Tailwindcss, Nextjs and JS </p>
+            <p className='text-[12px] md:text-[19px]'>CoachClone is a fitness and gym membership website designed using Tailwind CSS, Next.js, and JavaScript. <br /> It provides users with information about fitness programs, gym memberships, and workout routines. <br /> The platform is built for a seamless and responsive user experience, ensuring easy navigation and accessibility. <br /> It may include features like membership registration, class scheduling, and fitness tips, making it a valuable tool for gym-goers and fitness enthusiasts.</p>
+            <p className='text-gray-700'>Tailwindcss, Nextjs and JS </p>
 
 
             <div>

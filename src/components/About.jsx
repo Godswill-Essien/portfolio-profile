@@ -15,11 +15,11 @@ export default function About() {
 
 
 
-                <div data-aos="fade-left" className='flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-400  h-[70vh] w-[250px] md:w-[310] opacity-70 rounded-md'>
+                <div data-aos="fade-down" className='flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-400  h-[70vh] w-[250px] md:w-[310] opacity-70 rounded-md'>
 
                     <div  className='bg-black h-[69vh]   md:w-[300px] w-[240px] mt-1  '>
 
-                        <div  className='about  bg-blue about-2   opacity-80'></div>
+                        <div  className='about  bg-blue about-2 transition-all duration-1000 ease-in-out  hover:scale-110  hover:opacity-60 '></div>
 
                     </div>
                 </div>
