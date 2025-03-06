@@ -117,12 +117,34 @@ body {
 
 }
 
+.project-3{
+  width: 98%;
+  height: 40vh;
+  background:  url('/shoelayers.png');
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
+  margin-top: 15px;
+  translate:30px ;
+  border: none;
+  
+  
 
+  
+  
+  
+  /* text-align: center; */
+  
+  
+  
+
+
+}
 
 
 .project-2{
   width: 100%;
-  height: 17vh;
+  height: 40vh;
   background:  url('/coach.png');
   background-repeat: no-repeat;
   background-size:contain;

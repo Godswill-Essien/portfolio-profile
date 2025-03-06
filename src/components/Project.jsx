@@ -70,7 +70,7 @@ export default function Project() {
             <div className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[500px] opacity-100'>
 
               <div className='project-2 md:hidden'></div>
-              <div className='project-4 hidden md:block lg:hidden'></div>
+              <div className='project-4 hidden md:block '></div>
 
             </div>
 
