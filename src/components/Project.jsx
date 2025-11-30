@@ -102,6 +102,54 @@ export default function Project() {
 
         </div>
 
+      </>     
+
+
+
+            {/* 3 */}
+      < >
+
+
+        <div className='flex flex-col gap-5 md:gap-14 md:flex-row md:mt-10'>
+          <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-red-800 to-red-500 text-transparent h-[21vh] w-[250px] md:h-[42vh]  md:w-[1000]  opacity-70 rounded-md'>
+
+            <div data-aos="fade-down"  className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[540px] opacity-100'>
+
+              <div className='project-5 md:hidden transition-all duration-1000 ease-in-out hover:scale-110 '></div>
+              <div className='project-6 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
+
+            </div>
+
+          </div>
+
+
+          <div  data-aos="fade-up" className='flex flex-col gap-2 md:text-[22px] md:mr-[20px]  '>
+            <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent  md:text-[30px]'>Netflixx</p>
+            <p className='text-[12px] md:text-[19px]'>My Netflixx Clone is a fully responsive movie-streaming web application inspired by the original Netflix interface. <br /> It features a modern UI built with React, JavaScript, Typescript and Tailwind CSS, allowing users to browse movies, view categories, manage authentication, and enjoy a smooth, cinematic user experience.</p>
+            <p className='text-gray-700'>Tailwindcss, Nextjs, Js and Ts </p>
+
+
+           
+            <div className='flex gap-4 md:text-[22px]'>
+              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://netflix-ashen-beta.vercel.app">
+
+                <IoIosLink className='font-bold text-[20px]  text-blue-700' />
+                <p className='bg-gradient-to-r from-red-700 to-green-700 bg-clip-text text-transparent'>Live link</p>
+              </Link>
+
+              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://github.com/Godswill-Essien/netflix">
+
+                <FaGithub className='font-bold text-[20px]  text-blue-700' />
+                <p className='bg-gradient-to-r from-indigo-700 to-red-700 bg-clip-text text-transparent'>Git hub</p>
+              </Link>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
       </>
 
 
