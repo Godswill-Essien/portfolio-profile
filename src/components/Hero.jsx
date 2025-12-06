@@ -38,11 +38,11 @@ export default function Hero() {
                     </div>
 
 
-                
+
 
                     <div className='flex justify-center items-center   font-serif text-[13px]'>
                         <h1 className=' font-extrabold text-white'>
-                        Hi👋 there,{' '}
+                            Hi👋 there,{' '}
                             <span style={{ color: 'white', fontWeight: 'bold' }}>
                                 <Typewriter
                                     words={['Digital wanderer', 'I am Godswill Essien']}
@@ -75,8 +75,18 @@ export default function Hero() {
 
 
 
-                    <div className=' shadow-2xl  shadow-blue-900 transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-5  rounded-md bg-gradient-to-r from-blue-800 to-indigo-900'>
-                        <Link href="mailto:godswillessien880@gmail.com" className='text-[20px]' >Reach Me </Link>
+                   
+
+                    <div className='w-full flex justify-center mb-6'>
+                        <a
+                            href="/CV"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download
+                            className='shadow-2xl  shadow-blue-900 animate-pulse transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-5  rounded-md bg-gradient-to-r from-blue-800 to-indigo-900'
+                        >
+                            Download CV
+                        </a>
                     </div>
 
 
@@ -87,7 +97,7 @@ export default function Hero() {
 
 
             {/* desktop */}
-            <div className='hidden md:block lg:block'>
+            <div className='hidden md:block lg:block '>
 
                 <div className='  flex flex-col items-center justify-center mt-16 gap-5'>
 
@@ -110,11 +120,11 @@ export default function Hero() {
                         </div>
 
                     </div>
- 
+
 
                     <div className='flex justify-center items-center   font-serif text-[14px]'>
                         <h1 className=' font-extrabold text-white'>
-                        Hi👋 there,{' '}
+                            Hi👋 there,{' '}
                             <span style={{ color: 'white', fontWeight: 'bold' }}>
                                 <Typewriter
                                     words={['Digital wanderer', 'I am Godswill Essien']}
@@ -132,7 +142,7 @@ export default function Hero() {
 
 
                     <div className='font-serif  flex flex-col items-center '>
-                        <p className=' text-[50px] bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent uppercase'>
+                        <p className=' text-[50px] bg-gradient-to-r  from-indigo-800 to-blue-800 bg-clip-text text-transparent uppercase'>
                             website developer
                         </p>
 
@@ -149,7 +159,7 @@ export default function Hero() {
 
 
 
-                    <div className=' shadow-2xl  shadow-blue-900 transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-5  rounded-md bg-gradient-to-r from-blue-800 to-indigo-900'>
+                    <div className=' shadow-2xl animate-pulse  shadow-blue-900 transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-5  rounded-md bg-gradient-to-r from-blue-800 to-indigo-900'>
                         <Link href="mailto:godswillessien880@gmail.com" className='text-[20px]' >Reach Me </Link>
                     </div>
 

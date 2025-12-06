@@ -8,158 +8,142 @@ import { Typewriter } from 'react-simple-typewriter';
 
 export default function Project() {
   return (
-    <div className='font-serif px-10 mt-10 flex flex-col gap-6 '>
+    <div className='font-serif px-6 md:px-12 mt-10 flex flex-col gap-10'>
 
 
-      {/* 1 */}
+      {/* TITLE */}
+      <p
+        className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent text-[22px] md:text-[40px] font-bold text-center'
+        id="work"
+      >
+        Projects I Have Worked On
+      </p>
 
-      < >
 
-        <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent text-bold  md:text-center md:mb-5 text-[25px]  md:text-[35px]' id="work">Projects I Have Worked On</p>
 
-        <div className='flex flex-col gap-5 md:flex-row'>
-          <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-blue-800 to-red-800 text-transparent h-[21vh]   md:h-[42vh]  md:w-[1000]  w-[250px]  opacity-70 rounded-md'>
-
-            <div data-aos="fade-down"  className='bg-black h-[20vh]  md:h-[41vh]  w-[240px] md:w-[550px]  mt-1  opacity-100'>
-
-              <div className='project md:hidden transition-all duration-1000 ease-in-out hover:scale-110  '></div>
-              <div className='project-3 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110    '></div>
-              <div className='project-5 hidden md:hidden sm:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
-
-            </div>
-
+      {/* 1 --- SHOELAYERS */}
+      <div className='flex flex-col gap-6 md:flex-row md:items-center'>
+        
+        {/* IMAGE CONTAINER */}
+        <div className='flex justify-center items-center bg-gradient-to-r from-blue-800 to-red-800 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
+          <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
+            <div className='project md:hidden hover:scale-110 transition-all duration-700'></div>
+            <div className='project-3 hidden md:block hover:scale-110 transition-all duration-700'></div>
           </div>
-
-
-          <div data-aos="fade-up" className='flex flex-col gap-2  md:ml-[20px] sm:ml-[]'>
-            <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent md:text-[30px]'> shoelayers</p>
-            <p className='text-[12px] md:text-[19px] sm:text-[10]'>Shoelayers is a stylish and user-friendly website focused on showcasing and selling shoes and clothing. <br /> Built with HTML and CSS, it features a clean design that highlights trendy footwear and fashionable outfits. <br /> The site likely includes sections for different categories, product descriptions, and a visually appealing layout to attract customers.</p>
-            <p className='text-gray-700'>HTML AND CSS</p>
-
-
-            <div className='flex gap-4 md:text-[22px]'>
-              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://godswill-essien.github.io/shoelayer-clone/shoelayers.html">
-
-                <IoIosLink className='font-bold text-[20px]  text-blue-700' />
-                <p className='bg-gradient-to-r from-indigo-700 to-emerald-700 bg-clip-text text-transparent'>Live link</p>
-              </Link>
-
-              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://github.com/Godswill-Essien/shoelayer-clone">
-
-                <FaGithub className='font-bold text-[20px]  text-blue-700' />
-                <p className='bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text text-transparent'>Git hub</p>
-              </Link>
-
-            </div>
-
-
-
-          </div>
-
         </div>
 
-      </>
+        {/* TEXT */}
+        <div className='flex flex-col gap-3 md:w-[50%]'>
+          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+            Shoelayers
+          </p>
 
-      {/* 2 */}
-      < >
+          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+            Shoelayers is a stylish and user-friendly website focused on 
+            showcasing shoes and clothing. Built with HTML and CSS, it features a
+            clean and attractive layout that highlights trendy footwear and outfits.
+          </p>
 
+          <p className='text-gray-700 text-[13px] md:text-[17px]'>HTML & CSS</p>
 
-        <div className='flex flex-col gap-5 md:flex-row-reverse  md:mt-10'>
-          <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-pink-800 to-blue-800 text-transparent h-[21vh] w-[250px] md:h-[42vh]  md:w-[1000]  opacity-70 rounded-md'>
+          <div className='flex gap-5 text-[15px] md:text-[20px]'>
+            <Link className='flex items-center gap-2 hover:-translate-y-1 transition' href="https://godswill-essien.github.io/shoelayer-clone/shoelayers.html">
+              <IoIosLink className='text-blue-700 text-[23px]' />
+              <p className='bg-gradient-to-r from-indigo-700 to-emerald-700 bg-clip-text text-transparent'>Live Link</p>
+            </Link>
 
-            <div data-aos="fade-down"  className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[540px] opacity-100'>
-
-              <div className='project-2 md:hidden transition-all duration-1000 ease-in-out hover:scale-110 '></div>
-              <div className='project-4 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
-
-            </div>
-
+            <Link className='flex items-center gap-2 hover:-translate-y-1 transition' href="https://github.com/Godswill-Essien/shoelayer-clone">
+              <FaGithub className='text-blue-700 text-[23px]' />
+              <p className='bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text text-transparent'>GitHub</p>
+            </Link>
           </div>
-
-
-          <div  data-aos="fade-up" className='flex flex-col gap-2 md:text-[22px] md:mr-[20px]  '>
-            <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent  md:text-[30px]'> Coach-clone</p>
-            <p className='text-[12px] md:text-[19px]'>CoachClone is a fitness and gym membership website designed using Tailwind CSS, Next.js, and JavaScript. <br /> It provides users with information about fitness programs, gym memberships, and workout routines. <br /> The platform is built for a seamless and responsive user experience, ensuring easy navigation and accessibility. <br /> It may include features like membership registration, class scheduling, and fitness tips, making it a valuable tool for gym-goers and fitness enthusiasts.</p>
-            <p className='text-gray-700'>Tailwindcss, Nextjs and JS </p>
-
-
-            <div>
-              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="#home">
-
-                <IoIosLink className='font-bold text-[20px]  text-blue-700' />
-                <p className='bg-gradient-to-r from-red-700 to-yellow-500 bg-clip-text text-transparent'>Off Line</p>
-              </Link>
+        </div>
+      </div>
 
 
 
 
-
-            </div>
-
-
-
+      {/* 2 --- COACH CLONE */}
+      <div className='flex flex-col gap-6 md:flex-row-reverse md:items-center'>
+       
+        <div className='flex justify-center items-center bg-gradient-to-r from-pink-800 to-blue-800 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
+          <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
+            <div className='project-2 md:hidden hover:scale-110 transition-all duration-700'></div>
+            <div className='project-4 hidden md:block hover:scale-110 transition-all duration-700'></div>
           </div>
-
         </div>
 
-      </>     
+        <div className='flex flex-col gap-3 md:w-[50%]'>
+          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+            CoachClone
+          </p>
+
+          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+            CoachClone is a fitness membership platform built with Next.js,
+            Tailwind CSS, and JavaScript. It offers smooth navigation, class scheduling,
+            programs, and a responsive UI for fitness lovers.
+          </p>
+
+          <p className='text-gray-700 text-[13px] md:text-[17px]'>TailwindCSS • Next.js • JS</p>
+
+          <Link className='flex items-center gap-2 hover:-translate-y-1 transition text-[15px] md:text-[20px]' href="#">
+            <IoIosLink className='text-blue-700 text-[23px]' />
+            <p className='bg-gradient-to-r from-red-700 to-yellow-500 bg-clip-text text-transparent'>Offline</p>
+          </Link>
+        </div>
+      </div>
 
 
 
-            {/* 3 */}
-      < >
 
-
-        <div className='flex flex-col gap-5 md:gap-14 md:flex-row md:mt-10'>
-          <div data-aos="fade-top" className='flex justify-center items-center mt-3 bg-gradient-to-r from-red-800 to-red-500 text-transparent h-[21vh] w-[250px] md:h-[42vh]  md:w-[1000]  opacity-70 rounded-md'>
-
-            <div data-aos="fade-down"  className='bg-black h-[20vh] w-[240px] mt-1  md:h-[41vh] md:w-[540px] opacity-100'>
-
-              <div className='project-5 md:hidden transition-all duration-1000 ease-in-out hover:scale-110 '></div>
-              <div className='project-6 hidden md:block transition-all duration-1000 ease-in-out hover:scale-110  '></div>
-
-            </div>
-
+      {/* 3 --- NETFLIXX */}
+      <div className='flex flex-col gap-6 md:flex-row md:items-center'>
+        
+        <div className='flex justify-center items-center bg-gradient-to-r from-red-800 to-red-500 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
+          <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
+            <div className='project-5 md:hidden hover:scale-110 transition-all duration-700'></div>
+            <div className='project-6 hidden md:block hover:scale-110 transition-all duration-700'></div>
           </div>
-
-
-          <div  data-aos="fade-up" className='flex flex-col gap-2 md:text-[22px] md:mr-[20px]  '>
-            <p className='font-bold  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent  md:text-[30px]'>Netflixx</p>
-            <p className='text-[12px] md:text-[19px]'>My Netflixx Clone is a fully responsive movie-streaming web application inspired by the original Netflix interface. <br /> It features a modern UI built with React, JavaScript, Typescript and Tailwind CSS, allowing users to browse movies, view categories, manage authentication, and enjoy a smooth, cinematic user experience.</p>
-            <p className='text-gray-700'>Tailwindcss, Nextjs, Js and Ts </p>
-
-
-           
-            <div className='flex gap-4 md:text-[22px]'>
-              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://netflix-ashen-beta.vercel.app">
-
-                <IoIosLink className='font-bold text-[20px]  text-blue-700' />
-                <p className='bg-gradient-to-r from-red-700 to-green-700 bg-clip-text text-transparent'>Live link</p>
-              </Link>
-
-              <Link className='flex  items-center gap-2 transition-all duration-500 ease-in-out hover:translate-y-[-3]' href="https://github.com/Godswill-Essien/netflix">
-
-                <FaGithub className='font-bold text-[20px]  text-blue-700' />
-                <p className='bg-gradient-to-r from-indigo-700 to-red-700 bg-clip-text text-transparent'>Git hub</p>
-              </Link>
-
-            </div>
-
-
-          </div>
-
         </div>
 
-      </>
+        <div className='flex flex-col gap-3 md:w-[50%]'>
+          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+            Netflixx
+          </p>
+
+          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+            A fully responsive Netflix clone built with React, Tailwind CSS,
+            JavaScript, and TypeScript. It includes categories, authentication,
+            and smooth cinematic interaction.
+          </p>
+
+          <p className='text-gray-700 text-[13px] md:text-[17px]'>TailwindCSS • Next.js • JS • TS</p>
+
+          <div className='flex gap-5 text-[15px] md:text-[20px]'>
+            <Link className='flex items-center gap-2 hover:-translate-y-1 transition' href="https://netflix-ashen-beta.vercel.app">
+              <IoIosLink className='text-blue-700 text-[23px]' />
+              <p className='bg-gradient-to-r from-red-700 to-green-700 bg-clip-text text-transparent'>Live Link</p>
+            </Link>
+
+            <Link className='flex items-center gap-2 hover:-translate-y-1 transition' href="https://github.com/Godswill-Essien/netflix">
+              <FaGithub className='text-blue-700 text-[23px]' />
+              <p className='bg-gradient-to-r from-indigo-700 to-red-700 bg-clip-text text-transparent'>GitHub</p>
+            </Link>
+          </div>
+        </div>
+      </div>
 
 
-      <div className='flex justify-center items-center       shadow-2xl mt-2 shadow-blue-900 transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-2 w-max  rounded-md '>
-        <h1 className=' font-extrabold   text-white  '>
-          More :{' '}
-          <span style={{ color: 'white', fontWeight: 'bold' }}>
+
+
+      {/* MORE */}
+      <div className='flex justify-end items-end shadow-2xl shadow-blue-900 hover:-translate-y-1 transition rounded-md py-2 px-4 w-max mx-auto'>
+        <h1 className='font-extrabold text-white'>
+          More:{' '}
+          <span className='text-white font-bold'>
             <Typewriter
               words={['..........', '..........']}
-              loop={500} // Number of loops (0 for infinite)
+              loop={500}
               cursor
               cursorStyle=""
               typeSpeed={200}

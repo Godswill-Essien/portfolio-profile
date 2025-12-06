@@ -33,7 +33,7 @@ export default function About() {
                     <p>Hey there digital wanderer !👋 I'm God'swill, I am a website developer, I build beautiful websites..untill  someone asks me to fix a bug, then i become a detective😁🔍 ..</p>
                     <p>i write HTML for structures,CSS for style, and JAVASCRIPT to make things move, becuase static websites are boring ..</p>
                     <p>i don't just code; i craft experiences. Unless it's internet explorer....My job is to make websites look amazing....and my nigtmare is fixing alignment issues in CSS. </p>
-                    <p> If I'm not performing tasks or making life easier by building websites, I relish a good manga read, watching animie 🥰, and playing Football'...</p>
+                    <p> If I'm not performing tasks or making life easier by building websites, I relish a good manga read, watching anime 🥰, and playing Football'...</p>
 
                     </div>
                    
