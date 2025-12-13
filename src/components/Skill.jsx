@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Skill() {
     return (
-        <div  data-aos="fade-down" className='px-10 mt-5  font-serif md:flex-row-reverse md:px-20   ' id="skill">
+        <div  data-aos="fade-down" className='px-6 mt-5  font-serif md:flex-row-reverse md:px-20   ' id="skill">
 
             <div className=''>
 

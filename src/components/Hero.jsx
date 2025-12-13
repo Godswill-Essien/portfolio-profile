@@ -16,11 +16,12 @@ export default function Hero() {
             {/* mobile */}
 
 
-            <div className='md:hidden lg:hidden sm:hidden '>
-                <div className=' flex flex-col items-center justify-center mt-9 gap-5'>
+            <div className='md:hidden lg:hidden sm:hidden  '>
+                <div className=' flex flex-col items-center justify-center mt-16 gap-5'>
 
 
-                    <div className='bg-gradient-to-r from-blue-800 to-indigo-800 rounded-full w-[250px] h-[250px]             flex items-center itmes-center justify-center  transition-all duration-500 ease-in-out hover:translate-y-[-3px]'>
+                    <div className='bg-gradient-to-r from-green-700 via-red-700
+                       to-blue-700 animate-gradient p-[2px] rounded-2xlw-full max-w-[500px] rounded-full w-[250px] h-[250px]             flex items-center itmes-center justify-center  transition-all duration-500 ease-in-out hover:translate-y-[-3px]'>
 
 
 
@@ -75,7 +76,7 @@ export default function Hero() {
 
 
 
-                   
+
 
                     <div className='w-full flex justify-center mb-6'>
                         <a
@@ -83,8 +84,9 @@ export default function Hero() {
                             target="_blank"
                             rel="noopener noreferrer"
                             download
-                            className='shadow-2xl  shadow-blue-900 animate-pulse transition-all duration-500 ease-in-out hover:translate-y-[-4px] py-1 px-5  rounded-md bg-gradient-to-r from-blue-800 to-indigo-900'
-                        >
+                            className='bg-gradient-to-r from-blue-800 to-indigo-900 
+                            animate-glow hover-glowtransition-all
+                             duration-500hover:scale-105py-2 px-6 rounded-md'>
                             Download CV
                         </a>
                     </div>

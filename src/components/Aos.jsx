@@ -8,8 +8,9 @@ export default function Aos(){
     AOS.init({
    
          once: false,
-         easing:'ease-out',
-         duration: "500",
+         easing:'ease-in-out',
+         duration: "1000",
+         transition: "all"
 
          
            

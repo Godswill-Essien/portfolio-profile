@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --background: #a09e9e;
   --foreground: #0f0202;
@@ -21,7 +23,146 @@ body {
 }
 
 
+:root {
+  --foreground-rgb: 59, 130, 246;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 3, 7, 18;
+}
 
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #0891b2);
+}
+
+/* Animation for the code block */
+pre {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace;
+  line-height: 1.6;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Soft breathing glow */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(99, 102, 241, 0.75);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+.animate-glow {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Neon hover glow */
+.hover-glow:hover {
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.8),
+    0 0 40px rgba(99, 102, 241, 0.8),
+    0 0 60px rgba(147, 51, 234, 0.6);
+}
+
+
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for hover effects */
+.footer-link {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+  transform: translateX(5px);
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Gradient text effects */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6, #ec4899);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 8s ease infinite;
+}
 
 
 
@@ -69,6 +210,29 @@ body {
   background:  url('/willsaint.jpg');
   background-repeat: no-repeat;
   background-size:cover;
+  background-position: center;
+  margin-top: 15px;
+  translate:20px ;
+  
+
+  
+  
+  
+  /* text-align: center; */
+  
+  
+  
+
+
+}
+
+
+.about-1{
+  width: 100%;
+  height: 60vh;
+  background:  url('/about-1.jpg');
+  background-repeat: no-repeat;
+  background-size:contain;
   background-position: center;
   margin-top: 15px;
   translate:20px ;

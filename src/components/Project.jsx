@@ -13,19 +13,19 @@ export default function Project() {
 
       {/* TITLE */}
       <p
-        className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent text-[22px] md:text-[40px] font-bold text-center'
+        className='  bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent text-[24px] md:text-[40px] font-bold justify- flex text-center'
         id="work"
       >
-        Projects I Have Worked On
+         My Projects 
       </p>
 
 
 
       {/* 1 --- SHOELAYERS */}
-      <div className='flex flex-col gap-6 md:flex-row md:items-center'>
+      <div data-aos="fade-down" className=' flex flex-col gap-6 md:flex-row md:items-center'>
         
         {/* IMAGE CONTAINER */}
-        <div className='flex justify-center items-center bg-gradient-to-r from-blue-800 to-red-800 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
+        <div  className='flex justify-center items-center bg-gradient-to-r from-blue-800 to-red-800 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
           <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
             <div className='project md:hidden hover:scale-110 transition-all duration-700'></div>
             <div className='project-3 hidden md:block hover:scale-110 transition-all duration-700'></div>
@@ -33,12 +33,12 @@ export default function Project() {
         </div>
 
         {/* TEXT */}
-        <div className='flex flex-col gap-3 md:w-[50%]'>
-          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+        <div  className='flex flex-col gap-3 md:w-[50%] ' >
+          <p  data-aos="fade-up" className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
             Shoelayers
           </p>
 
-          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+          <p  data-aos="zoom-in"className='text-[13px] md:text-[18px] leading-relaxed'>
             Shoelayers is a stylish and user-friendly website focused on 
             showcasing shoes and clothing. Built with HTML and CSS, it features a
             clean and attractive layout that highlights trendy footwear and outfits.
@@ -64,7 +64,7 @@ export default function Project() {
 
 
       {/* 2 --- COACH CLONE */}
-      <div className='flex flex-col gap-6 md:flex-row-reverse md:items-center'>
+      <div  data-aos="fade-down" className='flex flex-col gap-6 md:flex-row-reverse md:items-center'>
        
         <div className='flex justify-center items-center bg-gradient-to-r from-pink-800 to-blue-800 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
           <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
@@ -74,11 +74,11 @@ export default function Project() {
         </div>
 
         <div className='flex flex-col gap-3 md:w-[50%]'>
-          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+          <p data-aos="fade-right" className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
             CoachClone
           </p>
 
-          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+          <p data-aos="zoom-out" className='text-[13px] md:text-[18px] leading-relaxed'>
             CoachClone is a fitness membership platform built with Next.js,
             Tailwind CSS, and JavaScript. It offers smooth navigation, class scheduling,
             programs, and a responsive UI for fitness lovers.
@@ -97,7 +97,7 @@ export default function Project() {
 
 
       {/* 3 --- NETFLIXX */}
-      <div className='flex flex-col gap-6 md:flex-row md:items-center'>
+      <div data-aos="fade-up" className='flex flex-col gap-6 md:flex-row md:items-center'>
         
         <div className='flex justify-center items-center bg-gradient-to-r from-red-800 to-red-500 h-[21vh] w-[250px] md:h-[42vh] md:w-[520px] opacity-70 rounded-md mx-auto'>
           <div className='bg-black h-[20vh] w-[240px] md:h-[41vh] md:w-[500px] mt-1'>
@@ -107,11 +107,11 @@ export default function Project() {
         </div>
 
         <div className='flex flex-col gap-3 md:w-[50%]'>
-          <p className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
+          <p  data-aos="fade-down"className='bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent font-bold text-[22px] md:text-[30px]'>
             Netflixx
           </p>
 
-          <p className='text-[13px] md:text-[18px] leading-relaxed'>
+          <p  data-aos="zoom-in"className='text-[13px] md:text-[18px] leading-relaxed'>
             A fully responsive Netflix clone built with React, Tailwind CSS,
             JavaScript, and TypeScript. It includes categories, authentication,
             and smooth cinematic interaction.
@@ -137,18 +137,18 @@ export default function Project() {
 
 
       {/* MORE */}
-      <div className='flex justify-end items-end shadow-2xl shadow-blue-900 hover:-translate-y-1 transition rounded-md py-2 px-4 w-max mx-auto'>
-        <h1 className='font-extrabold text-white'>
+      <div className='flex  text-start justify-start items-start shadow-2xl shadow-blue-900 hover:-translate-y-1 transition rounded-md py-2 px-4 w-max mx-auto'>
+        <h1 className='font-extrabold  flex justify-start items-start text-start text-white'>
           More:{' '}
-          <span className='text-white font-bold'>
+          <span className='text-white font-bold text-start'>
             <Typewriter
               words={['..........', '..........']}
               loop={500}
               cursor
               cursorStyle=""
-              typeSpeed={200}
-              deleteSpeed={100}
-              delaySpeed={2000}
+              typeSpeed={300}
+              deleteSpeed={200}
+              delaySpeed={3000}
             />
           </span>
         </h1>
