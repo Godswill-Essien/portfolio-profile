@@ -2,6 +2,8 @@
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
 import { CiBoxList } from "react-icons/ci"
+import Viewc from '@/components/Viewc'
+
 
 export default function Navbar() {
   const [dropDown, setDropDown] = useState(false)
@@ -38,16 +40,21 @@ export default function Navbar() {
         >
           View CV
         </Link>
+
+
+        <Viewc/>
       </nav>
 
       {/* ================= MOBILE NAV ================= */}
-      <div className="md:hidden flex justify-center items-center gap-4   backdrop-blur-2xl rounded px-5 pt-3">
+      <div className="md:hidden flex justify-between items-center gap-4   backdrop-blur-2xl rounded px-5 pt-3">
         <button
           onClick={() => setDropDown(!dropDown)}
           className="text-blue-700 mb-1 text-2xl"
         >
           <CiBoxList />
         </button>
+
+        <Viewc/>
       </div>
 
       {/* ================= MOBILE DROPDOWN ================= */}

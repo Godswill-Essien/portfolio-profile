@@ -16,7 +16,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function page() {
 
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const { scrollY } = useScroll();
@@ -60,13 +60,12 @@ export default function page() {
   ];
   return (
     <div className=''>
-
-       <Navbar/>
-       <Hero/>
-       <About/>
-       <Skill/>
-       <Project/>
-       <Foter/>
+      <Navbar/>
+      <Hero />
+      <About />
+      <Skill />
+      <Project />
+      <Foter />
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 export default function Project() {
   return (
-    <div className='font-serif px-6 md:px-12 mt-10 flex flex-col gap-10'>
+    <div className='font-serif px-6 md:px-12 mt-10 flex flex-col gap-10 overflow-hidden'>
 
 
       {/* TITLE */}
@@ -137,7 +137,7 @@ export default function Project() {
 
 
       {/* MORE */}
-      <div className='flex  text-start justify-start items-start shadow-2xl shadow-blue-900 hover:-translate-y-1 transition rounded-md py-2 px-4 w-max mx-auto'>
+      {/* <div className='flex  text-start justify-start items-start shadow-2xl shadow-blue-900 hover:-translate-y-1 transition rounded-md py-2 px-4 w-max mx-auto'>
         <h1 className='font-extrabold  flex justify-start items-start text-start text-white'>
           More:{' '}
           <span className='text-white font-bold text-start'>
@@ -152,7 +152,7 @@ export default function Project() {
             />
           </span>
         </h1>
-      </div>
+      </div> */}
 
     </div>
   )

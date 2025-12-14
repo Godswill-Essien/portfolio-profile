@@ -7,7 +7,7 @@ export default function About() {
             {/* ABOUT SECTION */}
             <div
                 id="about"
-                className="mt-8 px-6 md:px-20 font-serif flex flex-col md:flex-row gap-6 md:gap-12"
+                className="md:mt-10 px-6 md:px-20 font-serif flex flex-col md:flex-row gap-6 md:gap-12"
             >
 
                 {/* IMAGE SIDE — UNCHANGED */}
@@ -43,9 +43,9 @@ export default function About() {
 
                     <div
                         data-aos="fade-right"
-                        className="flex flex-col gap-3"
+                        className="flex flex-col gap-3 bg-gray-950 rounded-2xl overflow-hidden  "
                     >
-                        <p className="text-start">
+                        <p className="text-start  py-7 px-7 rounded-2xl bg-black/70 backdrop-blur-3xl h-52 overflow-scroll  border border-slate-700 bg-blend-overlay  ">
                             Hey there digital wanderer 👋 I'm God'swill, I am a website developer,
                             I build beautiful websites.. until someone asks me to fix a bug,
                             then I become a detective 😁🔍 . <br /><br />

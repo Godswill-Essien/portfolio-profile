@@ -1,46 +1,55 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
 
 export default function CVSection() {
     return (
-        <div className='w-full flex justify-center px-4 mt-5'>
-            <div className='rounded-3xl bg-slate-300 flex flex-col justify-center items-center shadow-emerald-50 shadow-md w-[327px] md:w-[450px] lg:w-[500px] p-5'>
+        <div className="w-full flex justify-center px-4 mt-10">
+            <div className="rounded-3xl bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800 shadow-2xl w-full max-w-md md:max-w-lg lg:max-w-2xl p-6 md:p-8 flex flex-col items-center">
 
                 {/* Header */}
-                <div data-aos="fade-down" className='text-black flex flex-col items-center justify-center gap-1 text-[12px] text-center mt-5 md:text-[18px] lg:text-[20px]'>
-                    <h1 className='text-[16px] md:text-[20px] font-semibold'>God'swill Sampson Essien</h1>
-                    <p>#5 Gotheg Avenue, Artillery, Woji Junction,</p>
-                    <p>Off Okporo Road, Rumuogba</p>
+                <div data-aos="fade-down" className="text-center text-gray-900 dark:text-white">
+                    <h1 className="text-2xl md:text-3xl font-bold mb-2">God'swill Sampson Essien</h1>
+                    <p className="text-sm md:text-base">#5 Gotheg Avenue, Artillery, Woji Junction,</p>
+                    <p className="text-sm md:text-base">Off Okporo Road, Rumuogba</p>
 
-                    <div className='flex flex-col gap-3 mt-2'>
-                        <p className='border-b border-black px-4'>Phone: <Link className='text-blue-900' href="tel:+2348143399082">08143399082</Link></p>
-                        <p className='border-b border-black px-4'>Email: <Link className='text-blue-900' href="mailto:godswillessien880@gmail.com">godswillessien880@gmail.com</Link></p>
+                    <div className="flex flex-col gap-2 mt-3 text-sm md:text-base">
+                        <p className="border-b border-gray-400 dark:border-gray-600 px-2 md:px-4">
+                            Phone: <Link href="tel:+2348143399082" className="text-blue-700 dark:text-blue-400">08143399082</Link>
+                        </p>
+                        <p className="border-b border-gray-400 dark:border-gray-600 px-2 md:px-4">
+                            Email: <Link href="mailto:godswillessien880@gmail.com" className="text-blue-700 dark:text-blue-400">godswillessien880@gmail.com</Link>
+                        </p>
                     </div>
                 </div>
 
                 {/* Body */}
-                <div className='py-5 px-5 mt-2 text-black text-[10px] md:text-[14px] lg:text-[15px] w-full'>
+                <div className="w-full mt-6 text-gray-900 dark:text-white text-sm md:text-base space-y-5">
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2'>
-                        <h1 className='text-[14px] font-semibold'>Profile</h1>
+                    {/* Profile */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Profile</h2>
                         <p>
-                            Aspiring web developer with a passion for designing functional and visually appealing websites. <br />
-                            Currently developing skills in website development at LOCTECH, with a focus on front-end and
-                            back-end technologies. <br /> Eager to gain hands-on experience and contribute to real-world projects.
+                            Aspiring web developer with a passion for creating functional and visually appealing websites.
+                            Currently developing skills in website development at LOCTECH, focusing on both front-end and back-end technologies.
+                            Eager to gain hands-on experience and contribute to real-world projects.
                         </p>
-                    </div>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-3'>
-                        <h1 className='text-[14px] font-semibold'>Education</h1>
+                    {/* Education */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Education</h2>
                         <p>
-                            - Ongoing: Preparing for the Joint Admissions and Matriculation Board (JAMB) Exam (2025) <br />
-                            - Intended Course: Architecture <br />
-                            - Preferred Institution: Rivers State University (RSU)
+                            - Currently studying <strong>Estate Management</strong> <br />
+                            - Institution: Rivers State University (RSU) <br />
+                            - Previous: Prepared for JAMB Exam
                         </p>
-                    </div>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-3'>
-                        <h1 className='text-[14px] font-semibold'>Technical Skills</h1>
+                    {/* Technical Skills */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Technical Skills</h2>
                         <p>
                             - Website Development <br />
                             - Web Design <br />
@@ -48,55 +57,53 @@ export default function CVSection() {
                             - Responsive Design Principles <br />
                             - Problem-Solving & Debugging
                         </p>
-                    </div>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-3'>
-                        <h1 className='text-[14px] font-semibold'>Experience</h1>
+                    {/* Experience */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Experience</h2>
                         <p>
                             - Learning web development at LOCTECH <br />
                             - Building personal projects in website design
                         </p>
-                    </div>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-3'>
-                        <h1 className='text-[14px] font-semibold'>Certificate & Training</h1>
-                        <p>- LOCTECH Website Development Training (In Progress)</p>
-                    </div>
+                    {/* Certificate & Training */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Certificate & Training</h2>
+                        <p>- LOCTECH Website Development Training</p>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-3'>
-                        <h1 className='text-[14px] font-semibold'>Hobbies & Interests</h1>
+                    {/* Hobbies & Interests */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Hobbies & Interests</h2>
                         <p>
                             - Designing Websites <br />
                             - Dancing <br />
                             - Crafting
                         </p>
-                    </div>
+                    </section>
 
-                    <div data-aos="fade-up" className='flex flex-col gap-2 mt-4'>
-                        <h1 className='text-[14px] font-semibold'>Reference</h1>
-                        <p className='transition-all duration-500 mb-8 ease-out hover:text-green-900'>
-                            Available upon request...
-                        </p>
-                    </div>
-
+                    {/* Reference */}
+                    <section data-aos="fade-up" className="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <h2 className="font-semibold text-lg mb-1">Reference</h2>
+                        <p className="hover:text-green-700 transition-colors duration-300">Available upon request...</p>
+                    </section>
                 </div>
 
-              
-                   {/* Download Button */}
-                <div className='w-full flex justify-center '>
+                {/* Download Button */}
+                <div className="w-full flex justify-center mt-6">
                     <a
                         href="/CV"
                         target="_blank"
                         rel="noopener noreferrer"
                         download
-                        className='bg-gradient-to-r from-indigo-800 to-blue-800 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300'
+                        className="bg-gradient-to-r from-indigo-800 to-blue-800 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
                     >
                         Download CV
                     </a>
                 </div>
             </div>
-
-             
         </div>
     )
 }
