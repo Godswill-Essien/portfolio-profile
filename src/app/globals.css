@@ -91,6 +91,10 @@ html {
   }
 }
 
+
+
+
+
 .animate-gradient {
   background-size: 300% 300%;
   animation: gradientMove 8s ease infinite;
@@ -166,24 +170,6 @@ html {
 
 
 
-.profile{
-  width: 290px;
-  height: 290px;
-  background:  url('/saint.jpg');
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center;
-  border-radius: 50%;
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
-
-
-}
 
 .look{
   width: 240px;
@@ -206,13 +192,36 @@ html {
 
 .about{
   width: 100%;
-  height: 65vh;
+  height: 66vh;
+  background:  url('/willsaint.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  margin-top: 10px;
+  translate:20px ;
+  
+
+  
+  
+  
+  /* text-align: center; */
+  
+  
+  
+
+
+}
+
+.about-2{
+  width: 100%;
+  height: 77vh;
   background:  url('/willsaint.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
   margin-top: 15px;
   translate:20px ;
+  
   
 
   
@@ -257,125 +266,17 @@ html {
   
 }
 
-.project{
-  width: 98%;
-  height: 16vh;
-  background:  url('/shoelayers.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center;
-  margin-top: 15px;
-  translate:21px ;
-  border: none;
-  
-  
-
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
 
 
-}
-
-.project-3{
-  width: 98%;
-  height: 40vh;
-  background:  url('/shoelayers.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center;
-  margin-top: 15px;
-  translate:30px ;
-  border: none;
-  
-  
-
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
 
 
-}
 
 
-.project-2{
-  width: 100%;
-  height: 16vh;
-  background:  url('/coach.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center;
-  margin-top: 15px;
-  translate:20px ;
-  
 
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
-
-
-}
-
-.project-4{
+.project-8{
   width: 100%;
   height: 40vh;
-  background:  url('/coach.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center;
-  margin-top: 15px;
-  translate:20px ;
-  
-
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
-
-
-}
-
-.project-5{
-  width: 100%;
-  height: 16vh;
-  background:  url('/netflixx.png');
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center;
-  margin-top: 15px;
-  translate:20px ;
-  
-
-  
-  
-  
-  /* text-align: center; */
-  
-  
-  
-
-
-}
-
-.project-6{
-  width: 100%;
-  height: 40vh;
-  background:  url('/netflixx.png');
+  background:  url('/nova.png');
   background-repeat: no-repeat;
   background-size:contain;
   background-position: center;

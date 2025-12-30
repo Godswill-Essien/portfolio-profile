@@ -5,20 +5,18 @@ import { IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
 
 export default function Viewc() {
   const [views, setViews] = useState(0);
-  const [showViews, setShowViews] = useState(true);
+  const [showViews, setShowViews] = useState(false); // 👈 start hidden
 
   useEffect(() => {
-    // Get the current view count and last viewed date from localStorage
     const storedViews = localStorage.getItem("views") || "0";
     const lastViewed = localStorage.getItem("lastViewed");
 
-    const today = new Date().toDateString(); // e.g., "Sun Dec 15 2025"
+    const today = new Date().toDateString();
     let newViews = Number(storedViews);
 
-    // Only increment if lastViewed is not today
     if (lastViewed !== today) {
       newViews += 1;
-      localStorage.setItem("views", newViews);
+      localStorage.setItem("views", newViews.toString());
       localStorage.setItem("lastViewed", today);
     }
 
@@ -28,10 +26,15 @@ export default function Viewc() {
   return (
     <div
       onClick={() => setShowViews(!showViews)}
-      className="flex items-center gap-2 text-md cursor-pointer select-none"
-      title="Click to hide/show views"
+      className="flex items-center gap-2 cursor-pointer select-none"
+      title={showViews ? "Hide views" : "Show views"}
     >
-      {showViews ? <IoEyeSharp className="text-lg" /> : <IoEyeOffSharp className="text-xl" />}
+      {showViews ? (
+        <IoEyeSharp className="text-2xl" />
+      ) : (
+        <IoEyeOffSharp className="text-2xl" />
+      )}
+
       {showViews && <span>{views} views</span>}
     </div>
   );

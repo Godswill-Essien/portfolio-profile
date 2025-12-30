@@ -1,4 +1,7 @@
 import React from 'react'
+import Color from '@/components/Color'
+import { Typewriter } from "react-simple-typewriter";
+
 
 export default function About() {
     return (
@@ -7,21 +10,31 @@ export default function About() {
             {/* ABOUT SECTION */}
             <div
                 id="about"
-                className="md:mt-10 px-6 md:px-20 font-serif flex flex-col md:flex-row gap-6 md:gap-12"
+                className="md:mt-14 px-6 md:px-20  md:justify-evenly md:items-center translate-y-[-15px] font-serif flex flex-col md:flex-row  gap-6 md:gap-14"
             >
 
                 {/* IMAGE SIDE — UNCHANGED */}
                 <div
                     data-aos="fade-down"
-                    className="flex justify-center items-center 
-                    bg-gradient-to-r from-slate-700 to-slate-400
-                    h-[70vh] w-[250px] md:w-[310px]
+                    className="flex justify-center md:mt-20 items-center 
+                    bg-gradient-to-r from-slate-800 to-white/35
+                    h-[70vh] w-[250px] md:w-[310px] md:h-[85vh]
                     opacity-70 rounded-md"
                 >
-                    <div className="bg-black h-[69vh] md:w-[300px] w-[240px] mt-1">
-                        <div className="about bg-blue about-2 
-                        transition-all duration-1000 ease-in-out 
-                        hover:scale-110 hover:opacity-60"></div>
+                    <div className="bg-black md:h-[83vh] md:w-[300px] w-[240px] mt-1">
+                        <div className="  md:about-2 h-[67vh]
+                         transition-all duration-1000 ease-in-out 
+                         hover:scale-110 hover:opacity-60">
+                            <div className='about md:hidden'>
+
+                            </div>
+
+                            <div className='hidden md:block about-2'>
+
+                            </div>
+
+                        </div>
+                        {/* <Picture /> */}
                     </div>
                 </div>
 
@@ -33,84 +46,37 @@ export default function About() {
                 >
                     <p
                         data-aos="fade-up"
-                        className="bg-gradient-to-r from-indigo-800 to-blue-800
-                        bg-clip-text text-transparent
-                        text-[24px]  text-start sm:text-[26px] md:text-[30px]
+                        className="bg-gradient-to-r from-indigo-700 to-blue-700
+                 bg-clip-text text-transparent
+                        text-[24px]  text-start sm:text-[26px]   md:justify-center md:text-[30px]
                         font-bold"
                     >
                         About Me
                     </p>
 
-                    <div
-                        data-aos="fade-right"
-                        className="flex flex-col gap-3 bg-gray-950 rounded-2xl overflow-hidden  "
-                    >
-                        <p className="text-start  py-7 px-7 rounded-2xl bg-black/70 backdrop-blur-3xl h-52 overflow-scroll  border border-slate-700 bg-blend-overlay  ">
-                            Hey there digital wanderer 👋 I'm God'swill, I am a website developer,
-                            I build beautiful websites.. until someone asks me to fix a bug,
-                            then I become a detective 😁🔍 . <br /><br />
+                    <div data-aos="fade-right" className="flex flex-col gap-3  rounded-2xl   "  >
 
-                            I write HTML for structures, CSS for style, and JAVASCRIPT to make
-                            things move, because static websites are boring . <br />
 
-                            I don't just code; I craft experiences. Unless it's Internet Explorer.
-                            My job is to make websites look amazing. and my nightmare is fixing
-                            alignment issues in CSS. <br />
+                        <Color />
 
-                            If I'm not performing tasks or making life easier by building websites,
-                            I relish a good manga read, watching anime 🥰, and playing football.
-                        </p>
+                        <p className="text-start  py-2 px-4 rounded-2xl bg-gray-900/50   backdrop-blur-xl  bg-blend-overlay  ">
+                            
+                            Hello, I’m God’swill, a freelance web developer specializing in modern, responsive, and high-performing websites. I help individuals
+                             and businesses bring their ideas to life with clean, user-friendly interfaces using HTML,
+                             CSS, JavaScript, TypeScript, and modern frameworks.
+
+                           I focus on creating visually appealing, fast, and seamless websites, with clear communication, attention to detail, and timely delivery.
+                            From landing pages to full web solutions, I’m committed to delivering results that meet your goals. <br /> <br />
+
+                           Outside of work, I enjoy reading manga, watching anime, and playing football activities that keep me inspired and creative. 
+                        </p> 
+                       
                     </div>
                 </div>
 
             </div>
 
-            {/* CERTIFICATE SECTION — NEW */}
-            <div className="mt-5 md:flex-row-reverse t px-6 md:px-20 font-serif flex flex-col gap-6" aos="fade-up" id='cert'>
 
-                <p
-                    data-aos="fade-down"
-                    className=" md:flex-row-reverse bg-gradient-to-r from-indigo-800 to-blue-800
-                    bg-clip-text text-transparent
-                    text-[24px] sm:text-[26px] text-start md:text-[30px]
-                    font-bold  md:text-left"
-                >
-                    Certificate
-                </p>
-
-                <div data-aos="zoom-in" className="flex justify-center md:justify-start">
-                    <div
-                      className="bg-gradient-to-r from-slate-800 via-gray-700
-                       to-blue-800 animate-gradient rounded-xl p-[2px] rounded-2xlw-full max-w-[500px]"
-
-                    >
-                        <div className="bg-black/80 backdrop-blur-xl rounded-2xl p-4">
-
-                            <div className="overflow-hidden rounded-lg ">
-                                <img
-                                    src="/about-1.jpg"   
-                                    alt="My Certificate"
-                                    className="w-full h-auto
-                                    transition-all duration-700 ease-in-out
-                                    hover:scale-150"
-                                />
-                            </div>
-
-                            <div className="mt-4 text-center md:text-left">
-                                <p className="text-white text-[16px] md:text-[18px] font-semibold">
-                                    Website Development Certificate
-                                </p>
-
-                                <p className="text-gray-400 text-[13px] animate-pulse md:text-[15px]">
-                                    Issued by LOCTECH · 2025
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
     )
