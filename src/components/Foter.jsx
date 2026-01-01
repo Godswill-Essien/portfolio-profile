@@ -8,7 +8,7 @@ import { FaPhone } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black/60 backdrop-blur-lg rounded-2xl py-10 px-6 sm:px-16 mt-14 shadow-2xl gap-5 flex flex-col overflow-hidden text-white">
+    <footer className="relative bg-black/60 backdrop-blur-lg rounded-2xl py-10 px-6 sm:px-16 mt-16 shadow-2xl gap-5 flex flex-col overflow-hidden text-white">
 
       {/* Decorative Circles */}
       <div className="absolute -top-10 -left-10 w-24 h-24 animate-spin-slow sm:w-32 sm:h-32 bg-indigo-600 opacity-20 rounded-full"></div>
@@ -19,11 +19,23 @@ export default function Footer() {
         <h3 className="text-2xl sm:text-3xl  font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">
           Get In Contact With Me
         </h3>
-        <p className="text-[13px] sm:text-base text-white/70 max-w-xl mx-auto">
-          Have some work you need done?  Hit the message button or reach me through any of the social links below. <br />
-        
-          I’d love to hear from you.
+        <p
+          className="
+    mx-auto
+    max-w-md
+    text-center
+    text-[12px] sm:text-[13px] md:text-sm
+    leading-relaxed
+    text-white/60
+  "
+        >
+          Have some work you need done? Hit the message button or reach me through any
+          of the social links below.
+          <span className="block mt-2 text-white/80">
+            I’d love to hear from you.
+          </span>
         </p>
+
       </div>
 
       {/* Contact Button */}
@@ -32,13 +44,13 @@ export default function Footer() {
           href="mailto:godswillessien880@gmail.com"
           className="px-8 py-2 rounded-3xl bg-black border text-sm animate-pulse shadow-blue-950 shadow-lg hover:scale-105 transition-transform duration-300 font-semibold"
         >
-          Reach Me
+          Hire Me
         </Link>
 
         {/* Social Links */}
         <div className="flex  gap-6 sm:gap-10 justify-center items-center mt-4 flex-wrap">
           <Link href="https://wa.me/+2348143399082" className="text-lg  sm:text-3xl animate-pulse">
-            <IoLogoWhatsapp  color="blue" />
+            <IoLogoWhatsapp color="blue" />
           </Link>
 
           <Link href="https://www.facebook.com/gongflamez.jack" className="text-lg sm:text-3xl animate-pulse">
@@ -60,8 +72,8 @@ export default function Footer() {
 
         {/* Scroll to Top */}
         <div className="mt-3">
-          <Link  href="#top" className="inline-flex items-center   gap-2 text-sm sm:text-base text-blue-900 hover:text-indigo-600 transition-colors">
-            <FaLongArrowAltUp  className=''/> Back to Top
+          <Link href="#top" className="inline-flex items-center   gap-2 text-sm sm:text-base text-blue-900 hover:text-indigo-600 transition-colors">
+            <FaLongArrowAltUp className='' /> Back to Top
           </Link>
         </div>
 

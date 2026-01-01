@@ -42,11 +42,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 font-serif">
       <nav
-        className={`w-full transition-all duration-300 ${
-          scrolled
-            ? "bg-black/70 backdrop-blur-xl border-b border-blue-900"
-            : "bg-transparent"
-        }`}
+        className={`w-full transition-all duration-300 ${scrolled
+          ? "bg-black/70 backdrop-blur-xl border-b border-blue-900"
+          : "bg-transparent"
+          }`}
       >
         {/* ===== NAV BAR ===== */}
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
@@ -76,10 +75,10 @@ export default function Navbar() {
         </div>
 
         {/* ===== MOBILE DROPDOWN (FIXED HEIGHT + STABLE) ===== */}
-      {dropDown && (
-  <div
-    data-aos="fade-down"
-    className="
+        {dropDown && (
+          <div
+            data-aos="fade-down"
+            className="
       md:hidden
       fixed
       left-0
@@ -92,24 +91,24 @@ export default function Navbar() {
       pt-8
       z-40
     "
-  >
-    <nav className="w-[85%] flex flex-col items-center gap-5 text-white">
-      <Link onClick={closeDropdown} href="#home">Home</Link>
-      <Link onClick={closeDropdown} href="#about">About</Link>
-      <Link onClick={closeDropdown} href="#work">My Projects</Link>
-      <Link onClick={closeDropdown} href="#contact">Reach Me</Link>
-      <Link onClick={closeDropdown} href="#cert">View Certification</Link>
+          >
+            <nav className="w-[85%] flex flex-col items-center gap-5 text-white">
+              <Link onClick={closeDropdown} href="#home">Home</Link>
+              <Link onClick={closeDropdown} href="#about">About</Link>
+              <Link onClick={closeDropdown} href="#work">My Projects</Link>
+              <Link onClick={closeDropdown} href="#contact">Reach Me</Link>
+              <Link onClick={closeDropdown} href="#cert">View Certification</Link>
 
-      <Link
-        href="/CV"
-        onClick={closeDropdown}
-        className="mt-5 px-10 py-2 border bg-black rounded-3xl animate-pulse"
-      >
-        View CV
-      </Link>
-    </nav>
-  </div>
-)}
+              <Link
+                href="/CV"
+                onClick={closeDropdown}
+                className="mt-5 px-10 py-2 border bg-black rounded-3xl animate-pulse"
+              >
+                View CV
+              </Link>
+            </nav>
+          </div>
+        )}
 
       </nav>
     </header>
