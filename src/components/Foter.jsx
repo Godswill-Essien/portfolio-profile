@@ -94,10 +94,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
-      <div className="absolute bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
-      <div className="absolute top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
+     
     </footer>
   );
 }
