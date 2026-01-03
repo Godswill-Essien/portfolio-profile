@@ -8,7 +8,7 @@ import { FaPhone } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black/60 backdrop-blur-lg rounded-2xl py-10 px-6 sm:px-16 mt-16 shadow-2xl gap-5 flex flex-col overflow-hidden text-white">
+    <footer className="relative  bg-gradient-to-b from-[#0a0a0a] to-black border-t border-gray-900/50  backdrop-blur-lg rounded-2xl py-10 px-6 sm:px-16 mt-16 shadow-2xl gap-5 flex flex-col overflow-hidden text-white">
 
       {/* Decorative Circles */}
       <div className="absolute -top-10 -left-10 w-24 h-24 animate-spin-slow sm:w-32 sm:h-32 bg-indigo-600 opacity-20 rounded-full"></div>
@@ -79,6 +79,25 @@ export default function Footer() {
 
         <p className=" text-xs sm:text-sm mt-2 text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
       </div>
+
+
+
+
+
+      {/* Animated orbiting element */}
+      <div className="absolute bottom-20 right-20 w-64 h-64">
+        <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-spin-slow">
+          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
+          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
+          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Floating elements */}
+      <div className="absolute top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
+      <div className="absolute bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
+      <div className="absolute top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
     </footer>
   );
 }

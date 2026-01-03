@@ -5,6 +5,7 @@ import Image from "next/image";
 import Color from "@/components/Color";
 import { BsGlobe } from "react-icons/bs";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 export default function About() {
   const [loading, setLoading] = useState(true);
@@ -28,14 +29,16 @@ export default function About() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-black">
         <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
-        
       </div>
     );
   }
 
   return (
-    <section
+    <motion.section
       id="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="
         px-6 md:px-20
         mt-10
@@ -46,8 +49,11 @@ export default function About() {
       "
     >
       {/* IMAGE */}
-      <div
-        data-aos="fade-down"
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         className="
           relative
           w-full max-w-[360px]
@@ -76,12 +82,16 @@ export default function About() {
             sizes="(max-width: 640px) 100vw, 380px"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* TEXT */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         className="
-          flex flex-col justify-center
+          flex  flex-col justify-center
           gap-4 max-w-[720px]
           text-[13px] sm:text-[14px] md:text-[16px]
           leading-relaxed md:leading-loose
@@ -117,7 +127,14 @@ export default function About() {
             football activities that keep me inspired and creative.
           </p>
         </div>
-      </div>
-    </section>
+      </motion.div>
+
+
+
+
+
+
+      
+    </motion.section>
   );
 }
