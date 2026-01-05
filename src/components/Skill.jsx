@@ -46,7 +46,7 @@ export default function TextImageComponent() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6 flex flex-col md:flex-row-reverse items-stretch rounded-xl   md:mt-9  gap-8">
+    <div className="max-w-6xl mx-auto p-6 mt-8 flex flex-col md:flex-row-reverse items-stretch rounded-xl   md:mt-9  gap-8">
 
       {/* Image Section */}
       <div data-aos="fade-down" id="cert" className="flex-shrink-0  w-full md:w-1/2 h-full md:mt-20  px-3 py-2 rounded-xl  bg-gradient-to-r from-gray-900/50 via-indigo-800/50 to-green-700/50 animate-gradient">

@@ -35,7 +35,7 @@ export default function Project() {
      }
   
   return (
-    <div id="work" className="font-serif px-4 sm:px-6 md:px-12 mt-10 flex flex-col gap-14">
+    <div id="work" className="font-serif px-6 sm:px-6 md:px-12 mt-10 flex  flex-col gap-14">
 
       {/* TITLE */}
       <p

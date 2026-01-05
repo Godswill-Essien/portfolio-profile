@@ -1,113 +1,87 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
 import { BsGlobe } from "react-icons/bs";
 import axios from "axios";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 
 export default function Hero() {
-  const [offsetY, setOffsetY] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [content, setContent] = useState(null);
+
+  // scroll → smooth inertia
+  const { scrollY } = useScroll();
+  const rawY = useTransform(scrollY, [0, 600], [0, 120]);
+  const smoothY = useSpring(rawY, {
+    stiffness: 40,
+    damping: 20,
+    mass: 1,
+  });
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/content")
-      .then((res) => {
-        setContent(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // ✅ Loading effect
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" />
       </div>
     );
   }
 
   return (
-    <section
-      className="
-        relative w-full
-        min-h-screen
-        flex items-center justify-center
-        px-4 sm:px-6 md:px-10
-        pt-10 sm:pt-14 md:pt-24
-        pb-10 sm:pb-14
-        bg-animated-gradient
-        overflow-hidden
-      "
-    >
-      {/* ===== FLOATING BACKGROUND OBJECT ===== */}
-      <div
-        className="absolute rounded-full opacity-20 w-72 h-72 md:w-96 md:h-96 flex items-center justify-center"
-        style={{
-          transform: `translate(-50%, ${offsetY * 0.3}px)`,
-          top: "20%",
-          left: "50%",
-          transition: "transform 0.1s ease-out",
-          zIndex: 0,
-        }}
+    // ✅ FIX: top spacing + stop vertical centering
+    <section className="relative min-h-screen flex items-start justify-center bg-animated-gradient overflow-hidden px-6 pt-24 md:pt-36">
+      {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
+      <motion.div
+        style={{ y: smoothY }}
+        className="absolute top-[20%] left-1/2 -translate-x-3 opacity-20 z-0"
       >
-        <BsGlobe className="w-[50%] h-28 md:w-40 md:h-40 animate-spin-slow" />
-      </div>
+        <BsGlobe className="w-40 h-40 md:w-56 md:h-56 animate-spin-slow" />
+      </motion.div>
 
-      <div
-        className="
-          flex flex-col items-center text-center
-          gap-5 sm:gap-6
-          max-w-4xl w-full
-          relative z-10
-        "
+      {/* ===== CONTENT ===== */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="relative z-10 flex flex-col items-center text-center gap-6 max-w-4xl mt-6"
       >
-        {/* ===== PROFILE CIRCLE ===== */}
-        <div
-          className="
-            bg-gradient-to-r from-green-700 via-red-700 to-blue-700
-            animate-gradient rounded-full
-            w-[255px] h-[255px]
-            xs:w-[180px] xs:h-[180px]
-            sm:w-[220px] sm:h-[220px]
-            md:w-[280px] md:h-[280px]
-            p-[3px]
-            flex items-center justify-center
-            transition-all ease-in-out duration-500 hover:-translate-y-1
-          "
+        {/* ===== PROFILE IMAGE ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          whileHover={{ y: -6 }}
+          className="bg-gradient-to-r from-green-700 via-red-700 to-blue-700 animate-gradient hover:opacity-20 rounded-full p-[3px]"
         >
-          <div className="relative w-full h-full hover:opacity-75 rounded-full overflow-hidden bg-black">
+          <div className="relative w-[270px] hover:opacity-45 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
             <Image
               src="/saint.jpg"
               alt="Godswill Essien"
               fill
               priority
-              sizes="
-                (max-width: 320px) 160px,
-                (max-width: 480px) 180px,
-                (max-width: 768px) 220px,
-                280px
-              "
-              className="object-cover"
+              className="object-cover "
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* ===== GREETING ===== */}
-        <h1 className="font-serif font-extrabold text-white text-[12px] xs:text-[13px] sm:text-base md:text-lg">
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          className="font-serif font-extrabold text-white text-sm md:text-lg"
+        >
           Hi 👋 there,&nbsp;
           <span className="font-bold">
             <Typewriter
@@ -120,57 +94,44 @@ export default function Hero() {
               delaySpeed={1800}
             />
           </span>
-        </h1>
+        </motion.h1>
 
         {/* ===== TITLE ===== */}
-        <h2
-          className="
-            font-serif font-bold uppercase
-            bg-gradient-to-r from-indigo-700 to-blue-700
-            bg-clip-text text-transparent
-            text-2xl xs:text-xl
-            sm:text-2xl md:text-4xl lg:text-5xl
-          "
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.55 }}
+          className="font-serif font-bold uppercase bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-transparent text-2xl md:text-5xl"
         >
           Website Developer
-        </h2>
+        </motion.h2>
 
         {/* ===== DESCRIPTION ===== */}
-        <p
-          className="
-            font-serif text-gray-300
-            text-[12px] xs:text-sm
-            sm:text-base md:text-lg
-            leading-relaxed max-w-2xl
-          "
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.7 }}
+          className="font-serif text-gray-300 max-w-2xl text-sm md:text-lg"
         >
           A passionate Front-End Developer with experience in building responsive
           website applications using HTML, CSS, JAVASCRIPT, and REACT.JS.
           <br />
           Skilled in creating user friendly UI/UX, and optimizing web performance.
-        </p>
+        </motion.p>
 
-        {/* ===== CTA BUTTON ===== */}
-        <div className="pt-2 md:pt-4">
-          <a
-            href="/GOD'SWILL ESSIEN CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            className="
-              inline-block
-              bg-black border
-              rounded-full px-5 py-2
-              text-[15px] sm:text-sm md:text-base
-              shadow-lg shadow-slate-500/40
-              animate-pulse
-              transition hover:scale-105
-            "
-          >
-            Download CV
-          </a>
-        </div>
-      </div>
+        {/* ===== CTA ===== */}
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          href="/GOD'SWILL ESSIEN CV.pdf"
+          download
+          className="inline-block bg-black border rounded-full px-6 py-2 shadow-lg shadow-slate-500/40"
+        >
+          Download CV
+        </motion.a>
+      </motion.div>
     </section>
   );
 }

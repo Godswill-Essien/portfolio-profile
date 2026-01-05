@@ -9,7 +9,7 @@ export default function Aos(){
    
          once: false,
          easing:'ease-in-out',
-         duration: "1000",
+         duration: "2000",
          transition: "all"
 
          

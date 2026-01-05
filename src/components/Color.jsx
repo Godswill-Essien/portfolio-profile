@@ -10,7 +10,7 @@ export default function Color() {
   ];
 
   return (
-    <div className="flex gap-3  rounded-lg py-5 px-2 border-r border-l justify-around animate-puls  border-dashed  ">
+    <div className="flex gap-3  rounded-lg py-5 px-2 border-r border-l justify-around mb-2 animate-puls  border-dashed  ">
       {colors.map((color, index) => (
         <div
           key={index}
