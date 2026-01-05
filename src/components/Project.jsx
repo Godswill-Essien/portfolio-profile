@@ -142,8 +142,8 @@ export default function Project() {
         <motion.a href="/mproject"initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
-          whileHover={{ scale: 1.05 }}
-          className=" animate-pulse  text-center flex mb-4 dark:border-black/10 dark:border  justify-center gap-2 items-center bg-black dark:bg-white borde rounded-full px-6 py-2 shadow-lg shadow-slate-900/40" 
+          whileHover={{ scale: 1 }}
+          className=" animate-pulse text-center flex mb-4 dark:border-black/10  dark:border-none mt-4 justify-center gap-2 items-center bg-black dark:bg-white   px-6 py-4 shadow-lg shadow-black/40" 
         >
           view more projects
           <FiExternalLink />

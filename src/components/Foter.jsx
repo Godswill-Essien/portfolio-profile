@@ -59,6 +59,7 @@ export default function Footer() {
         className="flex flex-col items-center sm:gap-6 mt-6"
       >
         <Link
+        id='hire'
           href="mailto:godswillessien880@gmail.com"
           className="px-8 py-2 rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white text-sm animate-pulse shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-semibold"
         >

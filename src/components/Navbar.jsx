@@ -98,7 +98,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/CV"
-              className="hidden sm:inline-block border px-8 py-2 rounded-full text-sm animate-pulse"
+              className="hidden sm:inline-block border dark:border dark:border-black px-8 py-2 rounded-full text-sm animate-pulse"
             >
               View CV
             </Link>
@@ -111,9 +111,9 @@ export default function Navbar() {
             className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20"
           >
             {darkMode ? (
-              <FaSun className="text-yellow-500" />
-            ) : (
               <FaMoon className="text-blue-500" />
+            ) : (
+              <FaSun className="text-yellow-500" />
             )}
           </motion.button>
         </div>
@@ -140,7 +140,7 @@ export default function Navbar() {
               <Link onClick={closeDropdown} href="#home">Home</Link>
               <Link onClick={closeDropdown} href="#about">About</Link>
               <Link onClick={closeDropdown} href="#work">My Projects</Link>
-              <Link onClick={closeDropdown} href="#contact">Reach Me</Link>
+              <Link onClick={closeDropdown} href="#hire">Reach Me</Link>
               <Link onClick={closeDropdown} href="#cert">View Certification</Link>
 
               <Link
