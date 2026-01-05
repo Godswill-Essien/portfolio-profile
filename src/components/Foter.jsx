@@ -15,7 +15,7 @@ const fadeUp = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black/30 backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 mt-16 shadow-2xl flex flex-col items-center overflow-hidden text-white">
+    <footer className="relative dark:bg-white   dark:text-white bg-black/30 backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
 
       {/* ===== Decorative Blurred Circles ===== */}
       <motion.div 
@@ -41,9 +41,9 @@ export default function Footer() {
         <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent mb-2">
           Get In Contact With Me
         </h3>
-        <p className="mx-auto max-w-md text-[12px] sm:text-[13px] md:text-sm leading-relaxed text-white/60">
+        <p className="mx-auto dark:text-black max-w-md text-[12px] sm:text-[13px] md:text-sm leading-relaxed text-white/60">
           Have some work you need done? Hit the message button or reach me through any of the social links below.
-          <span className="block mt-2 text-white/80">
+          <span className="block mt-2 dark:text-black text-white/80">
             I’d love to hear from you.
           </span>
         </p>
@@ -60,7 +60,7 @@ export default function Footer() {
       >
         <Link
           href="mailto:godswillessien880@gmail.com"
-          className="px-8 py-2 rounded-3xl bg-black/10 backdrop-blur-sm border border-white text-sm animate-pulse shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-semibold"
+          className="px-8 py-2 rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white text-sm animate-pulse shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-semibold"
         >
           Hire Me
         </Link>
@@ -91,20 +91,20 @@ export default function Footer() {
           </Link>
         </div>
 
-        <p className="text-xs sm:text-sm mt-2 text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+        <p className="text-xs sm:text-sm mt-2 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
       </motion.div>
 
       {/* ===== Animated Orbiting Elements ===== */}
       <motion.div 
-        className="absolute bottom-20 right-20 w-64 h-64"
+        className="absolute bottom-20 right-20 w-64 h-64 "
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 1000, ease: "linear" }}
       >
         <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-spin-slow">
-          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
-          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
-          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full"></div>
+          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 hover:animate-ping bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
+          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br hover:animate-ping from-purple-500 to-pink-500 rounded-full"></div>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br hover:animate-ping from-green-500 to-emerald-500 rounded-full"></div>
+          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br hover:animate-ping from-yellow-500 to-orange-500 rounded-full"></div>
         </div>
       </motion.div>
     </footer>

@@ -38,7 +38,7 @@ export default function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="px-6 md:px-20  md:mt-16 flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-16 font-serif"
+      className="px-6 md:px-20  md:py-20 py-10 flex flex-col md:flex-row    dark:bg-white items-center md:items-stretch gap-10 md:gap-16 font-serif"
     >
       {/* IMAGE CARD WITH GLASS EFFECT */}
       <motion.div
@@ -79,7 +79,7 @@ export default function About() {
         <div data-aos="fade-up" className="flex flex-col gap-4">
           <Color />
 
-          <p className="px-6 py-5 rounded-3xl bg-white/5 backdrop-blur-3xl border hover:bg-white/10 border-white/20 shadow-lg text-gray-200 transition-all duration-500  hover:shadow-2xl">
+          <p className="px-6 py-5 rounded-3xl bg-white/5 backdrop-blur-3xl border dark:border-black dark:text-black hover:bg-white/10 border-white/20 shadow-lg text-gray-200 transition-all duration-500  hover:shadow-2xl">
             Hello, I’m God’swill, a freelance web developer specializing in modern,
             responsive, and high-performing websites. I help individuals and
             businesses bring their ideas to life with clean, user-friendly

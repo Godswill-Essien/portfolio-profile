@@ -6,7 +6,13 @@ import { IoIosLink } from "react-icons/io"
 import { FaGithub } from "react-icons/fa"
 import { BsGlobe } from "react-icons/bs"
 import axios from "axios";
-
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function Project() {
    const [loading, setLoading] = useState(true);
@@ -35,13 +41,13 @@ export default function Project() {
      }
   
   return (
-    <div id="work" className="font-serif px-6 sm:px-6 md:px-12 mt-10 flex  flex-col gap-14">
+    <div id="work" className="font-serif px-6 sm:px-6 md:px-5   py-6  dark:text-black dark:bg-white flex-col gap-14">
 
       {/* TITLE */}
       <p
         
         data-aos="fade-up"  className="bg-gradient-to-r from-indigo-800 to-blue-800 bg-clip-text text-transparent
-        text-[29px] md:text-[40px]  font-bold text-start"
+        text-[29px] md:text-[40px] md:px- font-bold text-start"
       >
         My Projects
       </p>
@@ -133,90 +139,15 @@ export default function Project() {
         </div>
       </div>
 
-      {/* ================= PROJECT 3 ================= */}
-      <div  className="flex flex-col gap-6 md:flex-row md:items-center">
-
-        <div  data-aos="fade-up" className="relative w-full max-w-[520px] mx-auto rounded-md overflow-hidden
-          aspect-video">
-          <Image
-            src="/netflixx.png"
-            alt="Netflix clone project"
-            fill
-            className="object-contain hover:scale-110 transition duration-700 opacity-55 hover:opacity-85  px-1"
-            sizes="(max-width: 768px) 100vw, 520px "
-          />
-        </div>
-
-        <div  data-aos="fade-down" className="flex flex-col gap-3 md:w-1/2">
-          <h2 className="text-[22px] md:text-[30px] font-bold bg-gradient-to-r from-red-800 to-red-700 bg-clip-text text-transparent">
-            Netflixx
-          </h2>
-
-          <p className="text-[13px] md:text-[18px] leading-relaxed">
-            A fully responsive Netflix clone built with React, Tailwind CSS, JavaScript, and TypeScript. It includes categories, authentication, and smooth cinematic interaction.
-          </p>
-
-          <p className="text-gray-700 text-[13px] md:text-[17px]">
-            TailwindCSS • Next.js • JS • TS
-          </p>
-
-          <div className="flex gap-5 text-[15px] md:text-[20px]">
-            <Link href="https://netflix-ashen-beta.vercel.app" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:-translate-y-1 transition">
-              <IoIosLink className="text-blue-700 text-[23px]" />
-              <span className="bg-gradient-to-r from-red-700 to-green-700 bg-clip-text animate-pulse text-transparent">
-                Live Link
-              </span>
-            </Link>
-
-            <Link href="https://github.com/Godswill-Essien/netflix" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:-translate-y-1 transition">
-              <FaGithub className="text-blue-700 text-[23px]" />
-              <span className="bg-gradient-to-r from-indigo-700 to-red-700 animate-pulse bg-clip-text text-transparent">
-                GitHub
-              </span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ================= PROJECT 4 ================= */}
-      <div data-aos="fade up" className="flex flex-col gap-6 md:flex-row-reverse md:items-center">
-
-        <div  data-aos="fade-down" className="relative w-full max-w-[520px] mx-auto rounded-md overflow-hidden
-           aspect-video">
-          <Image
-            src="/nova.png"
-            alt="Novacrust project"
-            fill
-            className="object-contain hover:scale-110 transition duration-700 opacity-55 hover:opacity-85  px-1"
-            sizes="(max-width: 768px) 100vw, 520px "
-          />
-        </div>
-
-        <div  data-aos="fade-up" className="flex flex-col gap-3 md:w-1/2">
-          <h2 className="text-[22px] md:text-[30px] font-bold bg-gradient-to-r from-green-800 to-green-700 bg-clip-text text-transparent">
-            Novacrust
-          </h2>
-
-          <p className="text-[13px] md:text-[18px] leading-relaxed">
-            Built Novacrust’s responsive landing page, allowing global payments, fund management, and crypto transactions with a clean, user-friendly design.
-          </p>
-
-          <p className="text-gray-700 text-[13px] md:text-[17px]">
-            TailwindCSS • Next.js • JS • TS
-          </p>
-
-          <Link href="https://Novacrust.com" target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:-translate-y-1 transition text-[15px] md:text-[20px]">
-            <IoIosLink className="text-blue-700 text-[23px] " />
-            <span className="bg-gradient-to-r from-green-700 to-green-400 bg-clip-text animate-pulse text-transparent">
-              Live Link
-            </span>
-          </Link>
-        </div>
-      </div>
-
+        <motion.a href="/mproject"initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          className=" animate-pulse  text-center flex mb-4 dark:border-black/10 dark:border  justify-center gap-2 items-center bg-black dark:bg-white borde rounded-full px-6 py-2 shadow-lg shadow-slate-900/40" 
+        >
+          view more projects
+          <FiExternalLink />
+        </motion.a>
     </div>
   )
 }

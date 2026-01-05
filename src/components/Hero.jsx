@@ -11,6 +11,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
+import { TbDownload } from "react-icons/tb";
 
 export default function Hero() {
   const [loading, setLoading] = useState(true);
@@ -40,7 +41,7 @@ export default function Hero() {
 
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min-h-screen flex items-start justify-center  bg-animated-gradient overflow-hidden px-6 pt-9 md:pt-36">
+    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center  mt-3 bg-animated-gradient overflow-hidden px-6 pt-9 md:py-24">
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div
         style={{ y: smoothY }}
@@ -80,7 +81,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="font-serif font-extrabold text-white text-sm md:text-lg"
+          className="font-serif font-extrabold text-white dark:text-black text-sm md:text-lg"
         >
           Hi 👋 there,&nbsp;
           <span className="font-bold">
@@ -111,7 +112,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.7 }}
-          className="font-serif text-gray-300 max-w-2xl  text-xs md:text-lg"
+          className="font-serif text-gray-300 max-w-2xl dark:text-black  text-xs md:text-lg"
         >
           A passionate Front-End Developer with experience in building responsive 
           website applications using HTML, CSS, JAVASCRIPT, and REACT.JS.
@@ -127,8 +128,8 @@ export default function Hero() {
           whileHover={{ scale: 1.05 }}
           href="/GOD'SWILL ESSIEN CV.pdf"
           download
-          className="inline-block bg-black border rounded-full px-6 py-2 shadow-lg shadow-slate-500/40"
-        >
+          className=" flex items-center gap-1 animate-pulse bg-black border hover:translate-y-[5px] rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
+        >  <TbDownload />
           Download CV
         </motion.a>
       </motion.div>

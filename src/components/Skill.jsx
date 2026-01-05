@@ -46,7 +46,7 @@ export default function TextImageComponent() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6 mt-8 flex flex-col md:flex-row-reverse items-stretch rounded-xl   md:mt-9  gap-8">
+    <div className="max-w-6xl mx-auto p-6 mt- flex dark:bg-white text-gray-800 dark:text-white flex-col md:flex-row-reverse items-stretch   md:py-6 md:bg-w-full  gap-8">
 
       {/* Image Section */}
       <div data-aos="fade-down" id="cert" className="flex-shrink-0  w-full md:w-1/2 h-full md:mt-20  px-3 py-2 rounded-xl  bg-gradient-to-r from-gray-900/50 via-indigo-800/50 to-green-700/50 animate-gradient">
@@ -87,7 +87,7 @@ export default function TextImageComponent() {
               href={skill.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-4 sm:p-5 bg-gray-900/50 hover:border-white/20  hover:border rounded-xl shadow-md hover:scale-105 transition-transform duration-300 text-center"
+              className="flex flex-col items-center gap-2 p-4 sm:p-5 bg-gray-900/50 dark:bg-gray-700 dark:hover:border-white/5 hover:border-white/20  hover:border rounded-xl shadow-md hover:scale-105 transition-transform duration-300 text-center"
             >
               <div className="flex gap-1 justify-center text-[1.5rem] animate-pulse sm:text-[2rem]">
                 {skill.icon}
