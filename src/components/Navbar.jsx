@@ -84,7 +84,7 @@ export default function Navbar() {
       left-0
       right-0
       top-[49px]       
-      h-[calc(100vh-80px)]  
+      h-[calc(100vh-60px)]  
       bg-black/90 rounded-lg
       backdrop-blur-md
       flex justify-center items-start font-serif font-bold

@@ -40,7 +40,7 @@ export default function Hero() {
 
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min-h-screen flex items-start justify-center bg-animated-gradient overflow-hidden px-6 pt-24 md:pt-36">
+    <section className="relative min-h-screen flex items-start justify-center  bg-animated-gradient overflow-hidden px-6 pt-9 md:pt-36">
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div
         style={{ y: smoothY }}
@@ -64,7 +64,7 @@ export default function Hero() {
           whileHover={{ y: -6 }}
           className="bg-gradient-to-r from-green-700 via-red-700 to-blue-700 animate-gradient hover:opacity-20 rounded-full p-[3px]"
         >
-          <div className="relative w-[270px] hover:opacity-45 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
+          <div className="relative w-[270px] hover:opacity-60 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
             <Image
               src="/saint.jpg"
               alt="Godswill Essien"
@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.55 }}
-          className="font-serif font-bold uppercase bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-transparent text-2xl md:text-5xl"
+          className="font-serif font-bold uppercase bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-transparent text-[25px] md:text-5xl"
         >
           Website Developer
         </motion.h2>
@@ -111,9 +111,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.7 }}
-          className="font-serif text-gray-300 max-w-2xl text-sm md:text-lg"
+          className="font-serif text-gray-300 max-w-2xl  text-xs md:text-lg"
         >
-          A passionate Front-End Developer with experience in building responsive
+          A passionate Front-End Developer with experience in building responsive 
           website applications using HTML, CSS, JAVASCRIPT, and REACT.JS.
           <br />
           Skilled in creating user friendly UI/UX, and optimizing web performance.

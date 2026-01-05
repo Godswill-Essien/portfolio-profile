@@ -169,12 +169,13 @@ export default function CVSection() {
               bg-black/80
               text-white
               text-center
-              font-semibold
+              font-bold
               px-6 py-2
               rounded-full
               border border-white/20
               hover:scale-105
               transition-transform
+              
             "
           >
             Home
