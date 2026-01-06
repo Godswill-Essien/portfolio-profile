@@ -61,7 +61,7 @@ export default function Footer() {
         <Link
         id='hire'
           href="mailto:godswillessien880@gmail.com"
-          className="px-8 py-2 rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white text-sm animate-pulse shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-semibold"
+          className="px-8 py-2 text-2xl  rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white  animate-pulse  shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-bold"
         >
           Hire Me
         </Link>

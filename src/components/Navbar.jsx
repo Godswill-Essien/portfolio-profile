@@ -91,7 +91,7 @@ export default function Navbar() {
           <div className="hidden md:flex gap-10 text-white dark:text-black font-bold text-[18px]">
             <Link href="#about">About</Link>
             <Link href="#work">Work</Link>
-            <Link href="#contact">Contact</Link>
+            <Link href="#hire">Contact</Link>
             <Link href="#cert">Certification</Link>
           </div>
 

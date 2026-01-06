@@ -103,11 +103,11 @@ export default function CVSection() {
             {
               title: "Experience",
               text:
-                "– Learning web development at LOCTECH\n– Building personal projects",
+                "– Learnt web development at LOCTECH\n– Building personal projects",
             },
             {
-              title: "Certificate & Training",
-              text: "– LOCTECH Website Development Training",
+              title: "Certificate ",
+              text: "– LOCTECH Website Development ",
             },
             {
               title: "Hobbies & Interests",

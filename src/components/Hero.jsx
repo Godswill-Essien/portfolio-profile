@@ -128,7 +128,7 @@ export default function Hero() {
           whileHover={{ scale: 1.05 }}
           href="/GOD'SWILL ESSIEN CV.pdf"
           download
-          className=" flex items-center gap-1 animate-pulse bg-black border hover:translate-y-[5px] rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
+          className=" flex items-center gap-1 animate-pulse bg-black border  hover:translate-y-[-5px] transition-all duration-500 ease-out rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
         >  <TbDownload />
           Download CV
         </motion.a>
