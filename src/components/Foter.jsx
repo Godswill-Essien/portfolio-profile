@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className="relative dark:bg-white   dark:text-white bg-black/30 backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
 
       {/* ===== Decorative Blurred Circles ===== */}
-      <motion.div 
+      <motion.div
         className="absolute -top-10 -left-10 w-24 h-24 sm:w-32 sm:h-32 bg-indigo-600/30 rounded-full"
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
@@ -59,9 +59,9 @@ export default function Footer() {
         className="flex flex-col items-center sm:gap-6 mt-6"
       >
         <Link
-        id='hire'
+          id='hire'
           href="mailto:godswillessien880@gmail.com"
-          className="px-8 py-2 text-2xl  rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white  animate-pulse  shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-bold"
+          className="px-8 py-2 text-lg  rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white  animate-pulse  shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-bold"
         >
           Hire Me
         </Link>
@@ -95,19 +95,27 @@ export default function Footer() {
         <p className="text-xs sm:text-sm mt-2 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
       </motion.div>
 
-      {/* ===== Animated Orbiting Elements ===== */}
-      <motion.div 
-        className="absolute bottom-20 right-20 w-64 h-64 "
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1000, ease: "linear" }}
-      >
+
+      {/* Animated orbiting element */}
+      {/* <div className="absolute bottom-20 right-20 w-64 h-64">
         <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-spin-slow">
-          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 hover:animate-ping bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
-          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br hover:animate-ping from-purple-500 to-pink-500 rounded-full"></div>
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br hover:animate-ping from-green-500 to-emerald-500 rounded-full"></div>
-          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br hover:animate-ping from-yellow-500 to-orange-500 rounded-full"></div>
+          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
+          <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
+          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full"></div>
         </div>
-      </motion.div>
+      </div> */}
+
+      {/* Floating elements */}
+
+      <div className='animate-spin-slow  '>
+        <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
+        <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
+        <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
+
+      </div>
+
+
     </footer>
   );
 }
