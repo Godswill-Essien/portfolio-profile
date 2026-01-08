@@ -40,7 +40,8 @@ export default function TextImageComponent() {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
+        {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" /> */}
+        <div className="loader"></div>
       </div>
     );
   }

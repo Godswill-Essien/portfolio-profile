@@ -86,7 +86,8 @@ export default function ViewMoreProjects() {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-                <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
+                {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" /> */}
+                <div className="loader"></div>
                 {/* <p className="text-white/60 mt-4">Loading projects...</p> */}
             </div>
         );

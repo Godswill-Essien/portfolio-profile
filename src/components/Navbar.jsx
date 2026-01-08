@@ -122,7 +122,7 @@ export default function Navbar() {
         {dropDown && (
           <div
             data-aos="fade-down"
-            className=" text-gray-800 dark:bg-white dark:text-black
+            className=" text-gray-800 dark:bg-white/80 dark:text-black
       md:hidden
       fixed
       left-0

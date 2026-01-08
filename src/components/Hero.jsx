@@ -34,7 +34,8 @@ export default function Hero() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
-        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" />
+        {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" /> */}
+        <div className="loader"></div>
       </div>
     );
   }
