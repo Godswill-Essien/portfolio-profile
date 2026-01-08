@@ -86,9 +86,8 @@ export default function ViewMoreProjects() {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-                {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" /> */}
-                <div className="loader"></div>
-                {/* <p className="text-white/60 mt-4">Loading projects...</p> */}
+                <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
+              
             </div>
         );
     }
@@ -102,7 +101,7 @@ export default function ViewMoreProjects() {
             </div>
 
             {/* ===== GLASS NAVBAR (SEARCH + TOGGLE) ===== */}
-            <div className="max-w-6xl mx-auto mb-10">
+            <div className="max-w-6xl  mx-auto mb-10" >
                 <div className="flex items-center gap-4 px-5 py-4 rounded-2xl sticky top-4 z-50 bg-white/20 dark:bg-black/40 backdrop-blur-2xl border border-white/20 shadow-xl">
                     <div className="flex items-center gap-3 flex-1">
                         <FaSearch className="text-gray-700 dark:text-white/60" />
@@ -118,7 +117,7 @@ export default function ViewMoreProjects() {
                     <motion.button
                         whileTap={{ scale: 0.9 }}
                         onClick={toggleTheme}
-                        className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20"
+                        className="p-2 rounded-full  bg-white/30 dark:bg-black/40 border border-white/20"
                     >
                         {darkMode ? (
                             <FaSun className="text-yellow-500" />
@@ -180,25 +179,31 @@ export default function ViewMoreProjects() {
                     </motion.div>
                 ))}
 
-                 <Link
-                             href="/#home"
-                             className="
-                               
-                               text-gray-800 dark:text-white
-                               text-center
-                               font-bold
-                               px-6 animate-pulse 
-                               rounded-full
-                               text-5xl 
-                               hover:scale-105 
-                               transition-transform
-                               
-                             "
-                           >
-                              <IoReturnUpBack />
-                           </Link>
-
             </motion.div>
+
+
+             <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex justify-start   w-5  mt-2 animate-pulse  "
+            >
+                <Link
+                    href="/#home"
+                    className="text-gray-800 dark:text-white text-center font-bold px-6 rounded-full text-5xl"
+                >
+                    <motion.span
+                        initial={{ x: 32 }}
+                        animate={{ x: 16 }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="inline-block"
+                    >
+                        <IoReturnUpBack />
+                    </motion.span>
+                </Link>
+            </motion.div>
+
 
             <p className="text-xs sm:text-sm py-2 text-gray-500 text-center">
                 &copy; {new Date().getFullYear()} Portfolio. All rights reserved.

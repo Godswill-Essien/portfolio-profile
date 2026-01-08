@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { BsGlobe } from "react-icons/bs";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { TbDownload } from "react-icons/tb";
+import { IoReturnUpBack } from "react-icons/io5";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 16 },
@@ -13,6 +17,30 @@ const fadeUp = {
 export default function CVSection() {
     const [loading, setLoading] = useState(true);
     const [content, setContent] = useState(null);
+    const [darkMode, setDarkMode] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    // 🌗 Load theme safely
+    useEffect(() => {
+        setMounted(true);
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            document.documentElement.classList.add("dark");
+            setDarkMode(true);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const root = document.documentElement;
+        if (darkMode) {
+            root.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        } else {
+            root.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        }
+        setDarkMode(!darkMode);
+    };
 
     useEffect(() => {
         axios
@@ -21,195 +49,165 @@ export default function CVSection() {
                 setContent(res.data);
                 setLoading(false);
             })
-            .catch((err) => {
-                console.error("API fetch error:", err);
-                setLoading(false); // ensure loader disappears even if API fails
-            });
+            .catch(() => setLoading(false));
     }, []);
+
+    if (!mounted) return null;
 
     if (loading) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-                {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" /> */}
-                <div className="loader"></div>
-                {/* <p className="text-white/60 mt-4">Loading projects...</p> */}
+            <div className="flex items-center justify-center min-h-screen bg-white dark:bg-black">
+                <BsGlobe className="w-20 h-20 text-blue-800 dark:text-blue-700 animate-spin-slow" />
             </div>
         );
     }
 
-
     return (
-        <section className="relative w-full py-24 px-4 overflow-hidden">
-            {/* ===== BLURRED BACKGROUND LAYER ===== */}
-            <div className="absolute inset-0 -z-10">
-                {/* base gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <section className="relative w-full py-24 px-4 overflow-hidden  bg-gray-100 dark:bg-black transition-colors">
 
-                {/* blur blobs */}
-                <div className="absolute top-20 left-1/4 w-[450px] h-[450px] bg-blue-600/30 rounded-full blur-[160px]" />
-                <div className="absolute bottom-20 right-1/4 w-[450px] h-[450px] bg-purple-600/30 rounded-full blur-[160px]" />
+            {/* 🌗 THEME TOGGLE */}
+            <button
+                onClick={toggleTheme}
+                className="
+          fixed top-6 right-6 z-50
+          p-3 rounded-full
+          bg-white dark:bg-black
+          border border-gray-300 dark:border-white/20
+          shadow-lg
+        "
+            >
+                {darkMode ? (
+                    <FaSun className="text-yellow-400" />
+                ) : (
+                    <FaMoon className="text-blue-600" />
+                )}
+            </button>
+
+            {/* ===== BACKGROUND ===== */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br
+          from-white via-gray-200 to-white
+          dark:from-black dark:via-gray-900 dark:to-black"
+                />
+                <div className="absolute top-20 left-1/4 w-[450px] h-[450px] bg-blue-600/20 rounded-full blur-[160px]" />
+                <div className="absolute bottom-20 right-1/4 w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[160px]" />
             </div>
 
             {/* ===== GLASS CARD ===== */}
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ duration: 1 }}
                 className="
-          mx-auto
-          w-full max-w-md md:max-w-lg lg:max-w-3xl
-          rounded-3xl
-          bg-white/10
+          mx-auto w-full max-w-md md:max-w-lg lg:max-w-3xl
+          rounded-3xl p-6 md:p-10
+          bg-white/70 dark:bg-white/10
           backdrop-blur-2xl
-          border border-white/20
+          border border-gray-200 dark:border-white/20
           shadow-2xl
-          p-6 md:p-10
-          text-white
+          text-gray-900 dark:text-white
         "
             >
-                {/* ===== HEADER ===== */}
+                {/* HEADER */}
                 <motion.div
                     variants={fadeUp}
                     initial="hidden"
                     animate="visible"
-                    transition={{ duration: 0.6 }}
                     className="text-center"
                 >
                     <h1 className="text-2xl md:text-3xl font-bold mb-2">
                         God'swill Sampson Essien
                     </h1>
-                    <p className="text-sm md:text-base text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300">
                         #5 Gotheg Avenue, Artillery, Woji Junction
                     </p>
-                    <p className="text-sm md:text-base text-gray-300">
-                        Off Okporo Road, Rumuogba
+                    <p className="text-gray-600 dark:text-gray-300">
+                        Off Okporo Road, Rumuogba,
                     </p>
-
-                    <div className="flex flex-col gap-2 mt-4 text-sm md:text-base">
-                        <p className="border-b border-white/20 pb-1">
-                            Phone:{" "}
-                            <Link
-                                href="tel:+2348143399082"
-                                className="text-green-400 hover:underline"
-                            >
-                                08143399082
-                            </Link>
-                        </p>
-                        <p className="border-b border-white/20 pb-1">
-                            Email:{" "}
-                            <Link
-                                href="mailto:godswillessien880@gmail.com"
-                                className="text-blue-400 hover:underline"
-                            >
-                                godswillessien880@gmail.com
-                            </Link>
-                        </p>
-                    </div>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        port-harcourt, Rivers state, Nigeria.
+                    </p>
                 </motion.div>
 
-                {/* ===== CONTENT ===== */}
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ staggerChildren: 0.12, delayChildren: 0.25 }}
-                    className="mt-8 space-y-5 text-sm md:text-base"
-                >
+                {/* CONTENT */}
+                <motion.div className="mt-8 space-y-5">
                     {[
-                        {
-                            title: "Profile",
-                            text: "Aspiring web developer passionate about creating functional and visually appealing websites. Currently training at LOCTECH with focus on front-end and back-end development.",
-                        },
-                        {
-                            title: "Education",
-                            text: "– Estate Management\n– Rivers State University (RSU)",
-                        },
-                        {
-                            title: "Technical Skills",
-                            text:
-                                "– Website Development\n– Web Design\n– HTML, CSS, JavaScript (Basic)\n– Responsive Design\n– Debugging",
-                        },
-                        {
-                            title: "Experience",
-                            text:
-                                "– Learnt web development at LOCTECH\n– Building personal projects",
-                        },
-                        {
-                            title: "Certificate ",
-                            text: "– LOCTECH Website Development ",
-                        },
-                        {
-                            title: "Hobbies & Interests",
-                            text: "– Designing Websites\n– Dancing\n– Crafting",
-                        },
-                        {
-                            title: "Reference",
-                            text: "Available upon request",
-                        },
-                    ].map((item, index) => (
+                        { title: "Profile", text: "Aspiring web developer passionate about creating functional and visually appealing websites." },
+                        { title: "Education", text: "Estate Management – Rivers State University" },
+                        { title: "Technical Skills", text: "HTML, CSS, JavaScript, Responsive Design" },
+                    ].map((item, i) => (
                         <motion.div
-                            key={index}
+                            key={i}
                             variants={fadeUp}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
                             className="
-                bg-black/40
-                backdrop-blur-md
-                rounded-xl
-                p-4
-                border border-white/10
-                shadow-md
-                whitespace-pre-line
+                p-4 rounded-xl
+                bg-gray-100 dark:bg-black/40
+                border border-gray-200 dark:border-white/10
               "
                         >
-                            <h2 className="font-semibold text-lg mb-1">{item.title}</h2>
-                            <p className="text-gray-300">{item.text}</p>
+                            <h2 className="font-semibold text-lg">{item.title}</h2>
+                            <p className="text-gray-700 dark:text-gray-300">{item.text}</p>
                         </motion.div>
                     ))}
                 </motion.div>
 
-                {/* ===== BUTTONS ===== */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.9, duration: 0.6 }}
-                    className="mt-8 flex flex-col gap-3"
-                >
-                    <a
-                        href="/GOD'SWILL ESSIEN CV.pdf"
-                        download
-                        className="
-              bg-black/80
-              text-white
-              text-center
-              font-semibold
-              px-6 py-2
-              rounded-full
-              border border-white/20
-              hover:scale-105
-              transition-transform
-            "
-                    >
-                        Download CV
-                    </a>
 
-                    <Link
-                        href="/#home"
-                        className="
-              bg-black/80
-              text-white
-              text-center
-              font-bold
-              px-6 py-2
-              rounded-full
-              border border-white/20
-              hover:scale-105
-              transition-transform
-              
-            "
-                    >
-                        Home
-                    </Link>
-                </motion.div>
+                <p className="text-gray-700 dark:text-gray-300 animate-bounce   p-4 rounded-xl
+                bg-gray-100 dark:bg-black/40
+                border border-gray-200 dark:border-white/10 mt-2 ">
+                    Pls download resume for more content 😊😊
+                </p>
+
+                {/* BUTTONS */}
+                <div className="mt-8 flex flex-col gap-3">
+
+                    <div className=" bg-gray-900 dark:bg-black text-white items-center justify-center gap-2 px-6 py-2 rounded-full hover:scale-105 transition flex   ">
+
+                        <a
+                            href="/GOD'SWILL ESSIEN resume.pdf"
+                            download
+
+                        >
+
+                            Download Resume
+                        </a>
+
+                        <TbDownload />
+                    </div>
+
+
+
+                </div>
+
+
             </motion.div>
+
+
+            <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="flex justify-start   w-5  mt-2 animate-pulse  "
+            >
+                <Link
+                    href="/#home"
+                    className="text-gray-800 dark:text-white text-center font-bold px-6 rounded-full text-5xl"
+                >
+                    <motion.span
+                        initial={{ x: 32 }}
+                        animate={{ x: 16 }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="inline-block"
+                    >
+                        <IoReturnUpBack />
+                    </motion.span>
+                </Link>
+            </motion.div>
+
+            <p className="text-xs translate-y-[80px] text-gray-500 text-center ">
+                © {new Date().getFullYear()} Portfolio. All rights reserved.
+            </p>
         </section>
     );
 }

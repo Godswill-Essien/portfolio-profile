@@ -34,8 +34,8 @@ export default function Hero() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">
-        {/* <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" /> */}
-        <div className="loader"></div>
+        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" />
+        
       </div>
     );
   }
@@ -127,11 +127,11 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
           whileHover={{ scale: 1.05 }}
-          href="/GOD'SWILL ESSIEN CV.pdf"
+          href="/GOD'SWILL ESSIEN resume.pdf"
           download
-          className=" flex items-center gap-1 animate-pulse bg-black border  hover:translate-y-[-5px] transition-all duration-500 ease-out rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
-        >  <TbDownload />
-          Download CV
+          className=" flex items-center justify-center gap-1 animate-pulse bg-black border  hover:translate-y-[-5px] transition-all duration-500 ease-out rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
+        >  <TbDownload className="flex justify-center items-center" />
+          Download Resume
         </motion.a>
       </motion.div>
     </section>

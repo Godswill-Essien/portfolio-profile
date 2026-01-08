@@ -77,16 +77,21 @@ export default function Navbar() {
         className={`w-full transition-all duration-300 ${scrolled
           ? "bg-black/70 backdrop-blur-xl border-b border-blue-900"
           : "bg-transparent"
-          }`}
-      >
+          }`}  >
+
+
         {/* ===== NAV BAR ===== */}
-        <div className="max-w-7xl mx-auto flex items-center  justify-between px-4 sm:px-6 md:px-10 py-3">
+        <  div className="max-w-7xl mx-auto flex items-center   justify-between px-4 sm:px-6 md:px-10  py-3">
+
+
           <button
             className="md:hidden dark:text-black text-2xl text-white"
             onClick={dropDown ? closeDropdown : toggleDropdown}
           >
             {dropDown ? <AiOutlineClose /> : <TbListDetails />}
           </button>
+
+
 
           <div className="hidden md:flex gap-10 text-white dark:text-black font-bold text-[18px]">
             <Link href="#about">About</Link>
@@ -95,15 +100,18 @@ export default function Navbar() {
             <Link href="#cert">Certification</Link>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ">
             <Link
               href="/CV"
               className="hidden sm:inline-block border dark:border dark:border-black px-8 py-2 rounded-full text-sm animate-pulse"
             >
-              View CV
+              View Resume
             </Link>
             <Viewc />
           </div>
+
+
+
 
           <motion.button
             whileTap={{ scale: 0.9 }}
@@ -116,6 +124,9 @@ export default function Navbar() {
               <FaSun className="text-yellow-500" />
             )}
           </motion.button>
+
+         
+
         </div>
 
         {/* ===== MOBILE DROPDOWN (FIXED HEIGHT + STABLE) ===== */}
@@ -155,6 +166,6 @@ export default function Navbar() {
         )}
 
       </nav>
-    </header>
+    </header >
   )
 }
