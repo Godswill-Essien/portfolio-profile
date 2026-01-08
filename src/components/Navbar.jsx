@@ -93,11 +93,11 @@ export default function Navbar() {
 
 
 
-          <div className="hidden md:flex gap-10 text-white dark:text-black font-bold text-[18px]">
-            <Link href="#about">About</Link>
-            <Link href="#work">Work</Link>
-            <Link href="#hire">Contact</Link>
-            <Link href="#cert">Certification</Link>
+          <div className="hidden md:flex gap-10 text-white dark:text-black font-bold  text-[18px]">
+            <Link className="hover:underline" href="#about">About</Link>
+            <Link className="hover:underline" href="#work">Work</Link>
+            <Link className="hover:underline" href="#hire">Contact</Link>
+            <Link className="hover:underline" href="#cert">Certification</Link>
           </div>
 
           <div className="flex items-center gap-3 ">
@@ -159,7 +159,7 @@ export default function Navbar() {
                 onClick={closeDropdown}
                 className="mt-5 px-10 py-2 border  dark:bg-white dark:border-black bg-black rounded-3xl animate-pulse"
               >
-                View CV
+                View Resume 
               </Link>
             </nav>
           </div>

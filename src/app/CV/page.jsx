@@ -116,7 +116,7 @@ export default function CVSection() {
                     className="text-center"
                 >
                     <h1 className="text-2xl md:text-3xl font-bold mb-2">
-                        God'swill Sampson Essien
+                        God'swill Essien
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300">
                         #5 Gotheg Avenue, Artillery, Woji Junction
@@ -152,16 +152,15 @@ export default function CVSection() {
                 </motion.div>
 
 
-                <p className="text-gray-700 dark:text-gray-300 animate-bounce   p-4 rounded-xl
-                bg-gray-100 dark:bg-black/40
-                border border-gray-200 dark:border-white/10 mt-2 ">
+                <p className="text-gray-700 dark:text-gray-300 animate-bounce   p-4 rounded-xl bg-gray-100 dark:bg-black/40  border border-gray-200 dark:border-white/10 mt-2 ">
                     Pls download resume for more content 😊😊
                 </p>
 
                 {/* BUTTONS */}
                 <div className="mt-8 flex flex-col gap-3">
 
-                    <div className=" bg-gray-900 dark:bg-black text-white items-center justify-center gap-2 px-6 py-2 rounded-full hover:scale-105 transition flex   ">
+                    <div className="   bg-gray-100 dark:bg-black/40
+                border border-gray-200 dark:border-white/10  animate-pulse items-center justify-center gap-2 px-6 py-2  shadow-lg   shadow-slate-500/40 rounded-full hover:scale-105 transition flex   ">
 
                         <a
                             href="/GOD'SWILL ESSIEN resume.pdf"
@@ -187,11 +186,11 @@ export default function CVSection() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex justify-start   w-5  mt-2 animate-pulse  "
+                className="flex justify-star   w-5  mt-2 animate-pulse  "
             >
                 <Link
                     href="/#home"
-                    className="text-gray-800 dark:text-white text-center font-bold px-6 rounded-full text-5xl"
+                    className="text-gray-800 dark:text-white  text-center font-bold px-6 rounded-full text-5xl"
                 >
                     <motion.span
                         initial={{ x: 32 }}

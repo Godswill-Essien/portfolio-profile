@@ -87,7 +87,7 @@ export default function Footer() {
 
         {/* Scroll to Top */}
         <div className="mt-3">
-          <Link href="#top" className="inline-flex items-center gap-2 text-sm sm:text-base text-blue-400 hover:text-indigo-500 transition-colors">
+          <Link href="#top" className="inline-flex animate-bounce  items-center gap-2 text-sm sm:text-base text-blue-700 hover:text-indigo-500 transition-colors">
             <FaLongArrowAltUp /> Back to Top
           </Link>
         </div>
