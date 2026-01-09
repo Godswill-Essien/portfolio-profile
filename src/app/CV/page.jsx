@@ -160,7 +160,7 @@ export default function CVSection() {
                 <div className="mt-8 flex flex-col gap-3">
 
                     <div className="   bg-gray-100 dark:bg-black/40
-                border border-gray-200 dark:border-white/10  animate-pulse items-center justify-center gap-2 px-6 py-2  shadow-lg   shadow-slate-500/40 rounded-full hover:scale-105 transition flex   ">
+                border border-gray-200 dark:border-white/10  animate-pulse items-center justify-center gap-2 px-6 py-2  shadow-lg   shadow-slate-500/10 rounded-full hover:scale-105 transition flex   ">
 
                         <a
                             href="/GOD'SWILL ESSIEN resume.pdf"
@@ -203,6 +203,19 @@ export default function CVSection() {
                     </motion.span>
                 </Link>
             </motion.div>
+
+
+
+
+            {/* Floating elements */}
+
+            <div className=' animate-spin-slow -z-5 '>
+                <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
+                <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
+                <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
+
+            </div>
+
 
             <p className="text-xs translate-y-[80px] text-gray-500 text-center ">
                 © {new Date().getFullYear()} Portfolio. All rights reserved.

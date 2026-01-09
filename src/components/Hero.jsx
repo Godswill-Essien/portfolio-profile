@@ -19,10 +19,8 @@ export default function Hero() {
   // scroll → smooth inertia
   const { scrollY } = useScroll();
   const rawY = useTransform(scrollY, [0, 600], [0, 120]);
-  const smoothY = useSpring(rawY, {
-    stiffness: 40,
-    damping: 20,
-    mass: 1,
+  const smoothY = useSpring(rawY, {stiffness: 40,damping: 20,  mass: 1,
+
   });
 
   useEffect(() => {
@@ -134,6 +132,8 @@ export default function Hero() {
           Download Resume
         </motion.a>
       </motion.div>
+
+      
     </section>
   );
 }

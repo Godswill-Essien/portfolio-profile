@@ -5,7 +5,15 @@ import React from 'react';
 import { FaLinkedin, FaTelegramPlane, FaLongArrowAltUp, FaFacebook } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
+import { BsGlobe } from 'react-icons/bs';
+
 
 // Fade-up variant
 const fadeUp = {
@@ -14,6 +22,16 @@ const fadeUp = {
 };
 
 export default function Footer() {
+
+
+  // scroll → smooth inertia
+  const { scrollY } = useScroll();
+  const rawY = useTransform(scrollY, [0, 600], [0, 120]);
+  const smoothY = useSpring(rawY, {
+    stiffness: 40, damping: 20, mass: 1,
+
+  });
+
   return (
     <footer className="relative dark:bg-white   dark:text-white bg-black/30 backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
 
@@ -86,34 +104,45 @@ export default function Footer() {
         </div>
 
         {/* Scroll to Top */}
-        <div className="mt-3">
+        <div className="translate-y-5">
           <Link href="#top" className="inline-flex animate-bounce  items-center gap-2 text-sm sm:text-base text-blue-700 hover:text-indigo-500 transition-colors">
             <FaLongArrowAltUp /> Back to Top
           </Link>
         </div>
 
-        <p className="text-xs sm:text-sm mt-2 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+        <p className="text-xs sm:text-sm translate-y-9 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
       </motion.div>
 
 
       {/* Animated orbiting element */}
-      {/* <div className="absolute bottom-20 right-20 w-64 h-64">
+
+
+{/* 
+      <motion.div
+        style={{ y: smoothY }}
+        className="absolute top-[20%] left-1/2 -translate-x-3 opacity-20 bg-black  rounded-full -z-30"
+      >
+        <BsGlobe className="w-40 h-40 md:w-56 md:h-56  animate-spin-slow" />
+      </motion.div> */}
+
+
+      <div className="absolute bottom-20 right-20 w-64 h-64 -z-50">
         <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-spin-slow">
           <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
           <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
           <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full"></div>
         </div>
-      </div> */}
+      </div>
 
       {/* Floating elements */}
-
-      <div className='animate-spin-slow  '>
+{/* 
+      <div className=' animate text-xs -z-50 '>
         <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
         <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
         <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
 
-      </div>
+      </div> */}
 
 
     </footer>
