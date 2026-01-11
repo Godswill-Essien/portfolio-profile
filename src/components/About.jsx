@@ -8,30 +8,8 @@ import axios from "axios";
 import { motion } from "framer-motion";
 
 export default function About() {
-  const [loading, setLoading] = useState(true);
-  const [content, setContent] = useState(null);
+ 
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/content")
-      .then((res) => {
-        setContent(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
-        {/* <div className="loader"></div> */}
-      </div>
-    );
-  }
 
   return (
     <motion.section

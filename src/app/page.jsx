@@ -1,71 +1,90 @@
-"use client"
+"use client";
 
-import About from '@/components/About'
-import Hero from '@/components/Hero'
-import Navbar from '@/components/Navbar'
-import Skill from '@/components/Skill'
-import Project from '@/components/Project'
-import React from 'react'
-import Foter from '@/components/Foter'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { BsGlobe } from "react-icons/bs";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { ChevronDown, Menu, X, Zap, ArrowRight, Globe, Code, TrendingUp } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import About from "@/components/About";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import Skill from "@/components/Skill";
+import Project from "@/components/Project";
+import Foter from "@/components/Foter";
 
+import { useScroll, useTransform } from "framer-motion";
 
-export default function page() {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Page() {
+  const [loading, setLoading] = useState(true);
+  const [content, setContent] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
   const { scrollY } = useScroll();
-  const yBackground = useTransform(scrollY, [0, 100], ['0%', '100%']);
+  const yBackground = useTransform(scrollY, [0, 100], ["0%", "100%"]);
 
+  // 🔹 Track portfolio views safely
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const trackViews = async () => {
+      try {
+        // 🔹 Replace with your real backend URL
+        const res = await fetch("http://localhost:5000/api/views/track", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ page: "portfolio-home" }),
+        });
+
+        if (!res.ok) {
+          console.warn("Backend returned error:", res.status);
+          return;
+        }
+
+        const data = await res.json();
+        console.log("Views tracked:", data);
+      } catch (err) {
+        console.warn("Failed to reach backend:", err);
+      }
+    };
+
+    trackViews();
   }, []);
 
-  const productItems = [
-    { title: 'Database', desc: 'Fully managed Postgres with realtime', href: '/product/database' },
-    { title: 'Authentication', desc: 'User management out of the box', href: '/product/authentication' },
-    { title: 'Storage', desc: 'Store and serve any type of digital content', href: '/product/storage' },
-    { title: 'Edge Functions', desc: 'Deploy serverless functions globally', href: '/product/functions' },
-    { title: 'Realtime', desc: 'Listen to database changes in realtime', href: '/product/realtime' },
-    { title: 'Vector Database', desc: 'AI-ready with pgvector support', href: '/product/vector' },
-  ];
+  // ✅ Fetch content from backend
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/content")
+      .then((res) => {
+        setContent(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch content:", err);
+        setLoading(false);
+      });
+  }, []);
 
-  const devItems = [
-    { title: 'Documentation', desc: 'Complete API references and guides', href: '/docs' },
-    { title: 'Examples', desc: 'Production-ready starter kits', href: '/examples' },
-    { title: 'CLI', desc: 'Command line interface', href: '/cli' },
-    { title: 'Status', desc: 'Real-time service status', href: 'https://status.atlas.dev' },
-    { title: 'Community', desc: 'Join thousands of developers', href: '/community' },
-    { title: 'Support', desc: 'Get help from our team', href: '/support' },
-  ];
+  // ✅ Scroll listener
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const metrics = [
-    { val: '7m → 40s', label: 'Build times' },
-    { val: '95%', label: 'Page load reduction' },
-    { val: '24x', label: 'Faster builds' },
-    { val: '50k+', label: 'Developers' },
-  ];
+  // ✅ Loading UI
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" />
+      </div>
+    );
+  }
 
-  const sections = [
-    { title: 'AI Apps', desc: 'Enrich any product or feature with the latest models and tools.', icon: <Zap className="w-12 h-12" />, tools: ['Fluid', 'AI SDK', 'AI Gateway', 'Workflow', 'Sandbox', 'BotID'], href: '/ai' },
-    { title: 'Web Apps', desc: 'Ship beautiful interfaces that don’t compromise speed or functionality.', icon: <Code className="w-12 h-12" />, tools: ['Next.js', 'React', 'Svelte', 'Nuxt'], href: '#' },
-    { title: 'Composable Commerce', desc: 'Increase conversion with fast, branded storefronts.', icon: <TrendingUp className="w-12 h-12" />, tools: ['Shopify', 'Stripe', 'Medusa'], href: '#' },
-  ];
   return (
-    <div className=''>
-      <Navbar/>
+    <div>
+      <Navbar />
       <Hero />
       <About />
       <Skill />
       <Project />
       <Foter />
     </div>
-  )
+  );
 }

@@ -14,7 +14,7 @@ import {
 import { TbDownload } from "react-icons/tb";
 
 export default function Hero() {
-  const [loading, setLoading] = useState(true);
+  
 
   // scroll → smooth inertia
   const { scrollY } = useScroll();
@@ -23,20 +23,6 @@ export default function Hero() {
 
   });
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/content")
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow" />
-        
-      </div>
-    );
-  }
 
   return (
     // ✅ FIX: top spacing + stop vertical centering

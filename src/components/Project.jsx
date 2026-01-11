@@ -15,32 +15,9 @@ import {
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Project() {
-   const [loading, setLoading] = useState(true);
-    const [content, setContent] = useState(null);
   
 
 
-   useEffect(() => {
-      axios.get("http://localhost:5000/api/content")
-        .then(res => {
-          setContent(res.data);
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error(err);
-          setLoading(false);
-        });
-    }, []);
-  
-    if (loading) {
-       return (
-         <div className="flex flex-col items-center justify-center min-h-screen bg-black">
-           <BsGlobe className="w-20 h-20 text-blue-900 animate-spin-slow mb-5" />
-           {/* <div className="loader"></div> */}
-         </div>
-       );
-     }
-  
   return (
     <div id="work" className="font-serif px-6 sm:px-6 md:px-5   py-6  dark:text-black dark:bg-white flex-col gap-14">
 
