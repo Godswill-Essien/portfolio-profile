@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center  mt-3 bg-animated-gradient overflow-hidden px-6 pt-9 md:py-24">
+    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center   bg-animated-gradient overflow-hidden px-6 pt-9 md:py-24">
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div
         style={{ y: smoothY }}
@@ -40,7 +40,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center text-center gap-6 max-w-4xl mt-6"
+        className="relative z-10 flex flex-col items-center text-center gap-6 max-w-4xl py-9"
       >
         {/* ===== PROFILE IMAGE ===== */}
         <motion.div

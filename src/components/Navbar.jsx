@@ -1,29 +1,21 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import React, { useEffect, useState, useRef } from "react"
-import { TbListDetails } from "react-icons/tb"
-import { AiOutlineClose } from "react-icons/ai"
-import Viewc from "@/components/Viewc"
+import Link from "next/link";
+import React, { useEffect, useState, useRef } from "react";
+import { TbListDetails } from "react-icons/tb";
+import { AiOutlineClose } from "react-icons/ai";
+import Viewc from "@/components/Viewc";
 import { motion } from "framer-motion";
-import { FaMoon, FaSun } from "react-icons/fa"
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Navbar() {
-  const [dropDown, setDropDown] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [dropDown, setDropDown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  const timerRef = useRef(null)
-  const navbarHeight = 72 // px
-
-  
-  
-
-
-
+  const timerRef = useRef(null);
 
   // 🌗 Load theme safely
   useEffect(() => {
-    if (typeof window === "undefined") return;
     const saved = localStorage.getItem("theme");
     if (saved === "light") {
       document.documentElement.classList.remove("dark");
@@ -46,129 +38,138 @@ export default function Navbar() {
     setDarkMode(!darkMode);
   };
 
-
-  // 🔹 Navbar scroll effect (PAUSED when dropdown is open)
+  // 🔹 Navbar scroll effect
   useEffect(() => {
-    if (dropDown) return
+    if (dropDown) return;
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dropDown]);
 
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [dropDown])
-
-  // 🔹 Lock background scroll
+  // 🔹 Lock background scroll when dropdown is open
   useEffect(() => {
-    document.body.style.overflow = dropDown ? "hidden" : "auto"
-    return () => (document.body.style.overflow = "auto")
-  }, [dropDown])
+    document.body.style.overflow = dropDown ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [dropDown]);
 
-  // 🔹 OPEN + AUTO CLOSE
+  // 🔹 Dropdown open + auto close
   const toggleDropdown = () => {
-    setDropDown(true)
-    if (timerRef.current) clearTimeout(timerRef.current)
-    timerRef.current = setTimeout(() => setDropDown(false), 5000)
-  }
+    setDropDown(true);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setDropDown(false), 5000);
+  };
 
   const closeDropdown = () => {
-    setDropDown(false)
-    if (timerRef.current) clearTimeout(timerRef.current)
-  }
+    setDropDown(false);
+    if (timerRef.current) clearTimeout(timerRef.current);
+  };
 
   return (
-    <header className="fixed dark:bg-white dark:text-black bg-black top-0 w-full flex items-center justify-center z-50 font-serif">
-      <nav
-        className={`w-full transition-all duration-300 ${scrolled
-          ? "bg-black/70 backdrop-blur-xl border-b border-blue-900"
-          : "bg-transparent"
-          }`}  >
+    <header
+      className={`fixed top-0 w-full    z-30 transition-all duration-300
+        ${scrolled ? "backdrop-blur-xl   dark:bg-black/30 border-b border-blue-700/95 " : "bg-transparent "}
+      `}
+    >
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
+        {/* ===== Hamburger / Close Button ===== */}
+        <button
+          className="md:hidden text-2xl text-white dark:text-black"
+          onClick={dropDown ? closeDropdown : toggleDropdown}
+        >
+          {dropDown ? <AiOutlineClose /> : <TbListDetails />}
+        </button>
 
+        {/* ===== Desktop Menu ===== */}
+        <div className="hidden md:flex gap-10 text-white dark:text-black font-bold text-[18px]">
+          <Link className="hover:underline" href="#about">About</Link>
+          <Link className="hover:underline" href="#work">Work</Link>
+          <Link className="hover:underline" href="#hire">Contact</Link>
+          <Link className="hover:underline" href="#cert">Certification</Link>
+        </div>
 
-        {/* ===== NAV BAR ===== */}
-        <  div className="max-w-7xl mx-auto flex items-center   justify-between px-4 sm:px-6 md:px-10  py-3">
-
-
-          <button
-            className="md:hidden dark:text-black text-2xl text-white"
-            onClick={dropDown ? closeDropdown : toggleDropdown}
+        {/* ===== Right Side: Resume + Views + Theme Toggle ===== */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/CV"
+            className="hidden sm:inline-block border dark:text-black border-white/50 dark:border-black/50 px-8 py-2  rounded-full text-sm animate-pulse"
           >
-            {dropDown ? <AiOutlineClose /> : <TbListDetails />}
-          </button>
-
-
-
-          <div className="hidden md:flex gap-10 text-white dark:text-black font-bold  text-[18px]">
-            <Link className="hover:underline" href="#about">About</Link>
-            <Link className="hover:underline" href="#work">Work</Link>
-            <Link className="hover:underline" href="#hire">Contact</Link>
-            <Link className="hover:underline" href="#cert">Certification</Link>
-          </div>
-
-          <div className="flex items-center gap-3 ">
-            <Link
-              href="/CV"
-              className="hidden sm:inline-block border dark:border dark:border-black px-8 py-2 rounded-full text-sm animate-pulse"
-            >
-              View Resume
-            </Link>
-            <Viewc />
-          </div>
-
-
-
-
+            View Resume
+          </Link>
+          <Viewc />
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20"
+            className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20 ml-2"
           >
-            {darkMode ? (
-              <FaMoon className="text-blue-500" />
-            ) : (
-              <FaSun className="text-yellow-500" />
-            )}
+            {darkMode ? <FaMoon className="text-blue-500" /> : <FaSun className="text-yellow-500" />}
           </motion.button>
-
-         
-
         </div>
+      </nav>
 
-        {/* ===== MOBILE DROPDOWN (FIXED HEIGHT + STABLE) ===== */}
-        {dropDown && (
-          <div
-            data-aos="fade-down"
-            className=" text-gray-800 dark:bg-white/80 dark:text-black
-      md:hidden
-      fixed
-      left-0
-      right-0
-      top-[58px]       
-      h-[calc(100vh-60px)]  
-      bg-black/90 rounded-lg
-      backdrop-blur-md
-      flex justify-center items-start font-serif font-bold
-      pt-8
-      z-40
-    "
+
+      {/* mobile drop */}
+
+      {/* ===== Mobile Dropdown ===== */}
+      {dropDown && (
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          data-aos="fade-dow"
+          className="fixed left-0 right-0 h-[calc(100vh-70px)] bg-black/85 dark:bg-white/95 rounded-md mt-[1px] backdrop-blur-xl flex justify-center translate-y-[-40px] items-start z-40"
+        >
+          <motion.nav
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.12 }
+              },
+            }}
+            className="w-[85%] flex flex-col items-center gap-5 text-white dark:text-black font-serif py-5 px-5 font-bold"
           >
-            <nav className="w-[85%] flex flex-col items-center gap-5 dark:text-black text-white">
-              <Link onClick={closeDropdown} href="#home">Home</Link>
-              <Link onClick={closeDropdown} href="#about">About</Link>
-              <Link onClick={closeDropdown} href="#work">My Projects</Link>
-              <Link onClick={closeDropdown} href="#hire">Reach Me</Link>
-              <Link onClick={closeDropdown} href="#cert">View Certification</Link>
+            {[
+              { href: "#home", label: "Home" },
+              { href: "#about", label: "About" },
+              { href: "#work", label: "My Projects" },
+              { href: "#hire", label: "Reach Me" },
+              { href: "#cert", label: "View Certification" },
+            ].map((item) => (
+              <motion.div
+                key={item.href}
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <Link onClick={closeDropdown} href={item.href}>
+                  {item.label}
+                </Link>
+              </motion.div>
+            ))}
 
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Link
                 href="/CV"
                 onClick={closeDropdown}
-                className="mt-5 px-10 py-2 border  dark:bg-white dark:border-black bg-black rounded-3xl animate-pulse"
+                className="mt-5 px-10 py-2 border dark:bg-white dark:border-black bg-black rounded-3xl"
               >
-                View Resume 
+                View Resume
               </Link>
-            </nav>
-          </div>
-        )}
+            </motion.div>
+          </motion.nav>
+        </motion.div>
+      )}
 
-      </nav>
-    </header >
-  )
+    </header>
+  );
 }
