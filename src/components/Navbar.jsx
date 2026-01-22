@@ -89,12 +89,27 @@ export default function Navbar() {
 
         {/* ===== Right Side: Resume + Views + Theme Toggle ===== */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/CV"
-            className="hidden sm:inline-block border dark:text-black border-white/50 dark:border-black/50 px-8 py-2  rounded-full text-sm animate-pulse"
-          >
-            View Resume
-          </Link>
+         <Link
+  href="/CV"
+  className="
+    hidden sm:inline-block
+    px-8 py-2 rounded-full text-sm
+    backdrop-blur-md backdrop-saturate-150
+    bg-white/20 dark:bg-black/20
+   dark:border-black/40
+    dark:text-black text-white
+    shadow-lg shadow-black/20
+    hover:bg-white/30 dark:hover:bg-black/30
+    hover:-translate-y-1 hover:shadow-xl
+    transition-all duration-500 ease-out
+    animate-pulse
+  "
+>
+  View Resume
+</Link>
+
+
+
           <Viewc />
           <motion.button
             whileTap={{ scale: 0.9 }}
@@ -158,13 +173,25 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                href="/CV"
-                onClick={closeDropdown}
-                className="mt-5 px-10 py-2 border dark:bg-white dark:border-black bg-black rounded-3xl"
-              >
-                View Resume
-              </Link>
+             <Link
+  href="/CV"
+  onClick={closeDropdown}
+  className="
+    mt-5 px-10 py-2 rounded-3xl
+    backdrop-blur-md backdrop-saturate-150
+    bg-white/20 dark:bg-black/20
+     dark:border-black/40
+    dark:text-black text-white
+    shadow-lg shadow-black/20
+    hover:bg-white/30 dark:hover:bg-black/30
+    hover:-translate-y-1 hover:shadow-xl
+    transition-all duration-300 ease-out animate-pulse
+  "
+>
+  View Resume
+</Link>
+
+              
             </motion.div>
           </motion.nav>
         </motion.div>

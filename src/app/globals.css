@@ -9,9 +9,9 @@
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #f1f5f9;
-  --border: #333333;
+  --background: #000000;
+  --foreground: #292d31;
+  --border: #000000;
 }
 
 html, body {
@@ -24,6 +24,15 @@ html, body {
 :root {
   --background: #2d2d31;
   --foreground: #fffdfd;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
 
 

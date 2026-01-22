@@ -48,15 +48,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           whileHover={{ y: -6 }}
-          className="bg-gradient-to-r from-green-700 via-red-700 to-blue-700 animate-gradient hover:opacity-20 rounded-full p-[3px]"
+          className="bg-gradient-to-r from-green-700 via-red-700 to-blue-700  animate-gradient hover:opacity-20 rounded-full p-[3px]"
         >
-          <div className="relative w-[270px] hover:opacity-60 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
+          <div className="relative  w-[270px] hover:opacity-60 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
             <Image
               src="/saint.jpg"
               alt="Godswill Essien"
               fill
               priority
-              className="object-cover "
+              className="object-cover   "
             />
           </div>
         </motion.div>
@@ -106,17 +106,30 @@ export default function Hero() {
         </motion.p>
 
         {/* ===== CTA ===== */}
-        <motion.a
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
-          whileHover={{ scale: 1.05 }}
-          href="/GOD'SWILL ESSIEN resume.pdf"
-          download
-          className=" flex items-center justify-center gap-1 animate-pulse bg-black border  hover:translate-y-[-5px] transition-all duration-500 ease-out rounded-full px-6 py-2 dark:border-black shadow-lg dark:text-black dark:bg-white  shadow-slate-500/40"
-        >  <TbDownload className="flex justify-center items-center" />
-          Download Resume
-        </motion.a>
+     <motion.a
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+  whileHover={{ scale: 1.05 }}
+  href="/GOD'SWILL ESSIEN resume.pdf"
+  download
+  className="
+    flex items-center justify-center gap-1
+    px-6 py-2 rounded-full
+    backdrop-blur-md bg-white/20 dark:bg-black/20
+     dark:border-white/10
+     dark:text-black text-white
+    shadow-lg shadow-black/20
+    hover:translate-y-[-5px]
+    hover:bg-white/30 dark:hover:bg-black/30
+    transition-all duration-500 ease-out  animate-pulse
+  "
+>
+  <TbDownload className="flex justify-center items-center " />
+  Download Resume
+</motion.a>
+
+        
       </motion.div>
 
       

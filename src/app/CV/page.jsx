@@ -152,7 +152,7 @@ export default function CVSection() {
                 </motion.div>
 
 
-                <p className="text-gray-700 dark:text-gray-300 animate-bounce   p-4 rounded-xl bg-gray-100 dark:bg-black/40  border border-gray-200 dark:border-white/10 mt-2 ">
+                <p className="text-gray-700 dark:text-gray-300 animate-float   p-4 rounded-xl bg-gray-100 dark:bg-black/40  border border-gray-200 dark:border-white/10 mt-2 ">
                     Pls download resume for more content 😊😊
                 </p>
 

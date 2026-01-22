@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { FaLinkedin, FaTelegramPlane, FaLongArrowAltUp, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaTelegramPlane,  FaFacebook, FaSortAlphaUp } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
+// import { FaSortAlphaUp } from "react-icons/fa";
+import { FaLevelUpAlt } from "react-icons/fa";
 // import { motion } from "framer-motion";
 import {
   motion,
@@ -75,14 +77,25 @@ export default function Footer() {
         variants={fadeUp}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="flex flex-col items-center sm:gap-6 mt-6"
-      >
-        <Link
-          id='hire'
-          href="mailto:godswillessien880@gmail.com"
-          className="px-8 py-2 text-lg  rounded-3xl bg-black/10 backdrop-blur-sm border dark:bg-white dark:text-black dark:border  border-white  animate-pulse  shadow-lg shadow-blue-950 hover:scale-105 transition-transform duration-300 font-bold"
-        >
-          Hire Me
-        </Link>
+      ><Link
+  id="hire"
+  href="mailto:godswillessien880@gmail.com"
+  className="
+    px-8 py-2 text-lg font-bold rounded-3xl
+    backdrop-blur-md backdrop-saturate-150
+    bg-white/20 dark:bg-black/20
+     dark:border-black/40
+    dark:text-black text-white
+    shadow-lg shadow-blue-950/40
+    hover:bg-white/30 dark:hover:bg-black/30
+    hover:scale-105
+    active:scale-95
+    animate-pulse
+    transition-all duration-300 ease-out
+  "
+>
+  Hire Me
+</Link>
 
         {/* Social Links */}
         <div className="flex gap-6 sm:gap-10 justify-center items-center mt-4 flex-wrap">
@@ -104,11 +117,32 @@ export default function Footer() {
         </div>
 
         {/* Scroll to Top */}
-        <div className="translate-y-5">
-          <Link href="#top" className="inline-flex animate-bounce  items-center gap-2 text-sm sm:text-base text-blue-700 hover:text-indigo-500 transition-colors">
-            <FaLongArrowAltUp /> Back to Top
-          </Link>
-        </div>
+       <div className="fixed bottom-6 right-6 z-50">
+ <div className="fixed bottom-6 right-6 z-50">
+  <Link
+    href="#top"
+    className="
+      group flex items-center justify-center
+      w-12 h-12 rounded-full
+       text-3xl
+      
+      dark:text-black
+      animate-float
+      hover:scale-110 hover:shadow-xl
+      transition-all duration-300
+    "
+  >
+         <FaLevelUpAlt  className="group-hover:-translate-y-1 transition-transform"/>
+    {/* glow */}
+    <span className="
+      absolute inset-0 rounded-full
+      blur opacity-60 -z-10
+    " />
+  </Link>
+</div>
+
+</div>
+
 
         <p className="text-xs sm:text-sm translate-y-9 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
       </motion.div>

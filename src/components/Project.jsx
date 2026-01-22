@@ -19,7 +19,7 @@ export default function Project() {
 
 
   return (
-    <div id="work" className="font-serif px-6 sm:px-6 md:px-5   py-6  dark:text-black dark:bg-white flex-col gap-14">
+    <div id="work" className="font-serif px-6 sm:px-6 md:px-8  md:gap-16 md:flex md:flex-col py-6  dark:text-black dark:bg-white flex-col gap-14">
 
       {/* TITLE */}
       <p
@@ -41,7 +41,7 @@ export default function Project() {
               src="/shoelayers.png"
               alt="Shoelayers project"
               fill
-              className="object-contain hover:scale-110 transition opacity-55 hover:opacity-85   duration-700 px-1"
+              className="object-contain hover:scale-110 transition opacity-55 dark:opacity-100 hover:opacity-85   duration-700 px-1"
               sizes="(max-width: 68px) 100vw, 520px"
               priority
             />
@@ -90,7 +90,7 @@ export default function Project() {
             src="/coach.png"
             alt="CoachClone project"
             fill
-            className="object-contain hover:scale-110 transition-all ease-in-out duration-700 opacity-55 hover:opacity-85  px-1"
+            className="object-contain hover:scale-110 dark:opacity-100 transition-all ease-in-out duration-700 opacity-55 hover:opacity-85  px-1"
             sizes="(max-width: 768px) 100vw, 520px"
           />
         </div>
@@ -116,16 +116,30 @@ export default function Project() {
           </Link>
         </div>
       </div>
+<motion.a
+  href="/mproject"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+  whileHover={{ scale: 1.03 }}
+  className="
+    animate-pulse
+    mt-4 mb-4 px-6 py-4
+    flex items-center justify-center gap-2 text-center
+    backdrop-blur-md backdrop-saturate-150
+    bg-white/20 dark:bg-black/20
+    rounded-2xl  dark:border-black/20
+    dark:text-black text-white
+    shadow-lg shadow-black/30
+    hover:bg-white/30 dark:hover:bg-black/30
+    hover:-translate-y-1
+    transition-all duration-500 ease-out
+  "
+>
+  view more projects
+  <FiExternalLink />
+</motion.a>
 
-        <motion.a href="/mproject"initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
-          whileHover={{ scale: 1 }}
-          className=" animate-pulse text-center flex mb-4 dark:border-black/10  dark:border-none mt-4 justify-center gap-2 items-center bg-black dark:bg-white   px-6 py-4 shadow-lg shadow-black/40" 
-        >
-          view more projects
-          <FiExternalLink />
-        </motion.a>
     </div>
   )
 }
