@@ -26,7 +26,8 @@ export default function Hero() {
 
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center   bg-animated-gradient overflow-hidden px-6 pt-9 md:py-24">
+    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center  bg-animated-gradient overflow-hidden px-6 pt-16 md:py-24">
+
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div
         style={{ y: smoothY }}
@@ -40,7 +41,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center text-center gap-6 max-w-4xl py-9"
+        className="relative z-10 flex flex-col items-center text-center md:dark:bg-black/10 md:shadow-xl md:shadow-black/55 gap-6 md:hover:scale-110 transition-all duration-1000  ease-in-out rounded-2xl    max-w-4xl py-5 "
       >
         {/* ===== PROFILE IMAGE ===== */}
         <motion.div
@@ -122,12 +123,12 @@ export default function Hero() {
     shadow-lg shadow-black/20
     hover:translate-y-[-5px]
     hover:bg-white/30 dark:hover:bg-black/30
-    transition-all duration-500 ease-out  animate-pulse
+    transition-all duration-500 ease-out border dark:border-black dark:border animate-pulse
   "
 >
-  <TbDownload className="flex justify-center items-center " />
-  Download Resume
-</motion.a>
+     <TbDownload className="flex justify-center  items-center " />
+     Download Resume
+      </motion.a>
 
         
       </motion.div>

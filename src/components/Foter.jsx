@@ -81,7 +81,7 @@ export default function Footer() {
   id="hire"
   href="mailto:godswillessien880@gmail.com"
   className="
-    px-8 py-2 text-lg font-bold rounded-3xl
+    px-8 py-2 text-lg font-bold rounded-xl
     backdrop-blur-md backdrop-saturate-150
     bg-white/20 dark:bg-black/20
      dark:border-black/40

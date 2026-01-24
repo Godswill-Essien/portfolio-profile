@@ -101,7 +101,7 @@ export default function Navbar() {
     shadow-lg shadow-black/20
     hover:bg-white/30 dark:hover:bg-black/30
     hover:-translate-y-1 hover:shadow-xl
-    transition-all duration-500 ease-out
+    transition-all duration-500 ease-out 
     animate-pulse
   "
 >

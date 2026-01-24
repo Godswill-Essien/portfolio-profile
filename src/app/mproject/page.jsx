@@ -136,14 +136,14 @@ export default function ViewMoreProjects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className={`flex flex-col gap-6 md:items-center ${project.reverse ? "md:flex-row-reverse" : "md:flex-row"
-                            } rounded-3xl bg-white/10 dark:bg-black/40 backdrop-blur-2xl p-6 shado shadow-lg md:p-12`}
+                            } rounded-3xl bg-white/10 dark:bg-black/40 backdrop-blur-2xl  p-6 shado shadow-lg md:p-12`}
                     >
                         <div className="relative w-full md:w-1/2 aspect-video rounded-xl overflow-hidden">
                             <Image
                                 src={project.image}
                                 alt={project.title}
                                 fill
-                                className="object-scale-down opacity-70 hover:opacity-100 hover:scale-110 transition duration-700"
+                                className="object-scale-down  opacity-100 dark:hover:opacity-100 dark:opacity-55 hover:scale-110 transition duration-700"
                             />
                         </div>
 
