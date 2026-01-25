@@ -18,7 +18,7 @@ const projects = [
         description:
             "A fully responsive Netflix clone built with React, Tailwind CSS, JavaScript, and TypeScript. It includes categories, authentication, and smooth cinematic interaction.",
         tech: "TailwindCSS • Next.js • JS • TS",
-        live: "https://netflix-ashen-beta.vercel.app",
+        live: "https://willview.vercel.app/",
         github: "https://github.com/Godswill-Essien/netflix",
         reverse: false,
         differences: [
@@ -98,7 +98,7 @@ export default function ViewMoreProjects() {
     }
 
     return (
-        <section className="relative pt-32 px-2 bg-gray-100 dark:bg-black transition-colors duration-500">
+        <section className="relative min-h-screen  pt-32 px-2 bg-gray-100 dark:bg-black transition-colors duration-500">
             {/* ===== FIXED SEARCH & THEME BAR ===== */}
             <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[80%]">
                 <div className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/15 dark:bg-black/40 backdrop-blur-2xl border border-white/20 shadow-xl">

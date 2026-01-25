@@ -63,7 +63,7 @@ export default function CVSection() {
     }
 
     return (
-        <section className="relative w-full py-24 px-4 overflow-hidden  bg-gray-100 dark:bg-black transition-colors">
+        <section className="relative min-h-screen w-full py-24 px-4 overflow-hidden  bg-gray-100 dark:bg-black transition-colors">
 
             {/* 🌗 THEME TOGGLE */}
             <button
