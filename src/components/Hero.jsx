@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min--screen flex items-start  dark:text-black dark:bg-white justify-center  bg-animated-gradient overflow-hidden px-6 pt-16 md:py-24">
+    <section className="relative min--screen flex items-start   justify-center  bg-animated-gradient overflow-hidden px-6 pt-12 md:py-24">
 
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div
@@ -41,7 +41,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center text-center md:dark:bg-black/10 md:shadow-xl md:shadow-black/55 gap-6 md:hover:scale-110 transition-all duration-1000  ease-in-out rounded-2xl    max-w-4xl py-5 "
+        className="relative z-10 flex flex-col items-center text-center    md:dark:bg-white/10 md:shadow-xl md:px-20 md:shadow-black/ gap-6 md:hover:scale-110 transition-all duration-1000  ease-in-out rounded-2xl    max-w-4xl py-5 "
       >
         {/* ===== PROFILE IMAGE ===== */}
         <motion.div
@@ -70,7 +70,7 @@ export default function Hero() {
           className="font-serif font-extrabold text-white dark:text-black text-sm md:text-lg"
         >
           Hi 👋 there,&nbsp;
-          <span className="font-bold">
+          <span className="font-bold ">
             <Typewriter
               words={["Digital wanderer", "I am Godswill Essien"]}
               loop={500}
@@ -116,14 +116,8 @@ export default function Hero() {
   download
   className="
     flex items-center justify-center gap-1
-    px-6 py-2 rounded-full
-    backdrop-blur-md bg-white/20 dark:bg-black/20
-     dark:border-white/10
-     dark:text-black text-white
-    shadow-lg shadow-black/20
-    hover:translate-y-[-5px]
-    hover:bg-white/30 dark:hover:bg-black/30
-    transition-all duration-500 ease-out border dark:border-black dark:border animate-pulse
+    px-6 py-2  bg-white
+   rounded-3xl bg-white/5 dark:bg-black/40  backdrop-blur-2xl border border-white/20 shadow-xl animate-pulse
   "
 >
      <TbDownload className="flex justify-center  items-center " />

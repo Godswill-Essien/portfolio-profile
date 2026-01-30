@@ -19,7 +19,7 @@ export default function Project() {
 
 
   return (
-    <div id="work" className="font-serif px-6 sm:px-6 md:px-8  md:gap-16 md:flex md:flex-col py-6  dark:text-black dark:bg-white flex-col gap-14">
+    <div id="work" className="font-serif px-6 sm:px-6 md:px-8  md:gap-16 md:flex md:flex-col py-6    flex-col gap-14">
 
       {/* TITLE */}
       <p

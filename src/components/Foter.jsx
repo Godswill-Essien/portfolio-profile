@@ -35,7 +35,7 @@ export default function Footer() {
   });
 
   return (
-    <footer className="relative dark:bg-white   dark:text-white bg-black/30 backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
+    <footer className="relative    backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
 
       {/* ===== Decorative Blurred Circles ===== */}
       <motion.div
@@ -118,11 +118,11 @@ export default function Footer() {
 
         {/* Scroll to Top */}
        <div className="fixed bottom-6 right-6 z-50">
- <div className="fixed bottom-6 right-6 z-50">
+ <div className="fixed bottom-6 right-6 z-50 translate-y-[50px]">
   <Link
     href="#top"
     className="
-      group flex items-center justify-center
+      group flex items-center  justify-center
       w-12 h-12 rounded-full
        text-3xl
       
@@ -132,7 +132,7 @@ export default function Footer() {
       transition-all duration-300
     "
   >
-         <FaLevelUpAlt  className="group-hover:-translate-y-1 transition-transform"/>
+         <FaLevelUpAlt  className="group-hover:-translate-y-1  transition-transform"/>
     {/* glow */}
     <span className="
       absolute inset-0 rounded-full

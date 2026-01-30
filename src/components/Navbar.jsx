@@ -114,7 +114,7 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20 ml-2"
+            className="p-2 rounded-full  bg-gradient-to-r from-white/5 via-black/45 to-white/5 animate-grad dark:text-black dark:bg-white border border-white/20 ml-2"
           >
             {darkMode ? <FaMoon className="text-blue-500" /> : <FaSun className="text-yellow-500" />}
           </motion.button>

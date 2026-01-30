@@ -63,7 +63,7 @@ export default function CVSection() {
     }
 
     return (
-        <section className="relative min-h-screen w-full py-24 px-4 overflow-hidden  bg-gray-100 dark:bg-black transition-colors">
+        <section className="relative min-h-screen w-full py-24 px-4 overflow-hidden   bg-gradient-to-r from-white/5 via-black/55 to-white/5  animate-grad    bg-gray-100 dark:bg-black transition-colors">
 
             {/* 🌗 THEME TOGGLE */}
             <button
@@ -85,7 +85,7 @@ export default function CVSection() {
 
             {/* ===== BACKGROUND ===== */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute inset-0 bg-gradient-to-br
+                <div className="absolute  inset-0 bg-gradient-to-br
           from-white via-gray-200 to-white
           dark:from-black dark:via-gray-900 dark:to-black"
                 />
@@ -102,7 +102,7 @@ export default function CVSection() {
           mx-auto w-full max-w-md md:max-w-lg lg:max-w-3xl
           rounded-3xl p-6 md:p-10
           bg-white/70 dark:bg-white/10
-          backdrop-blur-2xl
+          backdrop-blur-md
           border border-gray-200 dark:border-white/20
           shadow-2xl
           text-gray-900 dark:text-white

@@ -98,10 +98,12 @@ export default function ViewMoreProjects() {
     }
 
     return (
-        <section className="relative min-h-screen  pt-32 px-2 bg-gray-100 dark:bg-black transition-colors duration-500">
+        <section className="relative min-h-screen  pt-32 px-2 bg-gray-100 dark:bg-black/95     bg-gradient-to-r from-white/5 via-black/55 to-white/5  animate-grad   transition-colors duration-500">
             {/* ===== FIXED SEARCH & THEME BAR ===== */}
             <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[80%]">
+
                 <div className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/15 dark:bg-black/40 backdrop-blur-2xl border border-white/20 shadow-xl">
+
                     <div className="flex items-center gap-3 flex-1">
                         <FaSearch className="text-black dark:text-white/60" />
                         <input

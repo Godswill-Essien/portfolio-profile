@@ -17,7 +17,7 @@ export default function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="px-6 md:px-20  md:py-20 py-10  flex flex-col md:flex-row    dark:bg-white items-center md:items-stretch gap-10 md:gap-16 font-serif"
+      className="px-6 md:px-20  md:py-20 py-10  flex flex-col md:flex-row    items-center md:items-stretch gap-10 md:gap-16 font-serif"
     >
       {/* IMAGE CARD WITH GLASS EFFECT */}
       <motion.div
@@ -28,7 +28,7 @@ export default function About() {
         className="relative w-full max-w-[360px] h-[360px] sm:h-[420px] md:h-auto md:w-[380px] flex-shrink-0"
       >
         {/* Glass overlay shadow */}
-        <div className="absolute inset-0 translate-x-3 translate-y-3 bg-black/30 rounded-2xl hidden md:block" />
+        <div className="absolute inset-0 translate-x-3 translate-y-3 bg-black/15   rounded-2xl hidden md:block" />
 
         {/* Image container */}
         <div data-aos="fade-down" className="relative w-full h-full rounded-2xl overflow-hidden bg-black/20 backdrop-blur-xl border border-white/10 shadow-2xl hover:shadow-3xl transition-shadow duration-500">
