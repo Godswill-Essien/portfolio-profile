@@ -167,21 +167,31 @@ export default function Page() {
 
       {/* 🔮 Reload Popup */}
       {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-white/85 rounded-xl p-6 shadow-2xl max-w-sm text-center">
-            <h2 className="text-xl font-bold text-black mb-2">✨ Welcome</h2>
-            <p className="text-gray-700">
-              “Hey there!! Glad you’re here 👋Please Take a moment to explore ☺️”
-            </p>
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-md animate-fade-in">
+  <div className="bg-white/20 dark:bg-white/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/30
+                  rounded-2xl p-8 shadow-2xl max-w-sm text-center transition-colors duration-500">
+    
+    <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-3 flex items-center justify-center gap-2">
+      ✨ Welcome ✨
+    </h2>
+    
+    <p className="text-white dark:text-gray-200 mb-5 text-sm sm:text-base leading-relaxed">
+      Hey there! 👋 Glad you’re here.  
+      <br />
+     Please Take a moment to explore ☺️
+    </p>
+    
+    <button
+      onClick={() => setShowPopup(false)}
+      className="mt-2 px-6 py-2 rounded-full bg-white/30 dark:bg-gray-500/50 text-gray-900 dark:text-white font-semibold
+                 backdrop-blur-md hover:bg-white/50 dark:hover:bg-gray-700/60 hover:scale-105 transition-transform shadow-lg"
+    >
+      View Portfolio
+    </button>
+  </div>
+</div>
 
-            <button
-              onClick={() => setShowPopup(false)}
-              className="mt-4 px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+
       )}
 
       <Navbar />
