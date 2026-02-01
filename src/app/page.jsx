@@ -17,46 +17,36 @@ export default function Page() {
   const [loading, setLoading] = useState(true);
   const [content, setContent] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [userPaused, setUserPaused] = useState(false); // NEW: tracks manual pause
+  const [userPaused, setUserPaused] = useState(false); // tracks manual pause
   const [showMusicHint, setShowMusicHint] = useState(false);
 
   const audioRef = useRef(null);
-
   const { scrollY } = useScroll();
   const yBackground = useTransform(scrollY, [0, 100], ["0%", "100%"]);
 
-  // 🔹 Show popup on reload
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
-
   // 🔹 Timed music hint popup
   useEffect(() => {
-    const showTimer = setTimeout(() => setShowMusicHint(true), 5000); // 5s
-    const hideTimer = setTimeout(() => setShowMusicHint(false), 11000); // 11s
-
+    const showTimer = setTimeout(() => setShowMusicHint(true), 5000); // show after 5s
+    const hideTimer = setTimeout(() => setShowMusicHint(false), 11000); // hide after 11s
     return () => {
       clearTimeout(showTimer);
       clearTimeout(hideTimer);
     };
   }, []);
 
-  // 🔹 Track portfolio views
+  // 🔹 Track portfolio views (once per session)
   useEffect(() => {
-    const trackViews = async () => {
-      try {
-        await fetch("http://localhost:5000/api/views/track", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ page: "portfolio-home" }),
-        });
-      } catch (err) {
-        console.warn("Failed to reach backend:", err);
-      }
-    };
-    trackViews();
+    const hasTracked = sessionStorage.getItem("hasTrackedViews");
+    if (!hasTracked) {
+      fetch("http://localhost:5000/api/views/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ page: "portfolio-home" }),
+      })
+        .then(() => sessionStorage.setItem("hasTrackedViews", "true"))
+        .catch((err) => console.warn("Failed to reach backend:", err));
+    }
   }, []);
 
   // 🔹 Fetch content
@@ -78,13 +68,13 @@ export default function Page() {
 
       if (!audioRef.current) return;
 
-      // Only auto-play if user hasn't manually paused
+      // Auto-play music only if user hasn't paused
       if (scroll > 40 && !isPlaying && !userPaused) {
         audioRef.current.play().catch(() => {});
         setIsPlaying(true);
       }
 
-      // Volume ramps with scroll (0 → 0.5)
+      // Volume ramps with scroll
       const maxScroll = 600;
       audioRef.current.volume = Math.min(scroll / maxScroll, 0.5);
 
@@ -136,9 +126,8 @@ export default function Page() {
           }
         }}
         className="fixed bottom-1 right-4 z-50 w-12 h-12 rounded-full
-                   bg-black/70 bg backdrop-blur-md text-white
-                   flex items-center justify-center shadow-lg
-                   hover:scale-105 transition"
+                   bg-white/25 dark:bg-black/70 backdrop-blur-md text-white
+                   flex items-center justify-center shadow-lg hover:scale-105 transition"
         aria-label="Toggle music"
       >
         {isPlaying ? "❚❚" : "▶"}
@@ -147,7 +136,7 @@ export default function Page() {
       {/* ⏱️ Timed Music Hint Popup */}
       {showMusicHint && (
         <div className="fixed bottom-24 right-6 z-40 max-w-xs
-                        bg-black/70 text-white text-sm
+                        bg-white/25 dark:bg-black/70 text-white text-sm
                         px-4 py-3 rounded-lg shadow-lg
                         backdrop-blur-md animate-fade-in">
           <p>
@@ -165,42 +154,12 @@ export default function Page() {
         </div>
       )}
 
-      {/* 🔮 Reload Popup */}
-      {showPopup && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-md animate-fade-in">
-  <div className="bg-white/20 dark:bg-white/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/30
-                  rounded-2xl p-8 shadow-2xl max-w-sm text-center transition-colors duration-500">
-    
-    <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-3 flex items-center justify-center gap-2">
-      ✨ Welcome ✨
-    </h2>
-    
-    <p className="text-white dark:text-gray-200 mb-5 text-sm sm:text-base leading-relaxed">
-      Hey there! 👋 Glad you’re here.  
-      <br />
-     Please Take a moment to explore ☺️
-    </p>
-    
-    <button
-      onClick={() => setShowPopup(false)}
-      className="mt-2 px-6 py-2 rounded-full bg-white/30 dark:bg-gray-500/50 text-gray-900 dark:text-white font-semibold
-                 backdrop-blur-md hover:bg-white/50 dark:hover:bg-gray-700/60 hover:scale-105 transition-transform shadow-lg"
-    >
-      View Portfolio
-    </button>
-  </div>
-</div>
-
-
-      )}
-
       <Navbar />
       <Hero />
       <About />
       <Skill />
       <Project />
       <Foter />
-
     </div>
   );
 }

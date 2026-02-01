@@ -41,7 +41,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center text-center    md:dark:bg-white/10 md:shadow-xl md:px-20 md:shadow-black/ gap-6 md:hover:scale-110 transition-all duration-1000  ease-in-out rounded-2xl    max-w-4xl py-5 "
+        className="relative z-10 flex flex-col items-center text-center      md:dark:bg-white/10 md:shadow-xl md:px-20 md:shadow-black/ gap-6 md:hover:scale-110 transition-all duration-1000  ease-in-out rounded-2xl    max-w-4xl py-5 "
       >
         {/* ===== PROFILE IMAGE ===== */}
         <motion.div
@@ -51,7 +51,7 @@ export default function Hero() {
           whileHover={{ y: -6 }}
           className="bg-gradient-to-r from-green-700 via-red-700 to-blue-700  animate-gradient hover:opacity-20 rounded-full p-[3px]"
         >
-          <div className="relative  w-[270px] hover:opacity-60 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
+          <div className="relative  w-[270px]    hover:opacity-60 h-[270px] md:w-[280px] md:h-[280px] rounded-full overflow-hidden bg-black">
             <Image
               src="/saint.jpg"
               alt="Godswill Essien"

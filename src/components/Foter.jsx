@@ -116,9 +116,9 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Scroll to Top */}
+                 
        <div className="fixed bottom-6 right-6 z-50">
- <div className="fixed bottom-6 right-6 z-50 translate-y-[50px]">
+ <div className="fixed bottom-6 right-1 z-50 translate-y-[-40px]">
   <Link
     href="#top"
     className="
@@ -141,7 +141,7 @@ export default function Footer() {
   </Link>
 </div>
 
-</div>
+         </div>
 
 
         <p className="text-xs sm:text-sm translate-y-9 dark:text-black text-white/50">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>

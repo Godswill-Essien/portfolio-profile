@@ -77,7 +77,7 @@ export default function TextImageComponent() {
 
       {/* Text & Skills Section */}
       <div data-aos="fade-up" className="w-full md:w-1/2 flex flex-col gap-6">
-        <h3 className="text-2xl md:text-3xl font-bold  bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-700 text-transparent">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold  bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-700 text-transparent">
           My Skill Sets
         </h3>
 
