@@ -82,14 +82,14 @@ export default function CVSection() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-white dark:bg-black">
+      <div className="flex items-center justify-center min-h-screen  bg-white dark:bg-black">
         <BsGlobe className="w-20 h-20 text-blue-800 dark:text-blue-700 animate-spin-slow" />
       </div>
     );
   }
 
   return (
-    <section className="relative min-h-screen w-full py-24 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-r from-white/5 via-black/55 to-white/5 bg-gray-100 dark:bg-black transition-colors">
+    <section className="relative min-h-screen w-full py-24 px-4 sm:px-6 bg-animated-gradient  lg:px-12 overflow-hidden bg-gradient-to-r from-white/5 via-black/55 to-white/5 bg-gray-100 dark:bg-black transition-colors">
       {/* THEME TOGGLE */}
       <button
         onClick={toggleTheme}
@@ -100,7 +100,7 @@ export default function CVSection() {
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-200 to-white dark:from-black dark:via-gray-900 dark:to-black" />
+        <div className="absolute inset-0 bg-animated-gradient  bg-gradient-to-br from-white via-gray-200 to-white dark:from-black dark:via-gray-900 dark:to-black" />
         <div className="absolute top-20 left-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-blue-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
         <div className="absolute bottom-20 right-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-purple-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
       </div>
@@ -180,7 +180,16 @@ export default function CVSection() {
         </Link>
       </motion.div>
 
-      <p className="text-xs translate-y-20 text-gray-500 text-center">
+      
+      <div className=' animate-spin-slow text-xs -z-50 '>
+        <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
+        <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
+        <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
+
+      </div> 
+
+
+      <p className="text-xs translate-y-20 text-black dark:text-white text-center">
         © {new Date().getFullYear()} Portfolio. All rights reserved.
       </p>
     </section>

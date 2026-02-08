@@ -90,7 +90,7 @@ export default function Navbar() {
         {/* ===== Right Side: Resume + Views + Theme Toggle ===== */}
         <div className="flex items-center gap-3">
          <Link
-  href="/CV"
+  href="/Resume"
   className="
     hidden sm:inline-block
     px-8 py-2 rounded-full text-sm
@@ -174,7 +174,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
              <Link
-  href="/CV"
+  href="/Resume"
   onClick={closeDropdown}
   className="
     mt-5 px-10 py-2 rounded-3xl
