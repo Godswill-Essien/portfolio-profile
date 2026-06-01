@@ -44,7 +44,7 @@ export default function Project() {
                 src="/shoelayers.png"
                 alt="Shoelayers project"
                 fill
-                className="object-contain hover:scale-110 transition opacity-55 dark:opacity-100 hover:opacity-85   duration-700 px-1"
+                className="object-contain hover:scale-110 transition opacity-20 dark:opacity-100 hover:opacity-85   duration-700 px-1"
                 sizes="(max-width: 68px) 100vw, 520px"
                 priority
               />
@@ -93,7 +93,7 @@ export default function Project() {
               src="/coach.png"
               alt="CoachClone project"
               fill
-              className="object-contain hover:scale-110 dark:opacity-100 transition-all ease-in-out duration-700 opacity-55 hover:opacity-85  px-1"
+              className="object-contain hover:scale-110 dark:opacity-100 transition-all ease-in-out duration-700 opacity-20   hover:opacity-100  px-1"
               sizes="(max-width: 768px) 100vw, 520px"
             />
           </div>

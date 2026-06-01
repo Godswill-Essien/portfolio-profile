@@ -10,8 +10,11 @@ import Navbar from "@/components/Navbar";
 import Skill from "@/components/Skill";
 import Project from "@/components/Project";
 import Foter from "@/components/Foter";
+import Starbackground from "@/components/Starbackground";
 
 import { useScroll, useTransform } from "framer-motion";
+import Solarbg from "@/components/Animatebg";
+import AnimatedBackground from "@/components/Animatebg";
 
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -70,7 +73,7 @@ export default function Page() {
 
       // Auto-play music only if user hasn't paused
       if (scroll > 40 && !isPlaying && !userPaused) {
-        audioRef.current.play().catch(() => {});
+        audioRef.current.play().catch(() => { });
         setIsPlaying(true);
       }
 
@@ -100,8 +103,13 @@ export default function Page() {
   }
 
   return (
-    <div className="relative min-h-screen gradient-magic bg-gradient-to-r from-white/5 via-black/45 to-white/5 animate-grad dark:text-black dark:bg-white">
 
+       <div className="relative min-h-screen font-serif italic">
+
+            <Starbackground/>
+    <div className="relative stars min-h-screen gradient-magic bg-gradient-to-r from-white/5 via-black/45 to-white/5 animate-grad dark:text-black dark:bg-white">
+     
+        
       {/* 🎵 Scroll Music */}
       <audio
         ref={audioRef}
@@ -120,7 +128,7 @@ export default function Page() {
             setIsPlaying(false);
             setUserPaused(true); // mark manual pause
           } else {
-            audioRef.current.play().catch(() => {});
+            audioRef.current.play().catch(() => { });
             setIsPlaying(true);
             setUserPaused(false); // user resumed
           }
@@ -161,5 +169,8 @@ export default function Page() {
       <Project />
       <Foter />
     </div>
+
+       </div>
+
   );
 }

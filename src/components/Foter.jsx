@@ -15,6 +15,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { BsGlobe } from 'react-icons/bs';
+import Starbackground from "@/components/Starbackground";
 
 
 // Fade-up variant
@@ -35,8 +36,8 @@ export default function Footer() {
   });
 
   return (
-    <footer className="relative    backdrop-blur-2xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
-
+    <footer className="relative    backdrop-blur-xl rounded-2xl border border-white/10 py-12 px-6 sm:px-16 dark:rounded-none  shadow-2xl flex flex-col items-center overflow-hidden ">
+          {/* <Starbackground/> */}
       {/* ===== Decorative Blurred Circles ===== */}
       <motion.div
         className="absolute -top-10 -left-10 w-24 h-24 sm:w-32 sm:h-32 bg-indigo-600/30 rounded-full"
@@ -61,7 +62,7 @@ export default function Footer() {
         <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent mb-2">
           Get In Contact With Me
         </h3>
-        <p className="mx-auto dark:text-black max-w-md text-[12px] sm:text-[13px] md:text-sm leading-relaxed text-white/60">
+        <p className="mx-auto dark:text-black max-w-md text-[12px] sm:text-[13px] md:text-sm leading-relaxed text-white/80">
           Have some work you need done? Hit the message button or reach me through any of the social links below.
           <span className="block mt-2 dark:text-black text-white/80">
             I’d love to hear from you.
@@ -161,6 +162,7 @@ export default function Footer() {
 
 
       <div className="absolute bottom-20 right-20 w-64 h-64 -z-50">
+          {/* <Starbackground/> */}
         <div className="absolute inset-0 border border-blue-500/20 rounded-full animate-spin-slow">
           <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
           <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>

@@ -66,14 +66,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full    z-30 transition-all duration-300
-        ${scrolled ? "backdrop-blur-xl   dark:bg-black/30 border-b border-blue-700/95 " : "bg-transparent "}
+      className={`fixed    transition-all duration-300  top-1 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[99%]  rounded-2xl 
+        ${scrolled ? "backdrop-blur-xl   dark:bg-white/5 border-[1px] border-blue-700/20   " : "bg-transparent "}
       `}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
+      <nav className="max-w-7xl mx-auto  flex items-center justify-between px-3 sm:px-6 md:px-10  py-3  ">
         {/* ===== Hamburger / Close Button ===== */}
         <button
-          className="md:hidden text-2xl text-white dark:text-black"
+          className="md:hidden text-2xl text-white dark:text-black "
           onClick={dropDown ? closeDropdown : toggleDropdown}
         >
           {dropDown ? <AiOutlineClose /> : <TbListDetails />}
@@ -89,9 +89,9 @@ export default function Navbar() {
 
         {/* ===== Right Side: Resume + Views + Theme Toggle ===== */}
         <div className="flex items-center gap-3">
-         <Link
-  href="/Resume"
-  className="
+          <Link
+            href="/Resume"
+            className="
     hidden sm:inline-block
     px-8 py-2 rounded-full text-sm
     backdrop-blur-md backdrop-saturate-150
@@ -104,9 +104,9 @@ export default function Navbar() {
     transition-all duration-500 ease-out 
     animate-pulse
   "
->
-  View Resume
-</Link>
+          >
+            View Resume
+          </Link>
 
 
 
@@ -121,81 +121,142 @@ export default function Navbar() {
         </div>
       </nav>
 
+   {dropDown && (
+  <>
+    {/* Overlay */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={closeDropdown}
+      className="fixed inset-0 z-40 bg-black/10 rounded-2xl  backdrop-blur-sm"
+    />
 
-      {/* mobile drop */}
+    {/* Mobile Sidebar */}
+    <motion.aside
+    
+      initial={{ x: -320, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -220, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 120,
+        damping: 18,
+      }}
+      className="
+        fixed
+        top-20
+        left-3
+        z-50
 
-      {/* ===== Mobile Dropdown ===== */}
-      {dropDown && (
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          data-aos="fade-dow"
-          className="fixed left-0 right-0 h-[calc(100vh-70px)] bg-black/85 dark:bg-white/95 rounded-md mt-[1px] backdrop-blur-xl flex justify-center translate-y-[-40px] items-start z-40"
-        >
-          <motion.nav
-            initial="hidden"
-            animate="visible"
+        w-[290px]
+        overflow-hidden
+        rounded-3xl
+
+        bg-black/80
+        dark:bg-white/80
+
+        backdrop-blur-3xl
+        backdrop-saturate-200
+
+        border border-white/20
+        dark:border-white/10
+
+        shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+      "
+    >
+      {/* Glow effect */}
+      <div className="absolute -top-16 -right-16 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 -left-10 w-40 h-40 bg-indigo-500/20 blur-3xl rounded-full pointer-events-none" />
+
+      <motion.nav
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.08 },
+          },
+        }}
+        className="relative flex flex-col gap-3 p-6 text-white dark:text-black"
+      >
+        {[
+          { href: "#home", label: "Home" },
+          { href: "#about", label: "About" },
+          { href: "#work", label: "My Projects" },
+          { href: "#hire", label: "Reach Me" },
+          { href: "#cert", label: "View Certification" },
+        ].map((item) => (
+          <motion.div
+            key={item.href}
             variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.12 }
-              },
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0 },
             }}
-            className="w-[85%] flex flex-col items-center gap-5 text-white dark:text-black font-serif py-5 px-5 font-bold"
+            whileHover={{ x: 6 }}
           >
-            {[
-              { href: "#home", label: "Home" },
-              { href: "#about", label: "About" },
-              { href: "#work", label: "My Projects" },
-              { href: "#hire", label: "Reach Me" },
-              { href: "#cert", label: "View Certification" },
-            ].map((item) => (
-              <motion.div
-                key={item.href}
-                variants={{
-                  hidden: { opacity: 0, y: 15 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <Link onClick={closeDropdown} href={item.href}>
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
+            <Link
+              href={item.href}
+              onClick={closeDropdown}
+              className="
+                block
+                rounded-2xl
+                px-4
+                py-3
+                font-medium
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+                bg-white/5
+                dark:bg-black/5
+
+                border border-white/10
+
+                hover:bg-white/15
+                dark:hover:bg-black/15
+
+                backdrop-blur-md
+
+                transition-all duration-300
+              "
             >
-             <Link
-  href="/Resume"
-  onClick={closeDropdown}
-  className="
-    mt-5 px-10 py-2 rounded-3xl
-    backdrop-blur-md backdrop-saturate-150
-    bg-white/20 dark:bg-black/20
-     dark:border-black/40
-    dark:text-black text-white
-    shadow-lg shadow-black/20
-    hover:bg-white/30 dark:hover:bg-black/30
-    hover:-translate-y-1 hover:shadow-xl
-    transition-all duration-300 ease-out animate-pulse
-  "
->
-  View Resume
-</Link>
+              {item.label}
+            </Link>
+          </motion.div>
+        ))}
 
-              
-            </motion.div>
-          </motion.nav>
-        </motion.div>
-      )}
+        <Link
+          href="/Resume"
+          onClick={closeDropdown}
+          className="
+            mt-4
+            rounded-2xl
+
+            bg-gradient-to-r
+            from-blue-600
+            via-indigo-500
+            to-blue-600
+
+            py-3
+            text-center
+            font-semibold
+            text-white
+
+            shadow-lg shadow-blue-500/30
+
+            backdrop-blur-xl
+            border border-white/20
+
+            hover:scale-[1.04]
+            transition-all duration-300
+          "
+        >
+          View Resume
+        </Link>
+      </motion.nav>
+    </motion.aside>
+  </>
+)}
+
 
     </header>
   );

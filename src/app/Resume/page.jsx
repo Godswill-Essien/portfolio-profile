@@ -8,6 +8,7 @@ import { BsGlobe } from "react-icons/bs";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { TbDownload } from "react-icons/tb";
 import { IoReturnUpBack } from "react-icons/io5";
+import Starbackground from "@/components/Starbackground";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -89,7 +90,8 @@ export default function CVSection() {
   }
 
   return (
-    <section className="relative min-h-screen w-full py-24 px-4 sm:px-6 bg-animated-gradient  lg:px-12 overflow-hidden bg-gradient-to-r from-white/5 via-black/55 to-white/5 bg-gray-100 dark:bg-black transition-colors">
+    <section className="relative font-serif italic min-h-screen w-full py-24 px-4 sm:px-6 bg-animated-gradient  lg:px-12 overflow-hidden bg-gradient-to-r from-white/5 via-blac/55 to-white/5 bg-gray-100 dark:bg-black transition-colors">
+        <Starbackground/>
       {/* THEME TOGGLE */}
       <button
         onClick={toggleTheme}
@@ -100,7 +102,7 @@ export default function CVSection() {
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-animated-gradient  bg-gradient-to-br from-white via-gray-200 to-white dark:from-black dark:via-gray-900 dark:to-black" />
+        <div className="absolute inset-0 bg-animated-gradient  bg-gradient-to-br from-white via-gray-200 to-white dark:from-white dark:via-white dark:to-whiote" />
         <div className="absolute top-20 left-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-blue-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
         <div className="absolute bottom-20 right-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-purple-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
       </div>

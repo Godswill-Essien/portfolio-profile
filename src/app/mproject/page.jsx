@@ -9,6 +9,7 @@ import { FaGithub, FaSearch, FaSun, FaMoon } from "react-icons/fa";
 import axios from "axios";
 import { BsGlobe } from "react-icons/bs";
 import { IoReturnUpBack } from "react-icons/io5";
+import Starbackground from "@/components/Starbackground";
 
 const projects = [
     {
@@ -98,7 +99,10 @@ export default function ViewMoreProjects() {
     }
 
     return (
-        <section className="relative min-h-screen  pt-32 px-2 bg-gray-100 dark:bg-black/95     bg-gradient-to-r from-white/5 via-black/55 to-white/5  animate-grad   transition-colors duration-500">
+        <section className="relative min-h-screen  font-serif italic pt-32 px-2 bg-gray-100 dark:bg-black/95     bg-gradient-to-r from-white/5 via-black/55 to-white/5  animate-grad   transition-colors duration-500">
+
+                <Starbackground/> 
+
             {/* ===== FIXED SEARCH & THEME BAR ===== */}
             <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[80%]">
 
@@ -138,7 +142,7 @@ export default function ViewMoreProjects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className={`flex flex-col gap-6 md:items-center ${project.reverse ? "md:flex-row-reverse" : "md:flex-row"
-                            } rounded-3xl bg-white/10 dark:bg-black/40 backdrop-blur-2xl  p-6 shado shadow-lg md:p-12`}
+                            } rounded-3xl bg-white/10 dark:bg-black/50  backdrop-blur-3xl  p-6  shadow-lg md:p-12`}
                     >
                         <div className="relative w-full md:w-1/2 aspect-video rounded-xl overflow-hidden">
                             <Image
@@ -163,7 +167,7 @@ export default function ViewMoreProjects() {
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === project.id ? null : project.id)
                                     }
-                                    className="text-sm font-semibold text-indigo-500 hover:underline"
+                                    className="text-sm font-semibold  text-indigo-500 hover:underline"
                                 >
                                     {openDropdown === project.id
                                         ? "Hide details ▲"
@@ -180,7 +184,7 @@ export default function ViewMoreProjects() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                 >
-                                    <ul className="mt-3 space-y-2 text-sm opacity-80">
+                                    <ul className="mt-3 text-black/80 font-serif italic dark:text-white space-y-2 text-sm opacity-80">
                                         {project.differences.map((item, i) => (
                                             <li key={i} className="flex gap-2">
                                                 <span className="text-indigo-500">▹</span>
