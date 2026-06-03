@@ -89,111 +89,228 @@ export default function CVSection() {
     );
   }
 
-  return (
-    <section className="relative font-serif italic min-h-screen w-full py-24 px-4 sm:px-6 bg-animated-gradient  lg:px-12 overflow-hidden bg-gradient-to-r from-white/5 via-blac/55 to-white/5 bg-gray-100 dark:bg-black transition-colors">
-        <Starbackground/>
-      {/* THEME TOGGLE */}
-      <button
-        onClick={toggleTheme}
-        className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-black border border-gray-300 dark:border-white/20 shadow-lg"
-      >
-        {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-600" />}
-      </button>
+ return (
+  <section className="relative min-h-screen overflow-hidden px-4 sm:px-6 lg:px-8 py-24 bg-gray-100 dark:bg-black transition-colors duration-500">
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-animated-gradient  bg-gradient-to-br from-white via-gray-200 to-white dark:from-white dark:via-white dark:to-whiote" />
-        <div className="absolute top-20 left-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-blue-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
-        <div className="absolute bottom-20 right-1/4 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-purple-600/20 rounded-full blur-[120px] sm:blur-[160px]" />
-      </div>
+    <Starbackground />
 
-      {/* GLASS CARD */}
+    {/* Grid Background */}
+    <div className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,#1f293722_1px,transparent_1px),linear-gradient(to_bottom,#1f293722_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+    {/* Glow Effects */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[140px] -z-10" />
+
+    <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[140px] -z-10" />
+
+    {/* THEME TOGGLE */}
+    <button
+      onClick={toggleTheme}
+      className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/80 dark:bg-black/70 backdrop-blur-xl border border-white/20 shadow-xl"
+    >
+      {darkMode ? (
+        <FaSun className="text-yellow-400 text-lg" />
+      ) : (
+        <FaMoon className="text-blue-600 text-lg" />
+      )}
+    </button>
+
+    {/* CV CARD */}
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="
+        mx-auto
+        w-full
+        max-w-4xl
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/70
+        dark:bg-white/5
+        backdrop-blur-2xl
+        shadow-2xl
+        shadow-blue-500/10
+        p-6
+        sm:p-8
+        md:p-12
+        text-gray-900
+        dark:text-white
+      "
+    >
+      {/* HEADER */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-3xl rounded-3xl p-6 sm:p-10 bg-white/70 dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/20 shadow-2xl text-gray-900 dark:text-white"
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="text-center"
       >
-        {/* HEADER */}
-        <motion.div variants={fadeUp} initial="hidden" animate="visible" className="text-center relative">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-2">God'swill Essien</h1>
-          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">#5 Gotheg Avenue, Artillery, Woji Junction</p>
-          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Off Okporo Road, Rumuogba,</p>
-          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">Port-Harcourt, Rivers state, Nigeria.</p>
+        <h1 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-700  bg-clip-text text-transparent">
+          God'swill Essien
+        </h1>
 
-          {/* COPY EMAIL */}
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 relative">
-            <span className="text-gray-700 dark:text-gray-300 break-words text-center sm:text-left">{email}</span>
-            <button
-              onClick={copyEmail}
-              className="px-4 py-2 animate-pulse bg-gradient-to-r from-indigo-700 to- to-blue-700 dark:text-white text-black rounded-full hover:bg-blue-700 transition w-full sm:w-auto text-center"
-            >
-              Copy Email
-            </button>
-
-            {/* Toast */}
-            {copied && (
-              <div data-aos="fade-up" className="fixed top-6 left-1/2 -translate-x-1/2 bg-green-700 backdrop-blur-md text-white text-sm px-4 py-2 rounded-lg shadow-lg animate-fade-in-out z-50">
-                Email copied to clipboard!
-              </div>
-            )}
-          </div>
-        </motion.div>
-
-        {/* CONTENT */}
-        <motion.div className="mt-8 space-y-5">
-          {[
-            { title: "Profile", text: "Aspiring web developer passionate about creating functional and visually appealing websites." },
-            { title: "Education", text: "Estate Management – Rivers State University" },
-            { title: "Technical Skills", text: "HTML, CSS, JavaScript, Responsive Design" },
-          ].map((item, i) => (
-            <motion.div key={i} variants={fadeUp} className="p-4 rounded-xl bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/10">
-              <h2 className="font-semibold text-lg">{item.title}</h2>
-              <p className="text-gray-700 dark:text-gray-300">{item.text}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <p className="text-gray-700 dark:text-gray-300 animate-float p-4 rounded-xl bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/10 mt-2 text-center">
-          Pls download resume for more content 😊😊
+        <p className="mt-2 text-base md:text-lg text-gray-600 dark:text-gray-400">
+          Frontend Developer • React.js • Next.js
         </p>
 
-        {/* BUTTONS */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <a
-            href="/GOD'SWILL ESSIEN resume.pdf"
-            download
-            className="flex items-center justify-center gap-2 px-6 py-2 bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/10 rounded-full shadow-lg hover:scale-105 transition w-full sm:w-auto text-center"
-          >
-            Download Resume <TbDownload />
-          </a>
+        <div className="mt-4 text-sm md:text-base text-gray-600 dark:text-gray-400 space-y-1">
+          <p>#5 Gotheg Avenue, Artillery, Woji Junction</p>
+          <p>Off Okporo Road, Rumuogba</p>
+          <p>Port Harcourt, Rivers State, Nigeria</p>
         </div>
+
+        {/* EMAIL */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <span className="break-all text-gray-700 dark:text-gray-300">
+            {email}
+          </span>
+
+          <button
+            onClick={copyEmail}
+            className="
+              px-5
+              py-2
+              rounded-xl
+              bg-gradient-to-r
+              from-blue-700
+              to-indigo-700
+              text-white
+              font-medium
+              hover:scale-105
+              transition-all
+            "
+          >
+            Copy Email
+          </button>
+        </div>
+
+        {copied && (
+          <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-green-600 text-white px-4 py-2 rounded-xl shadow-lg">
+            Email copied successfully!
+          </div>
+        )}
       </motion.div>
 
-      {/* BACK LINK */}
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 300 }}
-        className=" mt-6"
+      {/* CONTENT */}
+      <div className="mt-10 space-y-5">
+        {[
+          {
+            title: "Profile",
+            text: "Frontend developer passionate about building modern, responsive and user-friendly web applications."
+          },
+          {
+            title: "Education",
+            text: "Estate Management,  Rivers State University"
+          },
+          {
+            title: "Technical Skills",
+            text: "HTML, CSS, JavaScript, React.js, Next.js, Tailwind CSS"
+          }
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            variants={fadeUp}
+            className="
+              p-5
+              rounded-2xl
+              bg-white/50
+              dark:bg-white/5
+              border
+              border-white/10
+              backdrop-blur-xl
+              hover:-translate-y-1
+              hover:border-blue-500/30
+              hover:shadow-lg
+              hover:shadow-blue-500/10
+              transition-all
+              duration-500
+            "
+          >
+            <h2 className="font-semibold text-xl mb-2">
+              {item.title}
+            </h2>
+
+            <p className="text-gray-700 dark:text-gray-300">
+              {item.text}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* INFO */}
+      <div className="mt-6">
+        <p className="text-center p-4 rounded-2xl bg-white/50 dark:bg-white/5 border border-white/10 text-gray-700 dark:text-gray-300">
+          Download my resume for complete experience.🚀
+        </p>
+      </div>
+
+      {/* DOWNLOAD BUTTON */}
+      <div className="mt-8 flex justify-center">
+        <a
+          href="/GOD'SWILL ESSIEN resume.pdf"
+          download
+          className="
+            flex
+            items-center
+            gap-2
+            px-8
+            py-4
+            rounded-2xl
+            font-semibold
+            text-white
+            bg-gradient-to-r
+            from-blue-700
+            to-indigo-700
+            hover:scale-105
+            transition-all
+            shadow-lg
+            hover:shadow-blue-500/30
+          "
+        >
+          Download Resume
+          <TbDownload />
+        </a>
+      </div>
+    </motion.div>
+
+    {/* HOME BUTTON */}
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      className="fixed bottom-6 left-6 z-50"
+    >
+      <Link
+        href="/#home"
+        className="
+          flex
+          items-center
+          justify-center
+          w-14
+          h-14
+          rounded-full
+          bg-white/80
+          dark:bg-black/60
+          backdrop-blur-xl
+          border
+          border-white/20
+          shadow-xl
+        "
       >
-        <Link href="/#home" className="text-gray-800 dark:text-white   font-bold text-4xl sm:text-5xl">
-          <IoReturnUpBack />
-        </Link>
-      </motion.div>
+        <IoReturnUpBack className="text-2xl text-blue-700 dark:text-white" />
+      </Link>
+    </motion.div>
 
-      
-      <div className=' animate-spin-slow text-xs -z-50 '>
-        <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
-        <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
-        <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
+    {/* Floating Dots */}
+    <div className="pointer-events-none">
+      <div className="absolute top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float" />
+      <div className="absolute bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000" />
+      <div className="absolute top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000" />
+    </div>
 
-      </div> 
+    {/* Footer */}
+    <p className="mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+      © {new Date().getFullYear()} Portfolio. All rights reserved.
+    </p>
 
-
-      <p className="text-xs translate-y-20 text-black dark:text-white text-center">
-        © {new Date().getFullYear()} Portfolio. All rights reserved.
-      </p>
-    </section>
-  );
+  </section>
+);
 }

@@ -63,201 +63,230 @@ export default function Navbar() {
     setDropDown(false);
     if (timerRef.current) clearTimeout(timerRef.current);
   };
-
   return (
-    <header
-      className={`fixed    transition-all duration-300  top-1 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[99%]  rounded-2xl 
-        ${scrolled ? "backdrop-blur-xl   dark:bg-white/5 border-[1px] border-blue-700/20   " : "bg-transparent "}
-      `}
-    >
-      <nav className="max-w-7xl mx-auto  flex items-center justify-between px-3 sm:px-6 md:px-10  py-3  ">
-        {/* ===== Hamburger / Close Button ===== */}
+  <header
+    className={`
+      fixed top-3 left-1/2 -translate-x-1/2
+      z-50
+      w-[95%] lg:w-[98%]
+      rounded-3xl
+      transition-all duration-500
+      ${
+        scrolled
+          ? "backdrop-blur-3xl bg-black/20 dark:bg-white/10 border  border-blue-700/30 shadow-2xl"
+          : "bg-transparent"
+      }
+    `}
+  >
+    <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3">
+      
+      {/* LEFT */}
+      <div className="flex items-center gap-4">
         <button
-          className="md:hidden text-2xl text-white dark:text-black "
+          className="md:hidden text-2xl text-white dark:text-black"
           onClick={dropDown ? closeDropdown : toggleDropdown}
         >
           {dropDown ? <AiOutlineClose /> : <TbListDetails />}
         </button>
 
-        {/* ===== Desktop Menu ===== */}
-        <div className="hidden md:flex gap-10 text-white dark:text-black font-bold text-[18px]">
-          <Link className="hover:underline" href="#about">About</Link>
-          <Link className="hover:underline" href="#work">Work</Link>
-          <Link className="hover:underline" href="#hire">Contact</Link>
-          <Link className="hover:underline" href="#cert">Certification</Link>
-        </div>
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="
+            text-lg md:text-xl
+            font-bold
+            bg-gradient-to-r
+            from-blue-700
+            via-indigo-700
+            to-purple-700
+            bg-clip-text
+            text-transparent
+          "
+        >
+          Will.dev
+        </Link>
+      </div>
 
-        {/* ===== Right Side: Resume + Views + Theme Toggle ===== */}
-        <div className="flex items-center gap-3">
-          <Link
-            href="/Resume"
-            className="
-    hidden sm:inline-block
-    px-8 py-2 rounded-full text-sm
-    backdrop-blur-md backdrop-saturate-150
-    bg-white/20 dark:bg-black/20
-   dark:border-black/40
-    dark:text-black text-white
-    shadow-lg shadow-black/20
-    hover:bg-white/30 dark:hover:bg-black/30
-    hover:-translate-y-1 hover:shadow-xl
-    transition-all duration-500 ease-out 
-    animate-pulse
-  "
-          >
-            View Resume
-          </Link>
-
-
-
-          <Viewc />
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={toggleTheme}
-            className="p-2 rounded-full  bg-gradient-to-r from-white/5 via-black/45 to-white/5 animate-grad dark:text-black dark:bg-white border border-white/20 ml-2"
-          >
-            {darkMode ? <FaMoon className="text-blue-500" /> : <FaSun className="text-yellow-500" />}
-          </motion.button>
-        </div>
-      </nav>
-
-   {dropDown && (
-  <>
-    {/* Overlay */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={closeDropdown}
-      className="fixed inset-0 z-40 bg-black/10 rounded-2xl  backdrop-blur-sm"
-    />
-
-    {/* Mobile Sidebar */}
-    <motion.aside
-    
-      initial={{ x: -320, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -220, opacity: 0 }}
-      transition={{
-        type: "spring",
-        stiffness: 120,
-        damping: 18,
-      }}
-      className="
-        fixed
-        top-20
-        left-3
-        z-50
-
-        w-[290px]
-        overflow-hidden
-        rounded-3xl
-
-        bg-black/80
-        dark:bg-white/80
-
-        backdrop-blur-3xl
-        backdrop-saturate-200
-
-        border border-white/20
-        dark:border-white/10
-
-        shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-      "
-    >
-      {/* Glow effect */}
-      <div className="absolute -top-16 -right-16 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 -left-10 w-40 h-40 bg-indigo-500/20 blur-3xl rounded-full pointer-events-none" />
-
-      <motion.nav
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.08 },
-          },
-        }}
-        className="relative flex flex-col gap-3 p-6 text-white dark:text-black"
-      >
-        {[
-          { href: "#home", label: "Home" },
-          { href: "#about", label: "About" },
-          { href: "#work", label: "My Projects" },
-          { href: "#hire", label: "Reach Me" },
-          { href: "#cert", label: "View Certification" },
-        ].map((item) => (
-          <motion.div
-            key={item.href}
-            variants={{
-              hidden: { opacity: 0, x: -20 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            whileHover={{ x: 6 }}
-          >
-            <Link
-              href={item.href}
-              onClick={closeDropdown}
-              className="
-                block
-                rounded-2xl
-                px-4
-                py-3
-                font-medium
-
-                bg-white/5
-                dark:bg-black/5
-
-                border border-white/10
-
-                hover:bg-white/15
-                dark:hover:bg-black/15
-
-                backdrop-blur-md
-
-                transition-all duration-300
-              "
-            >
-              {item.label}
-            </Link>
-          </motion.div>
-        ))}
+      {/* DESKTOP MENU */}
+      <div className="hidden md:flex items-center gap-8 font-medium text-white dark:text-black">
+        <Link
+          href="#about"
+          className="hover:text-blue-500 transition"
+        >
+          About
+        </Link>
 
         <Link
+          href="#work"
+          className="hover:text-blue-500 transition"
+        >
+          Projects
+        </Link>
+
+        <Link
+          href="#hire"
+          className="hover:text-blue-500 transition"
+        >
+          Contact
+        </Link>
+
+        <Link
+          href="/cert"
+          className="hover:text-blue-500 transition"
+        >
+          Certification
+        </Link>
+      </div>
+
+      {/* RIGHT */}
+      <div className="flex items-center gap-3">
+        
+        <Link
           href="/Resume"
-          onClick={closeDropdown}
           className="
-            mt-4
-            rounded-2xl
+            hidden sm:flex
+            items-center
+            justify-center
+            px-5 py-2
+            rounded-full
+            text-sm font-medium
 
             bg-gradient-to-r
             from-blue-600
-            via-indigo-500
-            to-blue-600
+            to-indigo-600
 
-            py-3
-            text-center
-            font-semibold
             text-white
 
-            shadow-lg shadow-blue-500/30
+            shadow-lg
+            shadow-blue-500/30
 
-            backdrop-blur-xl
-            border border-white/20
-
-            hover:scale-[1.04]
+            hover:scale-105
             transition-all duration-300
           "
         >
-          View Resume
+          Resume
         </Link>
-      </motion.nav>
-    </motion.aside>
-  </>
-)}
 
+        <Viewc />
 
-    </header>
-  );
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          onClick={toggleTheme}
+          className="
+            p-2.5
+            rounded-full
+            border border-white/10
+            backdrop-blur-xl
+            bg-white/10
+            dark:bg-black/20
+          "
+        >
+          {darkMode ? (
+            <FaMoon className="text-blue-500" />
+          ) : (
+            <FaSun className="text-yellow-500" />
+          )}
+        </motion.button>
+      </div>
+    </nav>
+
+    {/* MOBILE MENU */}
+     {dropDown && (
+      <>
+        {/* Overlay */}
+        <div
+          onClick={closeDropdown}
+          className="fixed inset-0 z-40 rounded-3xl bg-black/10 backdrop-blur-sm"
+        />
+
+        {/* Sidebar */}
+        <aside
+          className="
+            fixed
+            top-20
+            left-3
+            z-50
+            w-[290px]
+            overflow-hidden
+            rounded-3xl
+            bg-black/80
+            dark:bg-white/50
+            backdrop-blur-3xl
+            border border-white/20
+            shadow-2xl
+          "
+        >
+          {/* Glow Effects */}
+          <div className="absolute -top-16 -right-16 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full" />
+          <div className="absolute bottom-0 -left-10 w-40 h-40 bg-indigo-500/20 blur-3xl rounded-full" />
+
+          <nav className="relative flex flex-col gap-3 p-6 text-white dark:text-black">
+            <Link
+              href="#home"
+              onClick={closeDropdown}
+              className="rounded-2xl px-4 py-3 bg-white/5  dark:bg-black/10 border border-white/10 hover:bg-white/15 transition"
+            >
+              Home
+            </Link>
+
+            <Link
+              href="#about"
+              onClick={closeDropdown}
+              className="rounded-2xl px-4 py-3 bg-white/5 border  dark:bg-black/10 border-white/10 hover:bg-white/15 transition"
+            >
+              About
+            </Link>
+
+            <Link
+              href="#work"
+              onClick={closeDropdown}
+              className="rounded-2xl px-4 py-3 bg-white/5 border  dark:bg-black/10 border-white/10 hover:bg-white/15 transition"
+            >
+              My Projects
+            </Link>
+
+            <Link
+              href="#hire"
+              onClick={closeDropdown}
+              className="rounded-2xl px-4 py-3 bg-white/5 border  dark:bg-black/10 border-white/10 hover:bg-white/15 transition"
+            >
+              Reach Me
+            </Link>
+
+            <Link
+              href="/cert"
+              onClick={closeDropdown}
+              className="rounded-2xl px-4 py-3 bg-white/5 border  dark:bg-black/10 border-white/10 hover:bg-white/15 transition"
+            >
+              View Certification
+            </Link>
+
+            <Link
+              href="/Resume"
+              onClick={closeDropdown}
+              className="
+                mt-4
+                rounded-2xl
+                bg-gradient-to-r
+                from-blue-700
+                via-indigo-7000
+                to-blue-700
+                py-3
+                text-center
+                font-semibold
+                text-white
+                shadow-lg
+                hover:scale-105
+                transition-all
+              "
+            >
+              View Resume
+            </Link>
+          </nav>
+        </aside>
+      </>
+    )}
+  </header>
+  
+);
 }

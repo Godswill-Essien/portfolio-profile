@@ -97,157 +97,213 @@ export default function ViewMoreProjects() {
             </div>
         );
     }
+return (
+  <section className="relative   overflow-hidden pt-32 px-4 sm:px-6 pb-10 bg-white dark:bg-black transition-colors duration-500">
 
-    return (
-        <section className="relative min-h-screen  font-serif italic pt-32 px-2 bg-gray-100 dark:bg-black/95     bg-gradient-to-r from-white/5 via-black/55 to-white/5  animate-grad   transition-colors duration-500">
+    {/* Grid Background */}
+    <div className="absolute inset-0 -z-20 bg-[linear-gradient(to_right,#1f293722_1px,transparent_1px),linear-gradient(to_bottom,#1f293722_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-                <Starbackground/> 
+    {/* Glow */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[300px] w-[300px] md:h-[450px] md:w-[450px] rounded-full bg-indigo-500/10 blur-[120px] -z-10" />
 
-            {/* ===== FIXED SEARCH & THEME BAR ===== */}
-            <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[80%]">
+    <Starbackground />
 
-                <div className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/15 dark:bg-black/40 backdrop-blur-2xl border border-white/20 shadow-xl">
+    {/* SEARCH + THEME */}
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%]  md:w-[75%] lg:w-[650px]">
 
-                    <div className="flex items-center gap-3 flex-1">
-                        <FaSearch className="text-black dark:text-white/60" />
-                        <input
-                            type="text"
-                            placeholder="Search projects..."
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className="w-full bg-transparent outline-none text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50"
-                        />
-                    </div>
+      <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/70 dark:bg-black/60 backdrop-blur-xl border border-white/10 shadow-xl">
 
-                    <motion.button
-                        whileTap={{ scale: 0.9 }}
-                        onClick={toggleTheme}
-                        className="p-2 rounded-full bg-white/30 dark:bg-black/40 border border-white/20"
-                    >
-                        {darkMode ? (
-                            <FaSun className="text-yellow-500" />
-                        ) : (
-                            <FaMoon className="text-blue-500" />
-                        )}
-                    </motion.button>
-                </div>
-            </div>
+        <FaSearch className="text-gray-500" />
 
-            {/* ===== PROJECTS ===== */}
-            <motion.div className="max-w-6xl mx-auto shadow-black  flex flex-col gap-3">
-                {filteredProjects.map((project) => (
-                    <motion.div
-                        key={project.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className={`flex flex-col gap-6 md:items-center ${project.reverse ? "md:flex-row-reverse" : "md:flex-row"
-                            } rounded-3xl bg-white/10 dark:bg-black/50  backdrop-blur-3xl  p-6  shadow-lg md:p-12`}
-                    >
-                        <div className="relative w-full md:w-1/2 aspect-video rounded-xl overflow-hidden">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-scale-down  opacity-100 dark:hover:opacity-100 dark:opacity-55 hover:scale-110 transition duration-700"
-                            />
-                        </div>
+        <input
+          type="text"
+          placeholder="Search projects..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="flex-1 bg-transparent outline-none text-sm md:text-base text-black dark:text-white placeholder:text-gray-500"
+        />
 
-                        <div className="md:w-1/2 flex flex-col gap-3">
-                            <h3 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-blue-700 bg-clip-text text-transparent">
-                                {project.title}
-                            </h3>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          onClick={toggleTheme}
+          className="p-2 rounded-full bg-black/5 dark:bg-white/10"
+        >
+          {darkMode ? (
+            <FaSun className="text-yellow-400" />
+          ) : (
+            <FaMoon className="text-blue-500" />
+          )}
+        </motion.button>
 
-                            <p className="opacity-80 dark:text-white text-black">{project.description}</p>
-                            <p className="text-sm opacity-60 text-gray-900 dark:text-gray-500">{project.tech}</p>
+      </div>
+    </div>
 
-                            {/* ===== DROPDOWN ===== */}
-                            <div className="mt-2">
-                                <button
-                                    onClick={() =>
-                                        setOpenDropdown(openDropdown === project.id ? null : project.id)
-                                    }
-                                    className="text-sm font-semibold  text-indigo-500 hover:underline"
-                                >
-                                    {openDropdown === project.id
-                                        ? "Hide details ▲"
-                                        : "What I did differently ▼"}
-                                </button>
+    {/* PROJECTS */}
+    <motion.div className="max-w-5xl mx-auto flex flex-col  gap-8">
+      {filteredProjects.map((project) => (
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className={`group flex flex-col gap-6 md:items-center ${
+            project.reverse ? "md:flex-row-reverse" : "md:flex-row"
+          }
+          rounded-3xl
+          border border-white/10
+          bg-white/5
+          dark:bg-white/[0.03]
+    
+          backdrop-blur-xl
+          p-5 md:p-8
+          hover:border-indigo-500/20
+          hover:shadow-xl
+          hover:shadow-indigo-500/10
+          transition-all duration-500`}
+        >
 
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={
-                                        openDropdown === project.id
-                                            ? { height: "auto", opacity: 1 }
-                                            : { height: 0, opacity: 0 }
-                                    }
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-hidden"
-                                >
-                                    <ul className="mt-3 text-black/80 font-serif italic dark:text-white space-y-2 text-sm opacity-80">
-                                        {project.differences.map((item, i) => (
-                                            <li key={i} className="flex gap-2">
-                                                <span className="text-indigo-500">▹</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            </div>
+          {/* IMAGE */}
+          <div className="relative w-full md:w-1/2 aspect-video rounded-2xl  overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="
+              dark:opacity-50
+                dark:hover:opacity-95
+                object-cover
+                group-hover:scale-105
+                transition-all
+                duration-700
+              "
+            />
+          </div>
 
-                            <div className="flex gap-4 mt-6 font-bold dark:text-white text-black animate-pulse text-xl">
-                                <Link className="flex justify-start items-center bg-gradient-to-r from-green-700 to-red-700 bg-clip-text text-transparent gap-2" href={project.live} target="_blank">
-                                    Live < IoIosLink className="text-green-700" />
-                                </Link>
-                                {project.github && (
-                                    <Link className="flex justify-start bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-transparent items-center gap-2" href={project.github} target="_blank">
-                                        Github <FaGithub className="text-blue-700" />
-                                    </Link>
-                                )}
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
+          {/* CONTENT */}
+          <div className="md:w-1/2 flex flex-col  gap-4">
 
+            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+              {project.title}
+            </h3>
 
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="flex justify-star   w-5  mt-2 animate-pulse  "
-            >
-                <Link
-                    href="/#home"
-                    className="text-gray-800 dark:text-white  text-center font-bold px-6 rounded-full text-5xl"
-                >
-                    <motion.span
-                        initial={{ x: 32 }}
-                        animate={{ x: 16 }}
-                        whileHover={{ x: 0 }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="inline-block"
-                    >
-                        <IoReturnUpBack />
-                    </motion.span>
-                </Link>
-
-
-
-            </motion.div>
-
-
-
-            <div className=' animate-pulse -z-50 '>
-                <div className="absolute hover:animate-ping top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float"></div>
-                <div className="absolute hover:animate-ping bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000"></div>
-                <div className="absolute hover:animate-ping top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000"></div>
-
-            </div>
-
-            <p className="text-xs text-center py-2 opacity-60 ">
-                &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {project.description}
             </p>
-        </section>
-    );
+
+            <div className="flex flex-wrap gap-2">
+              {project.tech.split("•").map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-500 text-sm"
+                >
+                  {tech.trim()}
+                </span>
+              ))}
+            </div>
+
+            {/* DROPDOWN */}
+            <div>
+              <button
+                onClick={() =>
+                  setOpenDropdown(
+                    openDropdown === project.id ? null : project.id
+                  )
+                }
+                className="text-sm font-semibold text-indigo-500 hover:underline"
+              >
+                {openDropdown === project.id
+                  ? "Hide details ▲"
+                  : "What I did differently ▼"}
+              </button>
+
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={
+                  openDropdown === project.id
+                    ? { height: "auto", opacity: 1 }
+                    : { height: 0, opacity: 0 }
+                }
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <ul className="mt-3 dark:text-gray-300 text-gray-700 space-y-2 text-sm">
+                  {project.differences.map((item, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-indigo-500">▹</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* LINKS */}
+            <div className="flex flex-wrap gap-5 pt-3 font-semibold">
+
+              <Link
+                href={project.live}
+                target="_blank"
+                className="flex items-center gap-2 text-green-500 hover:text-green-400 transition"
+              >
+                Live
+                <IoIosLink />
+              </Link>
+
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="flex items-center gap-2 text-blue-500 hover:text-blue-400 transition"
+                >
+                  GitHub
+                  <FaGithub />
+                </Link>
+              )}
+            </div>
+
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+
+    {/* FLOATING HOME BUTTON */}
+    <motion.div
+      className="fixed bottom-6 right-6 z-50"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <Link
+        href="/#home"
+        className="
+          flex items-center justify-center
+          h-14 w-14
+          rounded-full
+           border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl
+          text-white
+          shadow-xl
+          hover:bg-blue-700
+          transition-all
+        "
+      >
+        <IoReturnUpBack size={26} />
+      </Link>
+    </motion.div>
+
+    {/* FLOATING PARTICLES */}
+    <div className="animate-pulse">
+      <div className="absolute top-1/4 left-10 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float" />
+      <div className="absolute bottom-1/3 right-32 w-3 h-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float delay-1000" />
+      <div className="absolute top-1/2 left-32 w-2 h-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full animate-float delay-2000" />
+    </div>
+
+    {/* FOOTER */}
+    <footer className=" text-center mt-2 text-sm text-gray-500 dark:text-gray-400">
+      © {new Date().getFullYear()} portfolio. all rights reserved.
+    </footer>
+
+  </section>
+);
 }

@@ -23,10 +23,9 @@ export default function Hero() {
 
   });
 
-
   return (
     // ✅ FIX: top spacing + stop vertical centering
-    <section className="relative min--screen flex items-start   justify-center  bg-animated-gradient overflow-hidden px-6 pt-14 md:py-24">
+    <section className="relative min--screen flex items-start   justify-center  bg-animated-gradient overflow-hidden px-6 pt-16 md:py-24">
 
       {/* ===== FLOATING GLOBE (SUPER SMOOTH) ===== */}
       <motion.div

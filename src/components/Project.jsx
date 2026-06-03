@@ -19,132 +19,230 @@ export default function Project() {
 
 
   return (
-    <div id="work" >
+    <section id="work" className="relative py-20 overflow-hidden">
+      {/* Grid Background */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#1f293722_1px,transparent_1px),linear-gradient(to_bottom,#1f293722_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-      {/* TITLE */}
-      <p
+      {/* Glow */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[350px] w-[350px] rounded-full bg-indigo-500/10 blur-[100px] -z-10" />
 
-        data-aos="fade-up" className="bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text px-7 text-transparent
-        text-2xl sm:text-3xl md:text-4xl  font-bold text-start"
-      >
-        My Projects
-      </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Title */}
+        <div className="text-center mb-14">
+          <h2
+            data-aos="fade-up"
+            className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            font-bold
+            bg-gradient-to-r
+            from-blue-700
+            via-indigo-700
+            
+            bg-clip-text
+            text-transparent
+          "
+          >
+            My Projects
+          </h2>
 
-      <div className="font-serif px-6 sm:px-6 md:px-8  md:gap-16 md:flex md:flex-col py-6    flex-col ">
+          <p className="mt-4 dark:text-black text-gray-400 max-w-xl mx-auto">
+            A collection of projects showcasing my frontend development,
+            responsive design, and modern web application skills.
+          </p>
+        </div>
 
-
-        {/* ================= PROJECT 1 ================= */}
-        <div data-aos="fade-down" className="flex flex-col gap-6 md:flex-row md:items-center">
-
-          <div className="relative w-full max-w-[520px] mx-auto rounded-md overflow-hidden 
-           aspect-video">
-
-            <div className=" ">
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* ================= PROJECT 1 ================= */}
+          <div
+            data-aos="fade-up"
+            className="
+            group
+            
+            rounded-3xl
+            overflow-hidden
+            dark:bg-black/10
+            border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl
+            hover:border-indigo-500/30
+            hover:shadow-xl
+            hover:shadow-indigo-500/10
+            transition-all
+            duration-500
+          "
+          >
+            <div className="relative aspect-video overflow-hidden">
               <Image
                 src="/shoelayers.png"
                 alt="Shoelayers project"
                 fill
-                className="object-contain hover:scale-110 transition opacity-20 dark:opacity-100 hover:opacity-85   duration-700 px-1"
-                sizes="(max-width: 68px) 100vw, 520px"
                 priority
+                className="
+                dark:opacity-100
+              opacity-30 hover:opacity-100
+                object-cover
+                transition-all
+                duration-700
+                px-5
+                py-5
+
+                rounded-3xl
+                group-hover:scale-105
+              "
               />
-
             </div>
 
-          </div>
+            <div className="p-6 flex flex-col gap-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-blue-500 bg-clip-text text-transparent">
+                Shoelayers
+              </h3>
 
-          <div data-aos="fade-up" className="flex project flex-col gap-3 md:w-1/2">
-            <h2 className="text-[22px] md:text-[30px] font-bold bg-gradient-to-r from-orange-800 to-blue-700 bg-clip-text text-transparent">
-              Shoelayers
-            </h2>
+              <p className="text-gray-300 dark:text-black leading-relaxed">
+                Shoelayers is a stylish and user-friendly website focused on
+                showcasing shoes and clothing with a clean and attractive UI.
+              </p>
 
-            <p className="text-[13px] md:text-[18px] leading-relaxed">
-              Shoelayers is a stylish and user-friendly website focused on showcasing shoes and clothing. Built with HTML and CSS, it features a clean and attractive layout that highlights trendy footwear and outfits.
-            </p>
-
-            <p className="text-gray-700 text-[13px] md:text-[17px]">HTML & CSS</p>
-
-            <div className="flex gap-5 text-[15px] md:text-[20px]">
-              <Link href="https://godswill-essien.github.io/shoelayer-clone/shoelayers.html" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:-translate-y-1 transition">
-                <IoIosLink className="text-blue-700 text-[23px]" />
-                <span className="bg-gradient-to-r from-orange-800 to-green-700 bg-clip-text animate-pulse text-transparent">
-                  Live Link
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-sm">
+                  HTML
                 </span>
-              </Link>
 
-              <Link href="https://github.com/Godswill-Essien/shoelayer-clone" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:-translate-y-1 transition">
-                <FaGithub className="text-blue-700 text-[23px]" />
-                <span className="bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text animate-pulse text-transparent">
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm">
+                  CSS
+                </span>
+              </div>
+
+              <div className="flex gap-5 pt-2">
+                <Link
+                  href="https://godswill-essien.github.io/shoelayer-clone/shoelayers.html"
+                  target="_blank"
+                  className="flex items-center gap-2 text-green-600 hover:text-blue-400 transition"
+                >
+                  <IoIosLink size={22} />
+                  Live Demo
+                </Link>
+
+                <Link
+                  href="https://github.com/Godswill-Essien/shoelayer-clone"
+                  target="_blank"
+                  className="flex items-center gap-2 hover:text-purple-400 transition"
+                >
+                  <FaGithub size={22} />
                   GitHub
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* ================= PROJECT 2 ================= */}
+          <div
+            data-aos="fade-up"
+            className="
+
+            dark:bg-black/10
+            group
+            rounded-3xl
+            overflow-hidden
+            border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl
+            hover:border-indigo-500/30
+            hover:shadow-xl
+            hover:shadow-indigo-500/10
+            transition-all
+            duration-500
+          "
+          >
+            <div className="relative aspect-video overflow-hidden">
+              <Image
+                src="/coach.png"
+                alt="CoachClone project"
+                fill
+                className="
+                dark:opacity-100
+                opacity-30 hover:opacity-100
+                object-cover
+                transition-all
+                 px-5
+                py-5
+
+                rounded-3xl
+                duration-700
+                group-hover:scale-105
+              "
+              />
+            </div>
+
+            <div className="p-6 flex flex-col gap-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent">
+                CoachClone
+              </h3>
+
+              <p className="text-gray-300  dark:text-black leading-relaxed">
+                A fitness membership platform built with Next.js, Tailwind CSS
+                and JavaScript featuring modern UI, class scheduling and
+                responsive layouts.
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm">
+                  Next.js
                 </span>
-              </Link>
+
+                <span className="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-sm">
+                  TailwindCSS
+                </span>
+
+                <span className="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm">
+                  JavaScript
+                </span>
+              </div>
+
+              <div className="flex dark:text-black items-center gap-2 text-gray-400">
+                <IoIosLink size={22} />
+                Offline
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ================= PROJECT 2 ================= */}
-        <div className="flex flex-col gap-6 md:flex-row-reverse md:items-center">
-
-          <div data-aos="fade-down" className="relative w-full max-w-[520px] mx-auto rounded-md overflow-hidden
-           aspect-video">
-            <Image
-              src="/coach.png"
-              alt="CoachClone project"
-              fill
-              className="object-contain hover:scale-110 dark:opacity-100 transition-all ease-in-out duration-700 opacity-20   hover:opacity-100  px-1"
-              sizes="(max-width: 768px) 100vw, 520px"
-            />
-          </div>
-
-          <div data-aos="fade-up" className="flex flex-col gap-3 md:w-1/2">
-            <h2 className="text-[22px] md:text-[30px] font-bold bg-gradient-to-r from-purple-800 to-orange-700 bg-clip-text text-transparent">
-              CoachClone
-            </h2>
-
-            <p className="text-[13px] md:text-[18px] leading-relaxed">
-              CoachClone is a fitness membership platform built with Next.js, Tailwind CSS, and JavaScript. It offers smooth navigation, class scheduling, programs, and a responsive UI for fitness lovers.
-            </p>
-
-            <p className="text-gray-700 text-[13px] md:text-[17px]">
-              TailwindCSS • Next.js • JS
-            </p>
-
-            <Link href="#" className="flex items-center gap-2 text-[15px] md:text-[20px]">
-              <IoIosLink className="text-blue-700 text-[23px]" />
-              <span className="bg-gradient-to-r from-red-700 to-yellow-500 bg-clip-text text-transparent">
-                Offline
-              </span>
-            </Link>
-          </div>
-        </div>
+        {/* View More Button */}
         <motion.a
           href="/mproject"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
           whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
           className="
-             animate-pulse
-              mt-4 mb-4 px-6 py-4
-            flex items-center justify-center gap-2 text-center
-           backdrop-blur-md backdrop-saturate-150
-          bg-white/20 dark:bg-black/20
-          rounded-2xl  dark:border-black/20
-        dark:text-black text-white
-           shadow-lg shadow-black/30
-             hover:bg-white/30 dark:hover:bg-black/30
-             hover:-translate-y-1
-            transition-all duration-500 ease-out
-           "
+          max-w-xs
+          mx-auto
+          mt-12
+          flex
+          items-center
+          justify-center
+          gap-3
+          rounded-2xl
+          px-6
+          py-4
+          border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl animate-pulse
+            dark:bg-black/10
+          text-white
+          font-semibold
+          shadow-lg
+          hover:shadow-indigo-500/30
+          transition-all
+        "
         >
-          view more projects
+          View More Projects
           <FiExternalLink />
         </motion.a>
-
       </div>
-
-    </div>
-  )
+    </section>
+  );
 }
